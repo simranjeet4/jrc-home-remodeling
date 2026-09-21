@@ -1,0 +1,314 @@
+/**
+ * JRC Home Remodeling — /concrete-services-near-you/ Styles
+ * Exact reproduction of the live reference site:
+ * - Clean Hero with dark overlay
+ * - 6 Service Cards Grid (light gray background, neat padding)
+ * - 2-Column Why Choose narrative with 2364.jpg image
+ * - Concrete Repairs list & tag badges
+ * - 4-Step Process with icons (estimate, preparation, mixer, checked)
+ * - Bottom orange CTA banner
+ */
+
+.concrete-page {
+  background-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.concrete-hero {
+  background-color: #1A1A1A;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/image-1-1.webp');
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.concrete-hero-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.concrete-hero-tag {
+  display: inline-block;
+  background: rgba(244, 84, 4, 0.2);
+  color: #F45404;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.concrete-hero-title {
+  font-family: "Poppins", serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.concrete-hero-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #DDDDDD;
+  margin-bottom: 30px;
+}
+
+.concrete-btn-orange {
+  display: inline-block;
+  background-color: #F45404;
+  color: #FFFFFF;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.concrete-btn-orange:hover {
+  background-color: #D84500;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SERVICES GRID (6 CARDS)
+   ========================================================================== */
+.concrete-services-section {
+  padding: 75px 0 55px;
+  background-color: #FFFFFF;
+}
+
+.concrete-section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 35px;
+}
+
+.concrete-section-title {
+  font-family: "Poppins", serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #160A05;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.concrete-section-subtitle {
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.concrete-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.concrete-service-card {
+  background-color: #F8F6F2;
+  padding: 30px 24px;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+}
+
+.concrete-service-card:hover {
+  transform: translateY(-3px);
+}
+
+.concrete-card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #160A05;
+  margin-bottom: 12px;
+}
+
+.concrete-card-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US & BENEFITS
+   ========================================================================== */
+.concrete-why-section {
+  padding: 65px 0;
+  background-color: #FAF5EE;
+}
+
+.concrete-why-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.concrete-why-title {
+  font-family: "Poppins", serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #160A05;
+  margin-bottom: 18px;
+}
+
+.concrete-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+.concrete-benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.concrete-why-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   REPAIRS TAGS LIST
+   ========================================================================== */
+.concrete-repairs-section {
+  padding: 45px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.concrete-repairs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 900px;
+  margin: 25px auto 20px;
+}
+
+.concrete-repair-tag {
+  background-color: #FAF5EE;
+  border: 1px solid #EADDCB;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #160A05;
+}
+
+/* ==========================================================================
+   4-STEP PROCESS
+   ========================================================================== */
+.concrete-process-section {
+  padding: 60px 0 70px;
+  background-color: #FAF5EE;
+  text-align: center;
+}
+
+.concrete-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.concrete-process-card {
+  background-color: #FFFFFF;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.concrete-process-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+}
+
+.concrete-process-step-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #160A05;
+}
+
+/* ==========================================================================
+   BOTTOM CTA (S2)
+   ========================================================================== */
+.concrete-bottom-cta {
+  padding: 86px 0;
+  background-color: #160A05;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.concrete-bottom-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.concrete-bottom-title {
+  font-family: "Poppins", serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.concrete-bottom-desc {
+  font-size: 16px;
+  color: #CCCCCC;
+  line-height: 1.65;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .concrete-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .concrete-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .concrete-why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .concrete-hero-title {
+    font-size: 32px;
+  }
+  .concrete-cards-grid,
+  .concrete-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .concrete-benefits-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,68 @@
+/**
+ * JRC Home Remodeling — Animation Styles
+ * Includes keyframes and transition effects verified from live site stylesheets.
+ */
+
+/* Verified Live Site Keyframes */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes blur {
+  0% {
+    backdrop-filter: blur(20px);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Common Transition Classes */
+.transition-fast {
+  transition: all 0.2s ease-in-out;
+}
+
+.transition-normal {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-slow {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Verified Hover Animation Classes */
+.scale-on-hover {
+  transition: transform 0.3s linear;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}

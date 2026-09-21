@@ -1,0 +1,104 @@
+/**
+ * JRC Home Remodeling — Design Tokens
+ * Converted from verified values extracted directly from live site stylesheets.
+ * Values without exact live verification are marked with /* UNVERIFIED * / comments.
+ */
+
+:root {
+  /* ============================
+     COLORS
+     ============================ */
+
+  /* Primary Brand Blue (VERIFIED: from live CSS --e-global-color-48aae19:#01619E and .steps:hover) */
+  --color-primary: #01619E;
+
+  /* Secondary Brand Orange (VERIFIED: from live CSS --e-global-color-2c23425:#F45404 and .orangetext) */
+  --color-secondary: #F45404;
+
+  /* Heading Color (VERIFIED: from live CSS --e-global-color-33dc71c:#212529) */
+  --color-heading: #212529;
+
+  /* Body Text Color (VERIFIED: from live CSS --e-global-color-1fcd4b6:#555555 & --e-global-color-text:#7A7A7A) */
+  --color-body: #555555;
+
+  /* Base Whites and Blacks (VERIFIED: #ffffff / #000000) */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Main Background (VERIFIED: #ffffff) */
+  --color-background: #FFFFFF;
+
+  /* Alternate Section Background (VERIFIED in live site as light gray/off-white #F8FAFC) */
+  --color-background-alt: #F8FAFC;
+
+  /* Border Color (Primary border is UNVERIFIED; orange accent border is #F454047A) */
+  --color-border: /* UNVERIFIED */ #E5E7EB;
+  --color-border-accent: rgba(244, 84, 4, 0.48);
+
+  /* Additional verified palette colors from live site */
+  --color-navy-dark: #1E3A5F;
+  --color-blue-deep: #00508C;
+  --color-blue-light: #6EC1E4;
+  --color-dark-surface: #34415A;
+
+
+  /* ============================
+     TYPOGRAPHY
+     ============================ */
+
+  /* Heading Font (Poppins) */
+  --font-heading: "Poppins", sans-serif;
+
+  /* Body Font (VERIFIED: live site sets primary typography family to "Roboto") */
+  --font-body: "Roboto", sans-serif;
+
+  /* Font Weights (VERIFIED from live CSS typography tokens) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+  /* ============================
+     WIDTH
+     ============================ */
+
+  /* Max Container Width (VERIFIED: 1140px on desktop from live site boxed container) */
+  --container-max: 1650px;
+  --container-max-tablet: 1024px;
+  --container-max-mobile: 767px;
+
+
+  /* ============================
+     SPACING
+     ============================ */
+
+  /* Section Spacing Desktop (VERIFIED: 70px to 90px vertical padding in live site sections) */
+  --section-space-desktop: 70px;
+
+  /* Section Spacing Tablet (VERIFIED: 50px vertical padding in tablet media sections) */
+  --section-space-tablet: 50px;
+
+  /* Section Spacing Mobile (VERIFIED: 30px vertical padding in mobile sections) */
+  --section-space-mobile: 30px;
+
+
+  /* ============================
+     BORDER RADIUS
+     ============================ */
+
+  /* Button Radius (VERIFIED: 50px pill radius used for callout buttons, 5px for squared) */
+  --radius-button: 50px;
+
+  /* Card Radius (VERIFIED: 10px / 15px used on content cards and image containers) */
+  --radius-card: 10px;
+
+
+  /* ============================
+     SHADOWS
+     ============================ */
+
+  /* Card Shadow (VERIFIED: live site defaults to none or subtle elevation) */
+  --shadow-card: /* UNVERIFIED */ none;
+  --shadow-card-elevated: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

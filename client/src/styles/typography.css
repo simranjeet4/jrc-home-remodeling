@@ -1,0 +1,92 @@
+/**
+ * JRC Home Remodeling — Typography Styles
+ * Imports verified Google Fonts (Poppins, Montserrat, Roboto, Work Sans)
+ * and establishes standard typography hierarchy.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+/* Base Body Typography */
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-body);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3rem); /* UNVERIFIED */
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 2.25rem); /* UNVERIFIED */
+  font-weight: var(--font-weight-semibold);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem); /* UNVERIFIED */
+  font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+  font-size: 1.2rem; /* UNVERIFIED */
+  font-weight: var(--font-weight-medium);
+}
+
+h5 {
+  font-size: 1.05rem; /* UNVERIFIED */
+  font-weight: var(--font-weight-medium);
+}
+
+h6 {
+  font-size: 0.95rem; /* UNVERIFIED */
+  font-weight: var(--font-weight-medium);
+}
+
+/* Paragraphs & Text Elements */
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Verified Accent Text Class */
+.orangetext {
+  color: var(--color-secondary) !important;
+}
+
+.bluetext {
+  color: var(--color-primary) !important;
+}

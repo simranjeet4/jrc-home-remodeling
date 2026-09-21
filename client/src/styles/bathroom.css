@@ -1,0 +1,491 @@
+/**
+ * JRC Home Remodeling — /bathroom-remodeling/ Page Styles
+ * Exact reproduction of the live reference site:
+ * - 2-Column Hero: Left side copy + CTAs + bullet highlights, right side interactive Before/After Slider
+ * - Dark Navy Trust Bar (#0B1727) with 4 key metrics and orange center button
+ * - Second Before & After Transformation Section
+ * - 6-Card Service Offerings Grid
+ * - Bottom Estimate Form
+ */
+
+.bathroom-page {
+  background-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.bathroom-hero-section {
+  background-color: #FAF5EE;
+  padding: 65px 0 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bathroom-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.bathroom-hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #160A05;
+  margin: 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.bathroom-hero-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 28px;
+}
+
+.bathroom-hero-cta-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.bathroom-highlights {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777777;
+}
+
+/* ==========================================================================
+   DARK NAVY TRUST BAR (#0B1727)
+   ========================================================================== */
+.bathroom-trust-bar {
+  background-color: #0B1727;
+  color: #FFFFFF;
+  padding: 50px 0 40px;
+  text-align: center;
+}
+
+.bathroom-trust-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 35px;
+}
+
+.bathroom-trust-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.bathroom-trust-card-white {
+  background-color: #FFFFFF;
+  color: #160A05;
+  padding: 20px 24px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.bathroom-trust-stars {
+  color: #F45404;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.bathroom-trust-card-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bathroom-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bathroom-trust-icon {
+  font-size: 28px;
+  color: #F45404;
+  margin-bottom: 8px;
+}
+
+.bathroom-trust-num {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.bathroom-trust-sub {
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bathroom-trust-btn {
+  background-color: #F45404;
+  color: #FFFFFF;
+  padding: 13px 32px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.bathroom-trust-btn:hover {
+  background-color: #D84500;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECOND TRANSFORMATION SECTION
+   ========================================================================== */
+.bathroom-transform-section {
+  padding: 85px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+/* ==========================================================================
+   6 SERVICES SECTION
+   ========================================================================== */
+.bathroom-services-section {
+  padding: 80px 0 90px;
+  background-color: #FAF3E9;
+}
+
+.bathroom-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 45px;
+}
+
+.bathroom-service-item {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.bathroom-service-item:hover {
+  transform: translateY(-4px);
+}
+
+.bathroom-service-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FAF3E9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.bathroom-service-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.bathroom-service-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #160A05;
+  margin-bottom: 10px;
+}
+
+.bathroom-service-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================================================
+   GALLERY / PROJECT PHOTOS
+   ========================================================================== */
+.bathroom-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.bathroom-gallery-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   WHY CHOOSE JRC SECTION
+   ========================================================================== */
+.bathroom-why-section {
+  padding: 120px 0;
+  background-color: #FFFFFF;
+}
+
+.bathroom-why-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.bathroom-why-title {
+  font-family: "Poppins", serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #160A05;
+  margin-bottom: 20px;
+}
+
+.bathroom-why-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   TESTIMONIALS SECTION
+   ========================================================================== */
+.bathroom-reviews-section {
+  padding: 125px 0;
+  background-color: #FAF5EE;
+  text-align: center;
+}
+
+.bathroom-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 40px 0 35px;
+  text-align: left;
+}
+
+.bathroom-review-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bathroom-review-quote {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #444444;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.bathroom-review-author {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #160A05;
+}
+
+/* ==========================================================================
+   VIDEO SHOWCASE SECTION
+   ========================================================================== */
+.bathroom-videos-section {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.bathroom-videos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 35px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bathroom-remodel-before-after-card {
+  flex: 1.7;
+  height: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: #F8F6F2;
+}
+
+.bathroom-remodel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bathroom-video-card {
+  flex: 1;
+  height: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: #000000;
+}
+
+.bathroom-reel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: #000000;
+}
+
+/* ==========================================================================
+   BOTTOM ESTIMATE & SERVICE AREAS
+   ========================================================================== */
+.bathroom-bottom-section {
+  padding: 135px 0 145px;
+  background-color: #FAF3E9;
+}
+
+.bathroom-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.bathroom-bottom-title {
+  font-family: "Poppins", serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #160A05;
+  margin-bottom: 12px;
+}
+
+.bathroom-bottom-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  margin-bottom: 24px;
+}
+
+.bathroom-areas-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #160A05;
+  margin: 30px 0 16px;
+}
+
+.bathroom-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+}
+
+.bathroom-area-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* ==========================================================================
+   BOTTOM CTA BANNER (S9)
+   ========================================================================== */
+.bathroom-cta-banner {
+  padding: 130px 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.bathroom-cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 23, 39, 0.75);
+}
+
+.bathroom-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.bathroom-cta-title {
+  font-family: "Poppins", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.bathroom-cta-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #EEEEEE;
+  margin-bottom: 30px;
+}
+
+.bathroom-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .bathroom-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .bathroom-trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .bathroom-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .bathroom-hero-title {
+    font-size: 32px;
+  }
+  .bathroom-trust-grid,
+  .bathroom-services-grid {
+    grid-template-columns: 1fr;
+  }
+}

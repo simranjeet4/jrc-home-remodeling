@@ -1,0 +1,219 @@
+/**
+ * JRC Home Remodeling — /services/ Hub Page Styles
+ * Exact reproduction of the live site layout and styles:
+ * - Full-width hero with dark overlay and centered title & narrative
+ * - 3-column responsive card grid (#F7F7F7 cards with 20px radius)
+ * - Card header with icon + Poppins bold title
+ * - Description, "Read More ->" link with arrow hover transition
+ * - Bottom rounded showcase image (226px height, 20px border radius)
+ */
+
+.services-page {
+  background-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.services-hero-section {
+  position: relative;
+  min-height: 520px;
+  background-image: url('/assets/images/20664.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.57);
+  z-index: 1;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.services-hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 56px;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.services-hero-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #FFFFFF;
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+/* ==========================================================================
+   SERVICES GRID SECTION
+   ========================================================================== */
+.services-grid-section {
+  padding: 80px 0 100px;
+  background-color: #FFFFFF;
+}
+
+.services-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.services-card-item {
+  background-color: #F7F7F7;
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services-card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.services-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.services-card-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.services-card-title {
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #160A05;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.services-card-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.services-card-link {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555555;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
+}
+
+.services-card-link:hover {
+  color: var(--color-secondary, #F45404);
+}
+
+.services-card-arrow {
+  transition: transform 0.2s ease;
+}
+
+.services-card-link:hover .services-card-arrow {
+  transform: translateX(4px);
+}
+
+.services-card-image-wrap {
+  width: 100%;
+  height: 226px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.services-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 20px;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.services-card-item:hover .services-card-img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .services-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .services-hero-title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-hero-section {
+    padding: 70px 16px;
+    min-height: auto;
+  }
+
+  .services-hero-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .services-hero-desc {
+    font-size: 15px;
+  }
+
+  .services-grid-section {
+    padding: 50px 0 70px;
+  }
+
+  .services-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-card-item {
+    padding: 30px 20px;
+  }
+}

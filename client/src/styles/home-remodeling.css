@@ -1,0 +1,913 @@
+/**
+ * JRC Home Remodeling — /home-remodeling/ Desktop Refined Styles
+ * Pixel-accurate reproduction matching the live site:
+ * - Crisp hero without fading gradient, 4-line title wrap
+ * - 2-column header and flat service columns on #F3E7D9
+ * - Visual collage (worker + tall interior) and progress metrics in About
+ * - Real photo portfolio cards with orange bottom banners on #F3EADE
+ * - Clean flat process steps with numbered orange badges on #FAF3E9
+ * - Denver skyline visual + pill accordion rows in FAQ on #FAF3E9
+ * - Bold large trust badges on #FFFFFF
+ */
+
+/* ==========================================================================
+   GLOBAL SECTION CONTAINER & TAGS
+   ========================================================================== */
+.hr-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hr-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 7px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.hr-tag-pill span {
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #292929;
+}
+
+.hr-section-header {
+  margin-bottom: 45px;
+}
+
+.hr-section-header.text-center {
+  text-align: center;
+}
+
+.hr-section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #160A05;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO SECTION
+   ========================================================================== */
+.hr-hero-section {
+  position: relative;
+  min-height: 670px;
+  padding: 95px 0;
+  background-image: url('/assets/images/hero-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hr-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 440px;
+}
+
+.hr-hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #160A05;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hr-hero-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 28px;
+  max-width: 410px;
+}
+
+.hr-hero-call-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hr-hero-call-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hr-call-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hr-call-icon {
+  width: 18px;
+  height: 18px;
+  fill: #FFFFFF;
+}
+
+.hr-call-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-call-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: #777777;
+  font-weight: 500;
+}
+
+.hr-call-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #160A05;
+}
+
+/* ==========================================================================
+   SECTION 2: WHAT WE DO (SERVICES)
+   ========================================================================== */
+.hr-services-section {
+  background-color: #F3E7D9;
+  padding: 150px 0;
+}
+
+.hr-services-header-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.hr-section-subtitle-right {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+.hr-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.hr-service-item {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.hr-service-item:hover {
+  transform: translateY(-4px);
+}
+
+.hr-service-icon-wrap {
+  margin-bottom: 18px;
+}
+
+.hr-service-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.hr-service-item-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #160A05;
+  margin-bottom: 10px;
+}
+
+.hr-service-item-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 3: GET TO KNOW US (ABOUT & EXPERIENCE)
+   ========================================================================== */
+.hr-about-section {
+  background-color: #F3E7D9;
+  padding: 105px 0;
+  min-height: 1004px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.hr-about-section.hr-about-compact {
+  min-height: 942px;
+}
+
+.hr-about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hr-about-collage-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.hr-about-subcol-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hr-about-worker-img-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 230px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.hr-about-worker-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hr-metric-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hr-metric-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #160A05;
+  margin: 0;
+}
+
+.hr-metric-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hr-metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hr-metric-label {
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  color: #555555;
+}
+
+.hr-metric-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #160A05;
+}
+
+.hr-progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hr-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #D47B36, #F45404);
+  border-radius: 10px;
+}
+
+.hr-about-subcol-right {
+  height: 100%;
+}
+
+.hr-about-interior-img-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 420px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.hr-about-interior-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hr-about-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #160A05;
+  margin-bottom: 18px;
+}
+
+.hr-about-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin-bottom: 26px;
+}
+
+.hr-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.hr-vision-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  padding: 26px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid #F0ECE6;
+}
+
+.hr-vision-icon-wrap {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hr-vision-icon-wrap img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.hr-vision-card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #160A05;
+  margin-bottom: 10px;
+}
+
+.hr-vision-card-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+}
+
+.hr-about-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.hr-btn-orange {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(244, 84, 4, 0.25);
+}
+
+.hr-btn-orange:hover {
+  background-color: #D84500;
+  transform: translateY(-2px);
+}
+
+.hr-btn-outline {
+  background-color: #FFFFFF;
+  color: #160A05;
+  border: 1px solid #ECECEC;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.hr-btn-outline:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.hr-btn-arrow {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hr-btn-white {
+  background-color: #FFFFFF;
+  color: #160A05;
+  border: 1.5px solid #160A05;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.hr-btn-white:hover {
+  background-color: #160A05;
+  color: #FFFFFF;
+}
+
+.hr-btn-arrow {
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   SECTION 4: LATEST PROJECTS (PORTFOLIO)
+   ========================================================================== */
+.hr-projects-section {
+  background-color: #F3EADE;
+  padding: 108px 0;
+}
+
+.hr-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.hr-project-card-item {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  height: 406px;
+  transition: transform 0.3s ease;
+}
+
+.hr-project-card-item:hover {
+  transform: translateY(-5px);
+}
+
+.hr-project-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hr-project-banner {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  padding: 16px 22px;
+}
+
+.hr-project-banner-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.hr-project-banner-client {
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 5: WORKING PROCESS (4 STEPS)
+   ========================================================================== */
+.hr-process-section {
+  background-color: #FAF3E9;
+  padding: 125px 0;
+}
+
+.hr-process-steps-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.hr-process-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hr-step-icon-container {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.hr-step-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #160A05;
+}
+
+.hr-step-number-tag {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FAF3E9;
+}
+
+.hr-step-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #160A05;
+  margin-bottom: 10px;
+}
+
+.hr-step-desc {
+  font-family: "Work Sans", "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* Step items with images (Floor Installers, Roof Repair, Landscape Design) */
+.hr-process-images-row {
+  align-items: flex-start;
+}
+
+.hr-step-item-with-img {
+  text-align: center;
+}
+
+.hr-step-image-wrap {
+  width: 100%;
+  height: 205px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.hr-step-image-wrap .hr-step-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hr-step-item-with-img .hr-step-item-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #160A05;
+  margin: 8px 0 7px;
+  text-align: center;
+}
+
+.hr-step-item-with-img .hr-step-item-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #555555;
+  text-align: center;
+  max-width: none;
+}
+
+/* ==========================================================================
+   SECTION 6: FAQ & SOCIAL PROOF
+   ========================================================================== */
+.hr-faq-section {
+  background-color: #FAF3E9;
+  padding: 130px 0 131px;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.hr-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.hr-faq-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #160A05;
+  margin-bottom: 24px;
+}
+
+.hr-skyline-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 424px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.hr-skyline-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hr-skyline-container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 130px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(10, 35, 70, 0.82) 100%);
+  pointer-events: none;
+}
+
+.hr-skyline-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hr-skyline-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.hr-skyline-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2.5px solid #FFFFFF;
+  object-fit: cover;
+  margin-left: -14px;
+}
+
+.hr-skyline-avatar:first-child {
+  margin-left: 0;
+}
+
+.hr-skyline-badge-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FFFFFF;
+}
+
+.hr-skyline-badge-text .hr-orange-text {
+  color: #F45404;
+}
+
+/* Accordion Cards */
+.hr-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hr-faq-item {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.hr-faq-question-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  background: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.hr-faq-question-btn:hover {
+  background-color: #FAFAFA;
+}
+
+.hr-faq-question-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #292929;
+  line-height: 1.35;
+  padding-right: 16px;
+}
+
+.hr-faq-chevron-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #555555;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.hr-faq-chevron-icon.rotated {
+  transform: rotate(90deg);
+}
+
+.hr-faq-answer-panel {
+  padding: 0 28px 22px;
+  background-color: #FFFFFF;
+}
+
+.hr-faq-answer-panel p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 7: TRUST BADGES & GUARANTEES (MARQUEE)
+   ========================================================================== */
+.hr-badges-section {
+  background-color: #FFFFFF;
+  padding: 60px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-track p {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Poppins", "Montserrat", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #160A05;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.marquee-track img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   PAGE-SPECIFIC PIXEL-PERFECT HEIGHT CALIBRATIONS (12-TARGET SUITE)
+   ========================================================================== */
+.ssp-bathtub-shower-conversions .hr-hero-section {
+  padding: 87px 0;
+}
+
+.ssp-junk-removal-demolition .hr-hero-section {
+  padding: 109px 0;
+}
+
+.ssp-jrc-frame-and-drywall .hr-hero-section {
+  padding: 109px 0 110px;
+}
+
+.ssp-landscape-design-near-me .hr-hero-section {
+  padding: 111px 0;
+}
+
+.ssp-floor-installers .hr-hero-section {
+  padding: 111px 0 112px;
+}
+
+.ssp-jrc-decks .hr-process-section {
+  padding: 107px 0;
+}
+
+.ssp-roof-repair .hr-hero-section {
+  padding: 115px 0;
+}
+
+.ssp-fast-countertop-services .hr-hero-section {
+  padding: 119px 0;
+}
+

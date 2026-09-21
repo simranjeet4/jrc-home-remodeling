@@ -1,0 +1,70 @@
+/**
+ * JRC Home Remodeling — Responsive Breakpoints & Utilities
+ * Breakpoint values verified from live site stylesheet media queries:
+ * - Desktop: >= 1024px
+ * - Tablet: 768px - 1024px
+ * - Mobile: <= 767px
+ */
+
+/* ==========================================================================
+   DESKTOP (> 1024px)
+   ========================================================================== */
+@media (min-width: 1025px) {
+  .container {
+    max-width: var(--container-max);
+  }
+
+  .section-padding {
+    padding-top: var(--section-space-desktop);
+    padding-bottom: var(--section-space-desktop);
+  }
+
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   TABLET (768px - 1024px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: var(--container-max-tablet);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-padding {
+    padding-top: var(--section-space-tablet);
+    padding-bottom: var(--section-space-tablet);
+  }
+
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (<= 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section-padding {
+    padding-top: var(--section-space-mobile);
+    padding-bottom: var(--section-space-mobile);
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  /* Form & input adjustments on mobile */
+  input, select, textarea, button {
+    font-size: 16px; /* Prevents auto-zoom on iOS */
+  }
+}

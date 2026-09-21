@@ -1,0 +1,1147 @@
+{
+  "jrc-decks": {
+    "title": "Denver Deck Builders | Custom Decks & Outdoor Living",
+    "metaDesc": "Colorado deck builders, JRC, offers custom deck builds, remodeling, and staining. Get a free estimate for your new deck today!",
+    "canonical": "https://jrchomeremodeling.com/jrc-decks/",
+    "hero": {
+      "pill": "BUILDING DREAMS, ONE DECK AT A TIME",
+      "title": "Denver's Trusted Deck Builders — Starting at $7,500",
+      "desc": "Imagine the smell of burgers on the grill, friends gathered with cold drinks, and the sun setting behind your beautiful new deck. At JRC Deck Builders, we turn that vision into reality — offering high-quality, affordable custom decks built to last, with most builds completed in just 2–3 days.",
+      "bg": "deck-bg.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Expert Deck Services That Elevate Your Outdoor Space",
+      "cards": [
+        {
+          "title": "Custom Deck Builds",
+          "icon": "deck-1.png",
+          "desc": "Brand-new decks built from the ground up using Trex composite, natural wood, or eco-friendly materials — tailored to your outdoor space."
+        },
+        {
+          "title": "Deck Remodeling",
+          "icon": "home-renovation.png",
+          "desc": "Upgrade railings, replace damaged boards, and reinforce framing to modernize your existing deck at a fraction of replacement cost."
+        },
+        {
+          "title": "Deck Staining & Painting",
+          "icon": "paint-roller-1.png",
+          "desc": "Weather-resistant stains and paints in a wide range of colors and finishes that protect your deck and extend its life for years to come."
+        },
+        {
+          "title": "Pergolas & Roof Overhangs",
+          "icon": "furniture.png",
+          "desc": "Custom pergolas, roof overhangs, and patio covers that let you get more out of your outdoor space year-round."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Transform Your Backyard With Denver's Most Trusted Deck Contractors",
+      "desc": [
+        "JRC Deck Builders was built on one idea: your outdoor space should be an extension of your home — a place where memories are made — not a weathered afterthought. Every deck we build, remodel, or restore gets the same quality craftsmanship and honest communication, whether it's a straightforward board replacement or a full custom build with pergola and overhead cover.",
+        "We handle everything from permits to final cleanup, so you can simply enjoy your new outdoor space from day one."
+      ],
+      "images": [
+        "96913f42-22bd-45a5-86f0-3fb95754b542.png",
+        "97071cee-49fc-4b40-ae08-ec603ec2f5d9.png"
+      ],
+      "mission": "To build outdoor spaces that add lasting value, beauty, and enjoyment to every home we touch — on time, on budget, and without the runaround.",
+      "vision": "To be the deck builders Denver homeowners recommend without hesitation — known for fast turnaround, fair pricing, and craftsmanship that holds up for years."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Decks That Speak for Themselves",
+      "cards": [
+        {
+          "title": "Custom Composite Deck Build",
+          "image": "267.jpg",
+          "desc": "Christine, Denver"
+        },
+        {
+          "title": "Deck Remodel & Staining",
+          "image": "17102.jpg",
+          "desc": "Amelia, Castle Rock"
+        },
+        {
+          "title": "Pergola & Deck Restoration",
+          "image": "703.jpg",
+          "desc": "Jack William, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Remodeling Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Get a Free Quote",
+          "desc": "Call us or fill out the online form to request your free, no-obligation estimate."
+        },
+        {
+          "num": "2",
+          "title": "Schedule a Consultation",
+          "desc": "We visit your outdoor space to discuss your goals, materials, layout, and budget."
+        },
+        {
+          "num": "3",
+          "title": "Remodeling Begins",
+          "desc": "Our crew gets to work — most decks are completed in just 2–3 days, with a clean site throughout."
+        },
+        {
+          "num": "4",
+          "title": "Final Walkthrough",
+          "desc": "We walk through the finished deck together to make sure everything meets your expectations before we leave."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How much does a new deck cost in Denver?",
+          "a": "Our decks start at just $7,500, with final pricing depending on size, materials (composite vs. natural wood), and additional features like railings, stairs, or a pergola. We provide a free, itemized estimate so you know exactly what you’re getting before work begins."
+        },
+        {
+          "q": "How long does it take to build a deck?",
+          "a": "Most standard deck builds are completed in 2–3 days. Larger projects with custom features like pergolas, roof overhangs, or extensive framing may take longer — we’ll give you an accurate timeline during your consultation."
+        },
+        {
+          "q": "What decking materials do you work with?",
+          "a": "We work with all major materials including Trex composite decking, natural wood, and eco-friendly alternatives. Each has different cost, maintenance, and longevity tradeoffs — we’ll help you choose what fits your lifestyle and budget."
+        },
+        {
+          "q": "Do I need a permit to build a deck in Denver?",
+          "a": "Most new deck builds and significant remodels require permits in the Denver metro area. We handle the permitting process for you as part of the project, so everything is code-compliant from the start."
+        },
+        {
+          "q": "Do you do deck remodels or just new builds?",
+          "a": "Both. We specialize in deck remodels and deck restorations, as well as brand new custom builds."
+        },
+        {
+          "q": "Is JRC Deck Builders licensed and insured?",
+          "a": "Yes. Our deck contractors are fully licensed and insured, protecting both our team and your property throughout the project."
+        },
+        {
+          "q": "Do you offer free estimates?",
+          "a": "Yes. Every project starts with a free, no-obligation estimate so you can make an informed decision before committing."
+        }
+      ]
+    }
+  },
+  "jrc-frame-and-drywall": {
+    "title": "Drywall Repair Near Me | Denver Framing & Drywall Experts",
+    "metaDesc": "JRC Home Remodeling: Denver's framing and drywall experts. Enhance your space with our professional services. Get a free estimate now!",
+    "canonical": "https://jrchomeremodeling.com/jrc-frame-and-drywall/",
+    "hero": {
+      "pill": "DRYWALL & FRAMING CONTRACTORS",
+      "title": "Expert Drywall Repair, Installation & Framing Contractors in Denver",
+      "desc": "Whether you’re dealing with water damage, cracks, or planning a full remodel, JRC Home Remodeling delivers professional drywall repair, sheetrock installation, and wall framing for residential and commercial projects — with licensed contractors, fast turnaround, and free estimates.",
+      "bg": "Gemini_Generated_Image_he5z51he5z51he5z.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Trusted Drywall & Framing Solutions Across the Denver Metro",
+      "cards": [
+        {
+          "title": "Drywall Repair & Sheetrock Repair",
+          "icon": "drywall.png",
+          "desc": "Patch and repair dents, holes, water damage, and ceiling cracks for a seamless, paint-ready surface."
+        },
+        {
+          "title": "New Drywall Installation",
+          "icon": "plasterboard.png",
+          "desc": "Full drywall installation for remodels, room additions, and new construction — finished to a smooth, professional standard."
+        },
+        {
+          "title": "Wall & Ceiling Framing",
+          "icon": "wall.png",
+          "desc": "Interior and exterior wall framing, ceiling and soffit framing, and basement framing — level, strong, and ready for drywall."
+        },
+        {
+          "title": "Seamless Finishing & Paint Prep",
+          "icon": "pixel-perfect.png",
+          "desc": "From framing the structure to finishing the surface, we handle every step so your walls are primed and ready for a perfect paint job."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Build with Confidence — Choose JRC Frame & Drywall",
+      "desc": [
+        "When you search \"drywall repair near me\" or \"framing contractors near me,\" you need trusted professionals who deliver dependable, lasting results. At JRC Home Remodeling, we're locally owned and built on quality, reliability, and honest communication — whether you need a simple patch on a single wall or a full basement frame and drywall installation.",
+        "Our commitment goes beyond just walls. We deliver framing and drywall solutions that give your space a solid foundation and a seamless finish, inside and out."
+      ],
+      "images": [
+        "2148784098.jpg",
+        "2148384512.jpg"
+      ],
+      "mission": "To deliver drywall and framing work that is structurally sound, cleanly finished, and built to stand the test of time — on every project, regardless of size.",
+      "vision": "To be the drywall and framing contractor Denver homeowners and businesses call first — known for honest pricing, skilled workmanship, and zero shortcuts."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Drywall & Framing Projects",
+      "cards": [
+        {
+          "title": "Basement Framing & Drywall",
+          "image": "2151317367.jpg",
+          "desc": "Charissa Walton, Denver"
+        },
+        {
+          "title": "Water Damage Repair & Drywall",
+          "image": "60826.jpg",
+          "desc": "Bliss Bernal, Castle Rock"
+        },
+        {
+          "title": "Room Addition Framing & Installation",
+          "image": "7324.jpg",
+          "desc": "Toni Starner, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Drywall & Framing Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Get a Free Quote",
+          "desc": "Call us or fill out the online form. We assess the scope of the job and provide a transparent, no-obligation estimate."
+        },
+        {
+          "num": "2",
+          "title": "Schedule a Consultation",
+          "desc": "We visit your space, confirm measurements and materials, and schedule the work around your timeline."
+        },
+        {
+          "num": "3",
+          "title": "Remodeling Begins",
+          "desc": "Our licensed contractors frame, hang, tape, and finish with precision — keeping the site clean and communicating throughout."
+        },
+        {
+          "num": "4",
+          "title": "Final Walkthrough",
+          "desc": "We inspect the finished work together and make sure every surface is smooth, level, and paint-ready before we leave."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What types of drywall repair do you handle?",
+          "a": "We handle everything from minor holes and dents to water damage, ceiling cracks, crumbling sheetrock, and full panel replacement. If it’s a wall or ceiling issue, we can fix it."
+        },
+        {
+          "q": "How much does drywall repair cost in Denver?",
+          "a": "Cost depends on the size of the damaged area, the number of repairs needed, and whether finishing and priming are included. We provide a detailed, free estimate after assessing the space so you know what to expect before work begins."
+        },
+        {
+          "q": "Do you handle both residential and commercial drywall projects?",
+          "a": "Yes. We work on homes, offices, and commercial spaces of all sizes — from a single wall repair to full framing and drywall installation for a commercial buildout."
+        },
+        {
+          "q": "What framing services do you offer?",
+          "a": "We handle interior and exterior wall framing, ceiling and soffit framing, basement framing and finishing, and both structural and non-load-bearing framing solutions using wood and metal framing."
+        },
+        {
+          "q": "Do I need a permit for drywall or framing work in Denver?",
+          "a": "Permits are typically required for structural framing, room additions, and significant basement finishing projects in the Denver metro. We advise you on permit requirements during your estimate and handle the process when needed."
+        },
+        {
+          "q": "How long does drywall installation take?",
+          "a": "A standard room can usually be framed and drywalled in one to three days. Larger remodels with multiple rooms, finishing, and paint prep take longer — we give you an accurate timeline after assessing your project."
+        },
+        {
+          "q": "Are your drywall and framing contractors licensed and insured?",
+          "a": "Yes. All JRC drywall and framing contractors are fully licensed and insured, protecting both our team and your property throughout the job."
+        }
+      ]
+    }
+  },
+  "bathtub-shower-conversions": {
+    "title": "Bath Tub Remodel | Denver Tub-to-Shower Experts",
+    "metaDesc": "Denver shower conversions by JRC Home Remodeling. Upgrade your bathroom with our expert services. Get a free estimate now!",
+    "canonical": "https://jrchomeremodeling.com/bathtub-shower-conversions/",
+    "hero": {
+      "pill": "TUB TO SHOWER CONVERSION",
+      "title": "Upgrade Your Bathroom With a Professional Tub to Shower Conversion",
+      "desc": "Most bathtubs go unused — and more Denver homeowners are making the switch to modern, spacious walk-in showers. At JRC Home Remodeling, we handle the entire conversion from start to finish: plumbing, tile work, and a full bathroom refresh — completed in just 2–3 days.",
+      "bg": "Gemini_Generated_Image_rckg6jrckg6jrckg.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Seamless Tub to Shower Conversions Built Around Your Space",
+      "cards": [
+        {
+          "title": "Walk-In Shower Conversions",
+          "icon": "kitchen.png",
+          "desc": "Replace your unused tub with a spacious walk-in shower — barrier-free options available for improved accessibility and safety."
+        },
+        {
+          "title": "Custom Shower Enclosures",
+          "icon": "bathroom-3.png",
+          "desc": "Frameless glass, semi-frameless, or tiled enclosures designed to fit your bathroom layout and personal style."
+        },
+        {
+          "title": "Full Plumbing & Tile Work",
+          "icon": "basement.png",
+          "desc": "We handle every part of the project — rough plumbing, waterproofing, tile installation, and fixture fitting — so you don’t need to coordinate multiple contractors."
+        },
+        {
+          "title": "Full Bathroom Remodel",
+          "icon": "rooftop.png",
+          "desc": "Want to go beyond the shower? We can redo your entire bathroom at the same time for a fully refreshed, cohesive result."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Transform Your Space With Our Skilled Remodeling Team",
+      "desc": [
+        "If your bathtub is no longer being used, converting it to a walk-in shower is one of the most practical and value-adding upgrades you can make to your bathroom. At JRC Home Remodeling, our team handles the full scope — plumbing, waterproofing, tile, enclosures, and fixtures — so you get a single, accountable contractor and a finished shower you're proud of, typically within 2–3 days from start date."
+      ],
+      "images": [
+        "2150694914.jpg",
+        "2151983216.jpg"
+      ],
+      "mission": "To deliver tub-to-shower conversions that are beautiful, functional, and built right the first time — with honest pricing and a team that treats your home with care.",
+      "vision": "To be the bathroom remodeling contractor Denver homeowners turn to first when they want a stress-free, high-quality shower conversion done fast."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Tub to Shower Conversion Projects",
+      "cards": [
+        {
+          "title": "Walk-In Shower Conversion",
+          "image": "2149450886.jpg",
+          "desc": "Charissa Walton, Denver"
+        },
+        {
+          "title": "Custom Tile Shower Build",
+          "image": "2136.jpg",
+          "desc": "Bliss Bernal, Castle Rock"
+        },
+        {
+          "title": "Full Bathroom Remodel",
+          "image": "1501.jpg",
+          "desc": "Toni Starner, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Tub to Shower Conversion Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Free Consultation & Estimate",
+          "desc": "We assess your bathroom, discuss your design preferences and timeline, and walk you through your custom shower options at no obligation."
+        },
+        {
+          "num": "2",
+          "title": "Design & Planning",
+          "desc": "We finalize your tile selection, enclosure style, layout, and plumbing plan so there are no surprises once the work starts."
+        },
+        {
+          "num": "3",
+          "title": "Conversion Begins",
+          "desc": "Our team handles demolition, plumbing, waterproofing, tile installation, and fixture fitting — cleanly and efficiently, with most projects completed in just 2–3 days."
+        },
+        {
+          "num": "4",
+          "title": "Final Walkthrough",
+          "desc": "We inspect the finished shower together and make sure every detail — grout lines, fixtures, drainage, enclosure — meets your expectations before we leave."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How long does a tub to shower conversion take in Denver?",
+          "a": "Most conversions are completed in 2–3 days from start date. If you’re combining the conversion with a full bathroom remodel, the timeline will be a little longer — we’ll give you an accurate schedule during your free consultation."
+        },
+        {
+          "q": "How much does a tub to shower conversion cost?",
+          "a": "Cost depends on the size of the shower, your tile and enclosure choices, and whether any additional plumbing work is needed. We provide a detailed, free estimate after assessing your bathroom so you know exactly what to expect before committing."
+        },
+        {
+          "q": "Do you handle the plumbing, or do I need a separate plumber?",
+          "a": "We handle everything — rough plumbing, waterproofing, tile, enclosures, and fixtures. You don’t need to coordinate with a separate plumber. JRC manages the full project from start to finish."
+        },
+        {
+          "q": "Can I still use my bathroom during the conversion?",
+          "a": "We’ll discuss this during planning. For smaller bathrooms with a single shower/tub, there will be a short period of downtime during the active work days. Most projects are complete within 2–3 days, so the disruption is minimal."
+        },
+        {
+          "q": "What shower styles and tile options are available?",
+          "a": "We offer a wide range of styles — frameless glass enclosures, semi-frameless, fully tiled surround showers, walk-in barrier-free designs, and more. Tile options include ceramic, porcelain, marble, subway tile, large-format, and custom mosaic. We’ll help you choose what fits your bathroom and budget."
+        },
+        {
+          "q": "Do you offer walk-in or barrier-free shower options?",
+          "a": "Yes. We specialize in accessible walk-in shower designs — barrier-free, low-threshold, and grab-bar installations — for homeowners who want improved safety and ease of use."
+        },
+        {
+          "q": "Are your bathroom remodeling contractors licensed and insured?",
+          "a": "Yes. All JRC contractors are fully licensed and insured, covering both our team and your home throughout the project."
+        }
+      ]
+    }
+  },
+  "junk-removal-demolition": {
+    "title": "Junk Removal Denver | Clear Your Space & Reclaim Your Home",
+    "metaDesc": "Junk Removal Denver: Simplify your project with our expert services. Contact us for a stress-free solution to declutter and achieve your goals today!",
+    "canonical": "https://jrchomeremodeling.com/junk-removal-demolition/",
+    "hero": {
+      "pill": "JUNK REMOVAL & DEMOLITION",
+      "title": "Denver's Fast & Affordable Junk Removal Team — Clear Your Space Today!",
+      "desc": "From old furniture and appliances to construction debris and full estate cleanouts, JRC Junk Removal hauls it all away quickly, responsibly, and at honest prices. Same-day and next-day appointments available.",
+      "bg": "junk.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Hassle-Free Junk Removal & Demolition for Homes and Businesses",
+      "cards": [
+        {
+          "title": "Furniture & Appliance Removal",
+          "icon": "dustbin.png",
+          "desc": "Couches, mattresses, refrigerators, washers, dryers — we remove and haul away bulky items you can’t easily move on your own."
+        },
+        {
+          "title": "Construction & Renovation Debris",
+          "icon": "dustbin.png",
+          "desc": "Drywall, lumber, concrete, flooring, and post-remodel waste cleared cleanly and quickly."
+        },
+        {
+          "title": "Residential & Estate Cleanouts",
+          "icon": "dustbin.png",
+          "desc": "Full home cleanouts, garage purges, attic and basement haul-offs — ideal for moves, estate cleanups, or just reclaiming lost space."
+        },
+        {
+          "title": "Commercial Cleanouts",
+          "icon": "dustbin.png",
+          "desc": "Offices, retail spaces, storage units, and business haul-offs handled efficiently with minimal disruption to your operations."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Denver's Trusted Junk Removal & Demolition Crew",
+      "desc": [
+        "At JRC Junk Removal, we built our service around one simple idea: clearing out unwanted junk should be easy, fast, and affordable — not another thing to stress over. Whether you're decluttering a single room, hauling out debris from a remodel, or doing a full estate cleanout, our team arrives on time, does all the lifting, and leaves your space clean."
+      ],
+      "images": [
+        "ChatGPT-Image-Jul-5-2026-11_26_15-PM.png",
+        "ChatGPT-Image-Jul-5-2026-11_46_58-PM.png"
+      ],
+      "mission": "To make junk removal as fast and painless as possible for Denver homeowners and businesses — with honest pricing, reliable scheduling, and responsible disposal every time.",
+      "vision": "To be the junk removal company Denver calls first — known for showing up on time, doing the heavy lifting, and leaving every space cleaner than we found it."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Junk Removal & Demolition Jobs",
+      "cards": [
+        {
+          "title": "Full Home Cleanout",
+          "image": "ChatGPT-Image-Jul-11-2026-04_46_11-PM.png",
+          "desc": "Charissa Walton, Denver"
+        },
+        {
+          "title": "Post-Renovation Debris Removal",
+          "image": "ChatGPT-Image-Jul-11-2026-04_58_56-PM.png",
+          "desc": "Bliss Bernal, Castle Rock"
+        },
+        {
+          "title": "Garage & Basement Haul-Off",
+          "image": "ChatGPT-Image-Jul-11-2026-05_02_00-PM.png",
+          "desc": "Toni Starner, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Simple 4-Step Junk Removal Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Get a Free Quote",
+          "desc": "Call us or fill out the form online. We provide a no-obligation estimate based on the volume and type of junk to be removed."
+        },
+        {
+          "num": "2",
+          "title": "Schedule Your Pickup",
+          "desc": "Choose a time that works for you — same-day and next-day appointments are available across the Denver metro."
+        },
+        {
+          "num": "3",
+          "title": "We Haul It All Away",
+          "desc": "Our crew arrives on time, does all the lifting and loading, and clears your space cleanly. You don't need to move a thing."
+        },
+        {
+          "num": "4",
+          "title": "Final Walkthrough",
+          "desc": "We sort, recycle, and donate items whenever possible — so your junk is disposed of responsibly, not just dumped."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How much does junk removal cost in Denver?",
+          "a": "Pricing is based on the volume of junk being removed and the type of items. We provide a free, no-obligation estimate before any work begins so you know exactly what you’ll pay — no surprises."
+        },
+        {
+          "q": "Do you offer same-day junk removal in Denver?",
+          "a": "Yes. Same-day and next-day appointments are available across the Denver metro area, depending on schedule. Call us at 303-418-2167 to check availability."
+        },
+        {
+          "q": "What items do you remove?",
+          "a": "We remove furniture, mattresses, appliances, electronics, clothing, construction debris, yard waste, and general household junk. If you’re unsure whether we take something, just call — we’ll let you know."
+        },
+        {
+          "q": "Are there any items you won't take?",
+          "a": "We can’t remove hazardous materials such as paint, chemicals, asbestos, propane tanks, or biohazardous waste. Everything else is fair game — call us if you have a question about a specific item."
+        },
+        {
+          "q": "Do I need to move the junk to the curb beforehand?",
+          "a": "No. Our team does all the heavy lifting. We come inside, load everything ourselves, and leave your space clean. You don’t need to move a thing before we arrive."
+        },
+        {
+          "q": "Do you recycle or donate items?",
+          "a": "Yes. We sort everything and recycle or donate items whenever possible — furniture, appliances, clothing, and more — so your unwanted items stay out of the landfill when there’s a better option."
+        },
+        {
+          "q": "Do you handle demolition as well as junk removal?",
+          "a": "Yes. In addition to haul-off services, JRC also handles interior demolition — tearing out walls, flooring, cabinetry, and fixtures as part of a remodel or renovation project. Contact us for a demolition estimate."
+        }
+      ]
+    }
+  },
+  "landscape-design-near-me": {
+    "title": "Landscape Designers Near Me | Transform Your Outdoors",
+    "metaDesc": "JRC Landscape: Expert landscape design and installation services. Get a free estimate for your dream outdoor space today!",
+    "canonical": "https://jrchomeremodeling.com/landscape-design-near-me/",
+    "hero": {
+      "pill": "LANDSCAPE DESIGN NEAR YOU",
+      "title": "Denver's Top-Rated Landscape Design & Installation Services",
+      "desc": "Your Dream Landscape, Designed & Built to Perfection! From custom landscape design and retaining walls to sod installation, patios, and drainage solutions — JRC Landscape enhances your property’s beauty and functionality with expert craftsmanship tailored to your outdoor space.",
+      "bg": "Gemini_Generated_Image_5f1mrf5f1mrf5f1m-scaled.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Complete Landscaping Services for Denver Homeowners",
+      "cards": [
+        {
+          "title": "Landscape Design",
+          "icon": "vector-1.png",
+          "desc": "Custom outdoor designs that balance beauty, function, and your property’s natural layout — from concept to completion."
+        },
+        {
+          "title": "Retaining Walls",
+          "icon": "brick.png",
+          "desc": "Durable retaining walls that enhance stability, prevent erosion, and add structural beauty to sloped or uneven outdoor spaces."
+        },
+        {
+          "title": "Patios",
+          "icon": "seat.png",
+          "desc": "Custom patio builds designed for year-round outdoor living — in materials and styles that complement your home’s exterior."
+        },
+        {
+          "title": "Grading & French Drains",
+          "icon": "pass-test.png",
+          "desc": "Professional grading and drainage solutions that protect your property from water damage and standing water issues."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Enhance Your Outdoors with JRC Landscape",
+      "desc": [
+        "At JRC Landscape, we believe your outdoor space should be just as thoughtfully designed as the inside of your home. Whether you're starting from a bare yard or refreshing an existing landscape, our team brings expertise, quality materials, and a genuine commitment to getting every detail right — from the initial design consultation to the final cleanup.",
+        "We build landscapes that are not only beautiful on day one, but built to hold up through Colorado's heat, hail, and freeze-thaw cycles for years to come."
+      ],
+      "images": [
+        "ChatGPT-Image-Jul-5-2026-11_26_15-PM.png",
+        "ChatGPT-Image-Jul-5-2026-11_46_58-PM.png"
+      ],
+      "mission": "To design and build outdoor spaces that enhance your property's beauty, functionality, and value — with customized solutions and honest, transparent pricing on every project.",
+      "vision": "To be the landscaping company Denver homeowners trust most — known for thoughtful design, quality craftsmanship, and outdoor spaces that exceed expectations."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Landscaping Projects",
+      "cards": [
+        {
+          "title": "Custom Patio & Retaining Wall",
+          "image": "4134.jpg",
+          "desc": "Ava, Denver"
+        },
+        {
+          "title": "Full Landscape Design & Sod Installation",
+          "image": "1510.jpg",
+          "desc": "Leo, Castle Rock"
+        },
+        {
+          "title": "Grading & French Drain System",
+          "image": "6388.jpg",
+          "desc": "Kai, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Landscaping Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Design & Planning",
+          "desc": "We start with a detailed consultation to understand your vision, goals, and budget. Our experts then create a custom landscape design that enhances both the beauty and functionality of your outdoor space.",
+          "image": "/assets/images/3426.jpg"
+        },
+        {
+          "num": "2",
+          "title": "Site Preparation",
+          "desc": "We prepare the land through grading and excavation, ensuring proper leveling, drainage, and a solid foundation before any installation begins.",
+          "image": "/assets/images/2148269878.jpg"
+        },
+        {
+          "num": "3",
+          "title": "Installation",
+          "desc": "We install sod, patios, retaining walls, mulch, drainage solutions, and all other landscape features with precision — keeping the site clean and communicating with you throughout.",
+          "image": "/assets/images/1558.jpg"
+        },
+        {
+          "num": "4",
+          "title": "Final Touches & Cleanup",
+          "desc": "We add finishing details like decorative rock, mulch borders, and drainage covers, then do a full walkthrough together to make sure everything is perfectly in place before we leave.",
+          "image": "/assets/images/ChatGPT-Image-Jul-11-2026-06_01_09-PM.png"
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How much does professional landscape design cost in Denver?",
+          "a": "Cost varies depending on the size of your property and the scope of work — a patio and sod installation is a different project than a full retaining wall and drainage system. We provide a free, detailed consultation and estimate so you know what to expect before committing."
+        },
+        {
+          "q": "What landscaping services does JRC offer?",
+          "a": "We offer landscape design and planning, retaining wall construction, grading, sod installation, patio builds, mulch and rock installation, and French drain / drainage solutions — everything you need to transform your outdoor space from a single contractor."
+        },
+        {
+          "q": "How long does a landscaping project take?",
+          "a": "Timelines vary by scope. A sod installation or mulch and rock project can be completed in a day or two. A full landscape design with a patio, retaining wall, and drainage system will take longer — we’ll give you a realistic timeline during your consultation."
+        },
+        {
+          "q": "Do you handle grading and drainage for problem yards?",
+          "a": "Yes. We specialize in grading and French drain installation to correct drainage issues, standing water problems, and sloped or uneven yards that cause erosion or water damage to your foundation or lawn."
+        },
+        {
+          "q": "What is a French drain and do I need one?",
+          "a": "A French drain is a gravel-filled trench with a perforated pipe that redirects surface and groundwater away from your home or yard. If you have standing water, soggy lawn areas, or water pooling near your foundation, a French drain is often the right solution — we assess this during your free consultation."
+        },
+        {
+          "q": "Do you install sod or seed?",
+          "a": "We specialize in sod installation for an immediately green, lush lawn. Sod gives you instant results without the weeks of wait time and watering that seeding requires."
+        },
+        {
+          "q": "What areas do you serve?",
+          "a": "We serve homeowners throughout the Denver metro, including Aurora, Arvada, Lakewood, Westminster, Thornton, Centennial, Parker, and all surrounding communities listed below."
+        }
+      ]
+    }
+  },
+  "floor-installers": {
+    "title": "Expert Flooring Installers Denver | Tile & Hardwood Floors",
+    "metaDesc": "JRC Floor Installers: Expert flooring installation by JRC Home Remodeling. Get quality craftsmanship for laminate, LVP, and more. Contact us now!",
+    "canonical": "https://jrchomeremodeling.com/floor-installers/",
+    "hero": {
+      "pill": "FLOOR INSTALLATION NEAR ME",
+      "title": "Denver's Expert Floor Installers — Laminate, LVP, Ceramic & More",
+      "desc": "Looking for reliable floor installation near you? JRC Floor Installers delivers expert craftsmanship and high-quality flooring solutions for homes and commercial spaces across the Denver metro — with free in-home consultations, competitive pricing, and timely, clean installations every time.",
+      "bg": "Gemini_Generated_Image_yvqyojyvqyojyvqy-scaled.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Professional Flooring Installation for Every Room & Every Budget",
+      "cards": [
+        {
+          "title": "Laminate Floor Installation",
+          "icon": "flooring.png",
+          "desc": "Durable, stylish, and affordable laminate flooring installed to a high-end standard — without the high-end price tag."
+        },
+        {
+          "title": "Luxury Vinyl Plank (LVP)",
+          "icon": "plank.png",
+          "desc": "Waterproof, scratch-resistant LVP that looks like real wood — precision-installed for a long-lasting finish you’ll love."
+        },
+        {
+          "title": "Ceramic Floor Tile",
+          "icon": "ceramic-tiles.png",
+          "desc": "Elegant, timeless ceramic tile installation for high-traffic areas — polished, easy to clean, and built to last."
+        },
+        {
+          "title": "Floor Tile Installation",
+          "icon": "tiles.png",
+          "desc": "Expert tile work for kitchens, bathrooms, hallways, and commercial spaces — any pattern, any style, flawless results."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Your Local Floor Installers in Denver — Built on Craftsmanship & Trust",
+      "desc": [
+        "At JRC Floor Installers, we know that new flooring transforms a room more than almost any other upgrade. That's why we bring the same attention to detail to every square foot — whether we're installing waterproof LVP in a busy family kitchen, ceramic tile in a master bath, or laminate across an entire home renovation.",
+        "We're locally based, fully licensed and insured, and we offer free in-home consultations so you can see your options, ask questions, and get an accurate quote before committing to a single thing."
+      ],
+      "images": [
+        "2132.jpg",
+        "6792.jpg"
+      ],
+      "mission": "To deliver flooring installations that look flawless on day one and hold up for years — with honest pricing, clean worksites, and craftsmanship our customers are proud to show off.",
+      "vision": "To be the floor installation team Denver homeowners and businesses call first — known for precision, reliability, and results that speak for themselves."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Flooring Projects That Speak for Themselves",
+      "cards": [
+        {
+          "title": "Hardwood Floor Installation",
+          "desc": "Denver, CO",
+          "image": "4211.jpg"
+        },
+        {
+          "title": "Luxury Vinyl Plank (LVP) Flooring",
+          "desc": "Castle Rock, CO",
+          "image": "2015.jpg"
+        },
+        {
+          "title": "Custom Tile Flooring",
+          "desc": "Lakewood, CO",
+          "image": "2132-1.jpg"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Floor Installation Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Free In-Home Consultation",
+          "desc": "We visit your space, take measurements, walk you through your flooring options, and provide a free, no-obligation estimate tailored to your budget and goals.",
+          "image": "/assets/images/3426.jpg"
+        },
+        {
+          "num": "2",
+          "title": "Material Selection & Scheduling",
+          "desc": "We help you choose the right flooring type, color, and finish for your space, then schedule installation at a time that works for you.",
+          "image": "/assets/images/2148269878.jpg"
+        },
+        {
+          "num": "3",
+          "title": "Professional Installation",
+          "desc": "Our floor installers arrive on time and work with precision — subfloor prep, cutting, laying, and finishing — keeping the worksite clean throughout.",
+          "image": "/assets/images/1558.jpg"
+        },
+        {
+          "num": "4",
+          "title": "Final Walkthrough",
+          "desc": "We inspect every edge, seam, and transition together to make sure the installation is perfect before we consider the job done.",
+          "image": "/assets/images/ChatGPT-Image-Jul-11-2026-06_01_09-PM.png"
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How much does floor installation cost in Denver?",
+          "a": "Cost depends on the flooring type, the size of the area, and the complexity of the installation — subfloor conditions and pattern choices can also affect pricing. We provide a free, detailed in-home estimate so you know exactly what you’ll pay before work begins."
+        },
+        {
+          "q": "What types of flooring do you install?",
+          "a": "We specialize in laminate flooring, luxury vinyl plank (LVP), ceramic floor tile, and floor tile installation for kitchens, bathrooms, hallways, living areas, and commercial spaces."
+        },
+        {
+          "q": "What is the difference between laminate and luxury vinyl plank (LVP)?",
+          "a": "Laminate is a wood-composite product that offers a high-end wood look at an affordable price but is not waterproof. LVP is fully waterproof, scratch-resistant, and slightly softer underfoot — making it ideal for kitchens, bathrooms, and homes with pets or children. We’ll help you choose which is right for your space during your free consultation."
+        },
+        {
+          "q": "How long does floor installation take?",
+          "a": "A single room typically takes one day. A full home installation or a project with complex subfloor prep will take longer — we give you an accurate timeline after assessing your space during the in-home consultation."
+        },
+        {
+          "q": "Do you remove and dispose of old flooring?",
+          "a": "Yes. We handle old flooring removal and disposal as part of the project — just let us know during your consultation and we’ll include it in your estimate."
+        },
+        {
+          "q": "Do I need to move furniture before installation?",
+          "a": "We recommend clearing the rooms being installed if possible. If you need help moving large furniture, let us know — we’ll work with you to make the process as easy as possible."
+        },
+        {
+          "q": "Are your floor installers licensed and insured?",
+          "a": "Yes. JRC Floor Installers are fully licensed and insured, protecting both our team and your property throughout the installation."
+        }
+      ]
+    }
+  },
+  "roof-repair": {
+    "title": "Roof Repair Denver | Secure Your Home with JRC Experts",
+    "metaDesc": "JRC Home Remodeling offers expert roof repair in Denver. Get a free estimate for professional residential roofing services today!",
+    "canonical": "https://jrchomeremodeling.com/roof-repair/",
+    "hero": {
+      "pill": "ROOF REPAIR & REPLACEMENT",
+      "title": "Denver's Trusted Roofing Experts — Fast, Reliable & Built to Last",
+      "desc": "Leaky or damaged roof? JRC Home Remodeling delivers fast, professional roof repairs and full roof replacements to protect your home — on time and on budget. With 25+ years of experience and free roof inspections, we’re the roofing team Denver homeowners count on.",
+      "bg": "Gemini_Generated_Image_yvqyojyvqyojyvqy-scaled.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Expert Roofing Services for Denver Homes & Businesses",
+      "cards": [
+        {
+          "title": "Residential Roof Repair",
+          "icon": "house-damage.png",
+          "desc": "From minor leaks and storm damage to shingle replacement and flashing repairs — fast, reliable fixes that protect your home right away."
+        },
+        {
+          "title": "Full Roof Replacement",
+          "icon": "roofing.png",
+          "desc": "When repair isn’t enough, our certified roof installers deliver flawless full replacements using durable, industry-approved materials."
+        },
+        {
+          "title": "Free Roof Inspections",
+          "icon": "installation.png",
+          "desc": "No-cost, no-pressure roof assessments with honest, upfront pricing — so you know exactly what you’re dealing with before spending a dollar."
+        },
+        {
+          "title": "Emergency Roof Repair",
+          "icon": "24-hours.png",
+          "desc": "Roof damage can’t always wait. We prioritize urgent repairs to stop leaks and prevent further damage to your home as quickly as possible."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Denver's Experienced Roof Repair & Replacement Specialists",
+      "desc": [
+        "With 25+ years of experience, JRC Home Remodeling has been protecting Denver-area homes from the elements long enough to know that no two roofs — or roof problems — are exactly the same. That's why we start every job with a free, honest inspection before recommending any solution.",
+        "Whether you're dealing with hail damage from last week's storm, a slow leak that's been spreading, or a roof that's simply reached the end of its life, our licensed and insured roofing team gives you a clear picture of what needs to be done and gets the job completed safely, correctly, and at a fair price."
+      ],
+      "images": [
+        "2148748770.jpg",
+        "2149343635.jpg"
+      ],
+      "mission": "To protect Denver homes with fast, expert roofing services — backed by honest assessments, quality materials, and a team that does the job right the first time.",
+      "vision": "To be the roofing contractor Denver homeowners trust most — known for showing up fast, communicating clearly, and delivering roofs built to handle Colorado's toughest weather."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Roofing Work That Speaks for Itself",
+      "cards": [
+        {
+          "title": "Roof Repair — Storm Damage",
+          "image": "Gemini_Generated_Image_ulnn8mulnn8mulnn-scaled.jpg",
+          "desc": "James Smith, Lakewood, CO"
+        },
+        {
+          "title": "Full Roof Replacement",
+          "image": "Gemini_Generated_Image_91mtke91mtke91mt-scaled.jpg",
+          "desc": "John Johnson, Castle Rock"
+        },
+        {
+          "title": "Hail Damage Repair",
+          "image": "Gemini_Generated_Image_ug9dtmug9dtmug9d-scaled.png",
+          "desc": "Michael Brown, Lakewood"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Roofing Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Free Roof Inspection",
+          "desc": "We assess your roof at no cost, identifying damage, weak points, and the best course of action — with no pressure to commit.",
+          "image": "/assets/images/441.jpg"
+        },
+        {
+          "num": "2",
+          "title": "Honest Estimate & Material Selection",
+          "desc": "We provide clear, upfront pricing and walk you through your material options so you can make an informed decision with confidence.",
+          "image": "/assets/images/2148269878.jpg"
+        },
+        {
+          "num": "3",
+          "title": "Repair or Replacement Begins",
+          "desc": "Our licensed roofing team gets to work efficiently — using high-quality, industry-approved materials and following the latest installation standards for a secure, long-lasting result.",
+          "image": "/assets/images/2149343655.jpg"
+        },
+        {
+          "num": "4",
+          "title": "Final Inspection & Cleanup",
+          "desc": "We do a thorough post-job inspection, clear all debris and materials from your property, and walk through the completed work together before we leave.",
+          "image": "/assets/images/2148680355.jpg"
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": []
+    }
+  },
+  "handyman-near-me": {
+    "title": "JRC Handyman – Trusted Local Home Repairs & Remodeling",
+    "metaDesc": "Reliable, affordable handyman and remodeling services in Denver. Licensed, insured, and top-rated. Call JRC Handyman for repairs and remodels today!",
+    "canonical": "https://jrchomeremodeling.com/handyman-near-me/",
+    "hero": {
+      "pill": "HANDYMAN SERVICES NEAR YOU",
+      "title": "Denver's Trusted Handyman — Repairs, Installations & Home Fixes Big or Small",
+      "desc": "Leaky or damaged roof? JRC Home Remodeling delivers fast, professional roof repairs and full roof replacements to protect your home — on time and on budget. With 25+ years of experience and free roof inspections, we’re the roofing team Denver homeowners count on.",
+      "bg": "Gemini_Generated_Image_32e84732e84732e8-scaled.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Reliable Handyman Services for Every Room & Every Repair",
+      "cards": [
+        {
+          "title": "Home Repairs Drywall",
+          "icon": "house-damage.png",
+          "desc": "Doors, windows, faucets, cabinets, tile, flooring, fences, decks — we fix what needs fixing before small problems become big ones."
+        },
+        {
+          "title": "Fixture & Electrical Installations",
+          "icon": "wrench.png",
+          "desc": "Light fixture replacement, switch and outlet replacement, smoke detector installation, and more — done safely and correctly."
+        },
+        {
+          "title": "Mounting & Assembly",
+          "icon": "installation.png",
+          "desc": "TV mounting, furniture assembly, shelf installation, blinds, picture hanging, and everything else on your walls-and-shelves list."
+        },
+        {
+          "title": "Maintenance & Exterior Services",
+          "icon": "screwdriver.png",
+          "desc": "Pressure washing, gutter cleaning, dryer vent cleaning, deck repair, siding repair, and seasonal upkeep that keeps your home in top shape."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Home Repairs Made Simple & Stress-Free",
+      "desc": [
+        "At JRC Home Remodeling, our goal is simple: make home repairs easy, affordable, and completely stress-free for Denver homeowners. Whether you need a single quick fix or a full afternoon's worth of tasks crossed off your list, our experienced handyman team arrives prepared, works efficiently, and leaves every job done right.",
+        "We treat your home like our own — with care, respect, and the kind of quality workmanship you'd expect from a full remodeling team, not just a handyman."
+      ],
+      "images": [
+        "2148748770.jpg",
+        "Gemini_Generated_Image_plepjgplepjgplep-scaled.jpg"
+      ],
+      "mission": "To make everyday home maintenance and repairs as easy as one call — handled by skilled professionals who show up on time, price honestly, and finish the job to your satisfaction.",
+      "vision": "To be the handyman service Denver homeowners call first, every time something needs fixing — trusted for reliability, affordability, and workmanship that lasts."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Handyman Jobs Across Denver",
+      "cards": [
+        {
+          "title": "TV Mounting & Shelf Installation",
+          "image": "17902.jpg",
+          "desc": "Lakewood, CO"
+        },
+        {
+          "title": "Drywall Repair & Touch-Up Painting",
+          "image": "2085.jpg",
+          "desc": "Aurora, CO"
+        },
+        {
+          "title": "Full Home Maintenance Day",
+          "image": "108541.jpg",
+          "desc": "Thornton, CO"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Simple 5-Step Handyman Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Contact Our Team",
+          "desc": "Call us or request service online and tell us what needs attention — a single repair or a full to-do list."
+        },
+        {
+          "num": "2",
+          "title": "Free Estimate",
+          "desc": "We provide clear, upfront pricing before any work begins — no surprises, no hidden fees."
+        },
+        {
+          "num": "3",
+          "title": "Schedule a Convenient Appointment",
+          "desc": "Choose a time that works best for your schedule. We offer flexible appointments across the Denver metro."
+        },
+        {
+          "num": "4",
+          "title": "Professional Job Completion",
+          "desc": "Our handyman arrives prepared and completes every task efficiently, with care and attention to detail."
+        },
+        {
+          "num": "5",
+          "title": "Final Walkthrough",
+          "desc": "We confirm everything meets your expectations and leave your home clean before we consider the job done."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": []
+    }
+  },
+  "fast-countertop-services": {
+    "title": "Fast Countertop Replacement & Installation",
+    "metaDesc": "Upgrade your kitchen or bathroom with JRC Countertops. Expert quartz and granite installers deliver fast, precise, and affordable countertop replacement!",
+    "canonical": "https://jrchomeremodeling.com/fast-countertop-services-by-jrc-countertops/",
+    "hero": {
+      "pill": "COUNTERTOP INSTALLATION & REPLACEMENT",
+      "title": "Denver's Expert Quartz & Granite Countertop Installers",
+      "desc": "Looking for fast and reliable countertop replacement? JRC Countertops specializes in quartz and granite installations that transform your kitchen, bathroom, or workspace into a stunning, functional showpiece — on time, on budget, and with a finish that lasts.",
+      "bg": "Gemini_Generated_Image_yvqyojyvqyojyvqy-1-scaled.jpg"
+    },
+    "whatWeDo": {
+      "pill": "WHAT WE DO",
+      "title": "Complete Countertop Installation & Replacement Services",
+      "cards": [
+        {
+          "title": "Quartz Countertop Installation",
+          "icon": "kitchen.png",
+          "desc": "Non-porous, stain-resistant, and available in a wide range of modern styles and colors — perfect for busy homes and high-traffic kitchens."
+        },
+        {
+          "title": "Granite Countertop Installation",
+          "icon": "bathroom-3.png",
+          "desc": "Timeless natural beauty, unmatched strength, and unique character — custom-fit to your home’s exact dimensions with premium slab sourcing."
+        },
+        {
+          "title": "Marble & Solid Surface Options",
+          "icon": "basement.png",
+          "desc": "Elegant alternatives for bathrooms, feature areas, and custom applications — selected and installed to the same precision standard."
+        },
+        {
+          "title": "Custom Fabrication & Edge Profiles",
+          "icon": "rooftop.png",
+          "desc": "Precision cutting, custom edge profiles, and seamless cutouts for sinks and fixtures — all handled in-house from measurement to final install."
+        }
+      ]
+    },
+    "getKnow": {
+      "pill": "GET TO KNOW US",
+      "title": "Countertop Replacement Made Simple — Start to Finish",
+      "desc": [
+        "At JRC Countertops, we built our service around one straightforward promise: we don't leave until your new countertops shine. From the initial measurement and material selection to precision fabrication and final installation, we handle everything in-house — so there's no back-and-forth between contractors, no scheduling gaps, and no surprises on the final invoice.",
+        "Our skilled craftsmen bring years of experience working with premium quartz, granite, and marble surfaces, and we back every installation with the same transparent pricing and honest communication you'd expect from any JRC service."
+      ],
+      "images": [
+        "425.jpg",
+        "Gemini_Generated_Image_5nxrfk5nxrfk5nxr-scaled.png"
+      ],
+      "mission": "To deliver countertop installations that are beautiful, precise, and built to last — with a seamless process that makes the experience as easy as possible for every homeowner.",
+      "vision": "To be the countertop installer Denver homeowners recommend first — known for fast turnaround, expert craftsmanship, and surfaces that look better than expected and last longer than planned."
+    },
+    "projects": {
+      "pill": "LATEST PROJECTS",
+      "title": "Recent Countertop Installation Projects",
+      "cards": [
+        {
+          "title": "Quartz Kitchen Countertops",
+          "image": "72019-1.jpg",
+          "desc": "Lakewood, CO"
+        },
+        {
+          "title": "Granite Kitchen & Island",
+          "image": "71008.jpg",
+          "desc": "Aurora, CO"
+        },
+        {
+          "title": "Marble Bathroom Countertop",
+          "image": "1965.jpg",
+          "desc": "Centennial, CO"
+        }
+      ]
+    },
+    "process": {
+      "pill": "WORKING PROCESS",
+      "title": "Our Step-by-Step Countertop Installation Process",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Free Consultation & Estimate",
+          "desc": "We visit your space, take precise measurements, walk you through your material options, and provide a transparent, no-obligation estimate."
+        },
+        {
+          "num": "2",
+          "title": "Material Selection",
+          "desc": "Choose from quartz, granite, marble, or solid surface options — we help you find the right material, color, and edge profile for your space and budget."
+        },
+        {
+          "num": "3",
+          "title": "Custom Fabrication",
+          "desc": "Precision cutting and finishing of your chosen slab in our fabrication facility — including all sink cutouts, edge profiles, and custom dimensions."
+        },
+        {
+          "num": "4",
+          "title": "Professional Installation",
+          "desc": "Our team removes your old countertops, preps the space, and installs your new surface cleanly and precisely — your satisfaction is guaranteed before we leave."
+        }
+      ]
+    },
+    "faqs": {
+      "pill": "ASK A QUESTION",
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "How much does countertop installation cost in Denver?",
+          "a": "Cost depends on the material you choose, the size of your countertop area, the edge profile, and the number of cutouts needed. Quartz and solid surface options are generally more consistent in pricing, while granite varies by slab. We provide a free, detailed estimate after measuring your space."
+        },
+        {
+          "q": "How long does countertop installation take?",
+          "a": "Most countertop installations are completed in a single day once fabrication is finished. The fabrication process typically takes [X] business days after your measurements and material selection are confirmed — we’ll give you an exact timeline during your consultation."
+        },
+        {
+          "q": "What is the difference between quartz and granite countertops?",
+          "a": "Granite is a 100% natural stone quarried from the earth — every slab is one-of-a-kind with unique veining and patterns. Quartz is an engineered stone made from natural quartz crystals and resin — it’s non-porous, highly stain-resistant, and consistent in color and pattern. Both are durable, beautiful, and long-lasting; the right choice depends on your lifestyle, aesthetic preference, and how much maintenance you want to do."
+        },
+        {
+          "q": "Do quartz countertops stain?",
+          "a": "Quartz is non-porous and highly resistant to staining, making it an excellent choice for kitchens. It does not require sealing and is easier to maintain than natural stone. Granite and marble are more porous and should be sealed periodically to maintain stain resistance."
+        },
+        {
+          "q": "Do you remove and dispose of old countertops?",
+          "a": "Yes. We handle complete removal of your existing countertops, prep the space, and dispose of the old material as part of our full-service installation — no separate contractor needed."
+        },
+        {
+          "q": "Can you install an undermount sink as part of the project?",
+          "a": "Yes. We handle all sink cutouts — undermount, drop-in, and farmhouse styles — as part of the fabrication and installation process."
+        },
+        {
+          "q": "Are your countertop installers licensed and insured?",
+          "a": "Yes. JRC Countertops operates under JRC Home Remodeling’s full licensing and insurance, protecting your home and our team throughout every installation."
+        }
+      ]
+    }
+  }
+}
