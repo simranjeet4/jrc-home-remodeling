@@ -1,28 +1,28 @@
-import { useState } from 'react';
+
+import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import HomeRemodelingBadges from '../components/sections/HomeRemodelingBadges';
 
 export default function AboutUs() {
-  const [activeTestimonial, setActiveTestimonial] = useState(1);
+  const section2Ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: section2Ref,
+    offset: ['start end', 'end start']
+  });
 
-  const testimonials = [
-    {
-      quote: "JRC did an awesome job with our kitchen floor! They were responsive, pleasant, professional, had good communication, were on time, and most importantly, did a great job! We are so happy with the results and look forward to working with Monica and her team again.",
-      name: "Bliss Bernal",
-      avatar: "/assets/images/about/user9.jpg"
-    },
-    {
-      quote: "Remodeled three bathrooms. We were very impressed with the attention to detail. Always on time, professional, easy to reach. GREAT work!",
-      name: "Toni Starner",
-      avatar: "/assets/images/about/toni-starner.jpg"
-    },
-    {
-      quote: "I have used JRC twice now - once, to add a bathroom to a basement, and then again to install a tile backsplash in the kitchen. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn't hesitate to use them again!",
-      name: "Charissa Walton",
-      avatar: "/assets/images/about/user7.jpg"
-    }
-  ];
+  // Parallax scroll: as page scrolls down, image translates UP
+  const yImage1 = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const yImage2 = useTransform(scrollYProgress, [0, 1], [65, -65]);
+
+  const section4Ref = useRef(null);
+  const { scrollYProgress: scrollYProgress4 } = useScroll({
+    target: section4Ref,
+    offset: ['start end', 'end start']
+  });
+  const yImage4 = useTransform(scrollYProgress4, [0, 1], [50, -50]);
+
 
   return (
     <>
@@ -62,6 +62,9 @@ export default function AboutUs() {
             style={{
               position: 'relative',
               zIndex: 2,
+              width: '100%',
+              maxWidth: '1650px',
+              margin: '0 auto',
               padding: '40px 24px'
             }}
           >
@@ -86,54 +89,75 @@ export default function AboutUs() {
               <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ margin: '0 8px', color: 'rgba(255,255,255,0.7)' }}>&raquo;</span>
-              <span style={{ color: '#F45404', fontWeight: '600' }}>About Us</span>
+              <span style={{ margin: '0 8px', color: 'rgba(255,255,255,0.7)' }}>/</span>
+              <span style={{ color: '#F45404', fontWeight: '600' }}>About us</span>
             </div>
           </div>
         </section>
 
         {/* Section 2: Get to Know JRC Home Remodeling */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
+        <section ref={section2Ref} style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
           <div
             className="hr-container"
             style={{
               width: '100%',
-              maxWidth: '1240px',
+              maxWidth: '1650px',
               margin: '0 auto',
               padding: '0 24px'
             }}
           >
             <div
+              className="about-sec2-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
                 gap: '50px',
-                alignItems: 'center'
+                alignItems: 'stretch'
               }}
             >
               {/* Left Column: Image Collage + Progress Card */}
               <div
+                className="about-sec2-left"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
                   gap: '20px',
-                  alignItems: 'stretch'
+                  alignItems: 'stretch',
+                  height: '100%'
                 }}
               >
-                {/* Subcolumn 1: Team Photo + Company Progress Card */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {/* Subcolumn 1: Team Photo (flexible height) + Company Progress Card */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    height: '100%'
+                  }}
+                >
                   <div
                     style={{
+                      flex: 1,
+                      minHeight: '260px',
                       borderRadius: '20px',
                       overflow: 'hidden',
-                      height: '240px',
+                      position: 'relative',
                       boxShadow: '0 8px 24px rgba(0,0,0,0.06)'
                     }}
                   >
-                    <img
+                    <motion.img
                       src="/assets/images/about/about-team-swatches.jpg"
                       alt="JRC Design Consultation"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{
+                        position: 'absolute',
+                        top: '-50px',
+                        left: 0,
+                        width: '100%',
+                        height: 'calc(100% + 100px)',
+                        objectFit: 'cover',
+                        objectPosition: 'center 15%',
+                        y: yImage1
+                      }}
                     />
                   </div>
 
@@ -142,7 +166,8 @@ export default function AboutUs() {
                       backgroundColor: '#FFF7EE',
                       borderRadius: '20px',
                       padding: '24px 20px',
-                      border: '1px solid #F5E6D3'
+                      border: '1px solid #F5E6D3',
+                      flexShrink: 0
                     }}
                   >
                     <h3
@@ -190,82 +215,103 @@ export default function AboutUs() {
                   </div>
                 </div>
 
-                {/* Subcolumn 2: Tall Stone Texture Image */}
+                {/* Subcolumn 2: Tall Stone Texture Image (full height matching subcolumn 1) */}
                 <div
+                  className="about-sec2-left-sub2"
                   style={{
+                    height: '100%',
+                    minHeight: '400px',
                     borderRadius: '20px',
                     overflow: 'hidden',
-                    height: '100%',
-                    minHeight: '380px',
+                    position: 'relative',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.06)'
                   }}
                 >
-                  <img
+                  <motion.img
                     src="/assets/images/about/about-stone-texture.jpg"
                     alt="Premium Stone Texture"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{
+                      position: 'absolute',
+                      top: '-65px',
+                      left: 0,
+                      width: '100%',
+                      height: 'calc(100% + 130px)',
+                      objectFit: 'cover',
+                      objectPosition: 'center center',
+                      y: yImage2
+                    }}
                   />
                 </div>
               </div>
 
-              {/* Right Column: Narrative & Mission/Vision */}
-              <div>
-                <div
-                  style={{
-                    display: 'inline-block',
-                    backgroundColor: 'rgba(0, 0, 0, 0.08)',
-                    padding: '8px 20px',
-                    borderRadius: '50px',
-                    fontSize: '13px',
-                    fontWeight: '600',
-                    letterSpacing: '1.6px',
-                    textTransform: 'uppercase',
-                    color: '#292929',
-                    marginBottom: '18px'
-                  }}
-                >
-                  WELCOME TO JRC
+              {/* Right Column: Narrative & Mission/Vision (aligned height with left column) */}
+              <div
+                className="about-sec2-right"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                      padding: '8px 20px',
+                      borderRadius: '50px',
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      letterSpacing: '1.6px',
+                      textTransform: 'uppercase',
+                      color: '#292929',
+                      marginBottom: '18px'
+                    }}
+                  >
+                    WELCOME TO JRC
+                  </div>
+
+                  <h2
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: '42px',
+                      fontWeight: '700',
+                      color: '#160A05',
+                      lineHeight: '1.2',
+                      marginBottom: '20px'
+                    }}
+                  >
+                    Get to Know JRC Home Remodeling
+                  </h2>
+
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      lineHeight: '1.7',
+                      color: '#555555',
+                      marginBottom: '16px'
+                    }}
+                  >
+                    At JRC Home Remodeling, we believe every home should be both beautiful and functional.
+                    From modern kitchen upgrades to complete basement transformations, our team delivers
+                    remodeling solutions built around your vision, your lifestyle, and your budget.
+                  </p>
+
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      lineHeight: '1.7',
+                      color: '#555555',
+                      marginBottom: '28px'
+                    }}
+                  >
+                    With years of hands-on experience and a strong commitment to quality, we approach every
+                    project with care, clear communication, and attention to detail. Whether you are updating
+                    a single room or reimagining your entire home, JRC is here to make the process smooth,
+                    efficient, and stress-free.
+                  </p>
                 </div>
-
-                <h2
-                  style={{
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: '42px',
-                    fontWeight: '700',
-                    color: '#160A05',
-                    lineHeight: '1.2',
-                    marginBottom: '20px'
-                  }}
-                >
-                  Get to Know JRC Home Remodeling
-                </h2>
-
-                <p
-                  style={{
-                    fontSize: '15px',
-                    lineHeight: '1.7',
-                    color: '#555555',
-                    marginBottom: '16px'
-                  }}
-                >
-                  At JRC Home Remodeling, we believe every home should be both beautiful and functional.
-                  From modern kitchen upgrades to complete basement transformations, our team delivers
-                  remodeling solutions built around your vision, your lifestyle, and your budget.
-                </p>
-
-                <p
-                  style={{
-                    fontSize: '15px',
-                    lineHeight: '1.7',
-                    color: '#555555',
-                    marginBottom: '32px'
-                  }}
-                >
-                  With years of hands-on experience and a strong commitment to quality, we approach every
-                  project with care, clear communication, and attention to detail. Whether you are updating
-                  a single room or reimagining your entire home, JRC is here to make the process smooth,
-                  efficient, and stress-free.
-                </p>
 
                 {/* Mission & Vision Cards */}
                 <div
@@ -363,7 +409,7 @@ export default function AboutUs() {
             className="hr-container"
             style={{
               width: '100%',
-              maxWidth: '1240px',
+              maxWidth: '1650px',
               margin: '0 auto',
               padding: '0 24px',
               textAlign: 'center'
@@ -409,11 +455,9 @@ export default function AboutUs() {
               {/* Step 1: Consultation */}
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '36px 24px',
+                  backgroundColor: 'transparent',
+                  padding: '24px 16px',
                   textAlign: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
@@ -423,14 +467,14 @@ export default function AboutUs() {
                 <div style={{ position: 'relative', marginBottom: '20px' }}>
                   <div
                     style={{
-                      width: '64px',
-                      height: '64px',
-                      backgroundColor: '#F7F7F7',
-                      borderRadius: '14px',
+                      width: '68px',
+                      height: '68px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '16px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid #ECECEC'
+                      boxShadow: '0 6px 18px rgba(0,0,0,0.06)'
                     }}
                   >
                     <svg
@@ -479,11 +523,9 @@ export default function AboutUs() {
               {/* Step 2: Planning & Design */}
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '36px 24px',
+                  backgroundColor: 'transparent',
+                  padding: '24px 16px',
                   textAlign: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
@@ -493,14 +535,14 @@ export default function AboutUs() {
                 <div style={{ position: 'relative', marginBottom: '20px' }}>
                   <div
                     style={{
-                      width: '64px',
-                      height: '64px',
-                      backgroundColor: '#F7F7F7',
-                      borderRadius: '14px',
+                      width: '68px',
+                      height: '68px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '16px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid #ECECEC'
+                      boxShadow: '0 6px 18px rgba(0,0,0,0.06)'
                     }}
                   >
                     <svg
@@ -549,11 +591,9 @@ export default function AboutUs() {
               {/* Step 3: Construction */}
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '36px 24px',
+                  backgroundColor: 'transparent',
+                  padding: '24px 16px',
                   textAlign: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
@@ -563,14 +603,14 @@ export default function AboutUs() {
                 <div style={{ position: 'relative', marginBottom: '20px' }}>
                   <div
                     style={{
-                      width: '64px',
-                      height: '64px',
-                      backgroundColor: '#F7F7F7',
-                      borderRadius: '14px',
+                      width: '68px',
+                      height: '68px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '16px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid #ECECEC'
+                      boxShadow: '0 6px 18px rgba(0,0,0,0.06)'
                     }}
                   >
                     <svg
@@ -619,11 +659,9 @@ export default function AboutUs() {
               {/* Step 4: Final Walkthrough */}
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '36px 24px',
+                  backgroundColor: 'transparent',
+                  padding: '24px 16px',
                   textAlign: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
                   position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
@@ -633,14 +671,14 @@ export default function AboutUs() {
                 <div style={{ position: 'relative', marginBottom: '20px' }}>
                   <div
                     style={{
-                      width: '64px',
-                      height: '64px',
-                      backgroundColor: '#F7F7F7',
-                      borderRadius: '14px',
+                      width: '68px',
+                      height: '68px',
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '16px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid #ECECEC'
+                      boxShadow: '0 6px 18px rgba(0,0,0,0.06)'
                     }}
                   >
                     <svg
@@ -690,12 +728,12 @@ export default function AboutUs() {
         </section>
 
         {/* Section 4: Why Choose JRC Home Remodeling */}
-        <section style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
+        <section ref={section4Ref} style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
           <div
             className="hr-container"
             style={{
               width: '100%',
-              maxWidth: '1240px',
+              maxWidth: '1650px',
               margin: '0 auto',
               padding: '0 24px'
             }}
@@ -731,169 +769,165 @@ export default function AboutUs() {
             </div>
 
             <div
+              className="about-sec4-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
                 gap: '50px',
-                alignItems: 'center'
+                alignItems: 'stretch'
               }}
             >
               {/* Left Column: 4 Service Features */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
-                {/* Feature 1 */}
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {/* Feature 1: Kitchen Remodeling */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '24px',
+                    alignItems: 'center',
+                    padding: '25px 0',
+                    borderBottom: '1px solid #CCCCCC'
+                  }}
+                >
+                  <img
+                    src="/assets/images/about/icon-why-2.svg"
+                    alt="Kitchen Remodeling"
                     style={{
-                      flexShrink: 0,
                       width: '60px',
                       height: '60px',
-                      backgroundColor: '#FFF7EE',
-                      border: '1px solid #F8E2C9',
-                      borderRadius: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
+                      flexShrink: 0,
+                      objectFit: 'contain'
                     }}
-                  >
-                    <img
-                      src="/assets/images/about/icon-why-2.svg"
-                      alt="Kitchen Remodeling"
-                      style={{ width: '32px', height: '32px' }}
-                    />
-                  </div>
+                  />
                   <div>
                     <h3
                       style={{
                         fontFamily: "'Poppins', sans-serif",
-                        fontSize: '20px',
-                        fontWeight: '700',
+                        fontSize: '24px',
+                        fontWeight: '600',
                         color: '#160A05',
-                        marginBottom: '6px'
+                        marginBottom: '8px'
                       }}
                     >
                       Kitchen Remodeling
                     </h3>
-                    <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
+                    <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
                       Transform your kitchen into the heart of your home with modern layouts, custom
                       cabinetry, premium countertops, and improved functionality.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 2 */}
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div
+                {/* Feature 2: Bathroom Remodeling */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '24px',
+                    alignItems: 'center',
+                    padding: '25px 0',
+                    borderBottom: '1px solid #CCCCCC'
+                  }}
+                >
+                  <img
+                    src="/assets/images/about/icon-why-1.svg"
+                    alt="Bathroom Remodeling"
                     style={{
-                      flexShrink: 0,
                       width: '60px',
                       height: '60px',
-                      backgroundColor: '#FFF7EE',
-                      border: '1px solid #F8E2C9',
-                      borderRadius: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
+                      flexShrink: 0,
+                      objectFit: 'contain'
                     }}
-                  >
-                    <img
-                      src="/assets/images/about/icon-why-1.svg"
-                      alt="Bathroom Remodeling"
-                      style={{ width: '32px', height: '32px' }}
-                    />
-                  </div>
+                  />
                   <div>
                     <h3
                       style={{
                         fontFamily: "'Poppins', sans-serif",
-                        fontSize: '20px',
-                        fontWeight: '700',
+                        fontSize: '24px',
+                        fontWeight: '600',
                         color: '#160A05',
-                        marginBottom: '6px'
+                        marginBottom: '8px'
                       }}
                     >
                       Bathroom Remodeling
                     </h3>
-                    <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
+                    <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
                       Create a comfortable and stylish retreat with custom showers, vanities, tile
                       installations, and contemporary fixtures.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 3 */}
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div
+                {/* Feature 3: Turnkey Renovation */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '24px',
+                    alignItems: 'center',
+                    padding: '25px 0',
+                    borderBottom: '1px solid #CCCCCC'
+                  }}
+                >
+                  <img
+                    src="/assets/images/about/icon-why-3.svg"
+                    alt="Turnkey Renovation"
                     style={{
-                      flexShrink: 0,
                       width: '60px',
                       height: '60px',
-                      backgroundColor: '#FFF7EE',
-                      border: '1px solid #F8E2C9',
-                      borderRadius: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
+                      flexShrink: 0,
+                      objectFit: 'contain'
                     }}
-                  >
-                    <img
-                      src="/assets/images/about/icon-why-3.svg"
-                      alt="Turnkey Renovation"
-                      style={{ width: '32px', height: '32px' }}
-                    />
-                  </div>
+                  />
                   <div>
                     <h3
                       style={{
                         fontFamily: "'Poppins', sans-serif",
-                        fontSize: '20px',
-                        fontWeight: '700',
+                        fontSize: '24px',
+                        fontWeight: '600',
                         color: '#160A05',
-                        marginBottom: '6px'
+                        marginBottom: '8px'
                       }}
                     >
                       Turnkey Renovation
                     </h3>
-                    <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
+                    <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
                       Convert unused basement space into a functional living area, entertainment room,
                       home office, or guest suite.
                     </p>
                   </div>
                 </div>
 
-                {/* Feature 4 */}
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div
+                {/* Feature 4: Whole Home Renovations */}
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '24px',
+                    alignItems: 'center',
+                    padding: '25px 0'
+                  }}
+                >
+                  <img
+                    src="/assets/images/about/icon-why-3.svg"
+                    alt="Whole Home Renovations"
                     style={{
-                      flexShrink: 0,
                       width: '60px',
                       height: '60px',
-                      backgroundColor: '#FFF7EE',
-                      border: '1px solid #F8E2C9',
-                      borderRadius: '12px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
+                      flexShrink: 0,
+                      objectFit: 'contain'
                     }}
-                  >
-                    <img
-                      src="/assets/images/about/icon-why-3.svg"
-                      alt="Whole Home Renovations"
-                      style={{ width: '32px', height: '32px' }}
-                    />
-                  </div>
+                  />
                   <div>
                     <h3
                       style={{
                         fontFamily: "'Poppins', sans-serif",
-                        fontSize: '20px',
-                        fontWeight: '700',
+                        fontSize: '24px',
+                        fontWeight: '600',
                         color: '#160A05',
-                        marginBottom: '6px'
+                        marginBottom: '8px'
                       }}
                     >
                       Whole Home Renovations
                     </h3>
-                    <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
+                    <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#666666', margin: 0 }}>
                       Reimagine your entire home with comprehensive remodeling solutions designed to
                       enhance comfort, efficiency, and value.
                     </p>
@@ -901,18 +935,32 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* Right Column: Hero Showcase Image */}
+              {/* Right Column: Hero Showcase Image (Height matched to left services with parallax scroll) */}
               <div
+                className="about-sec4-img-wrapper"
                 style={{
                   borderRadius: '24px',
                   overflow: 'hidden',
+                  position: 'relative',
+                  height: '100%',
+                  minHeight: '480px',
                   boxShadow: '0 12px 36px rgba(0,0,0,0.1)'
                 }}
               >
-                <img
+                <motion.img
                   src="/assets/images/about/about-why-choose.jpg"
                   alt="JRC Remodeling Project Showcase"
-                  style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                  style={{
+                    position: 'absolute',
+                    top: '-60px',
+                    left: 0,
+                    width: '100%',
+                    height: 'calc(100% + 120px)',
+                    display: 'block',
+                    objectFit: 'cover',
+                    objectPosition: 'center center',
+                    y: yImage4
+                  }}
                 />
               </div>
             </div>
@@ -925,7 +973,7 @@ export default function AboutUs() {
             className="hr-container"
             style={{
               width: '100%',
-              maxWidth: '1240px',
+              maxWidth: '1650px',
               margin: '0 auto',
               padding: '0 24px'
             }}
@@ -1096,7 +1144,7 @@ export default function AboutUs() {
                       zIndex: 2
                     }}
                   >
-                    "{testimonials[activeTestimonial].quote}"
+                    "Remodeled three bathrooms. We were very impressed with the attention to detail. Always on time, professional, easy to reach. GREAT work!"
                   </p>
                 </div>
 
@@ -1112,8 +1160,8 @@ export default function AboutUs() {
                   }}
                 >
                   <img
-                    src={testimonials[activeTestimonial].avatar}
-                    alt={testimonials[activeTestimonial].name}
+                    src="/assets/images/about/toni-starner.jpg"
+                    alt="Toni Starner"
                     style={{
                       width: '56px',
                       height: '56px',
@@ -1124,31 +1172,10 @@ export default function AboutUs() {
                   />
                   <div>
                     <div style={{ fontSize: '18px', fontWeight: '700', color: '#FFFFFF' }}>
-                      {testimonials[activeTestimonial].name}
+                      Toni Starner
                     </div>
                     <div style={{ fontSize: '13px', color: '#A0B4C8' }}>Verified Customer</div>
                   </div>
-                </div>
-
-                {/* Pagination Dots to browse testimonials */}
-                <div style={{ display: 'flex', gap: '8px', marginTop: '24px' }}>
-                  {testimonials.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveTestimonial(idx)}
-                      style={{
-                        width: '10px',
-                        height: '10px',
-                        borderRadius: '50%',
-                        backgroundColor: activeTestimonial === idx ? '#F45404' : 'rgba(255,255,255,0.3)',
-                        border: 'none',
-                        cursor: 'pointer',
-                        padding: 0,
-                        transition: 'all 0.2s ease'
-                      }}
-                      aria-label={`Testimonial ${idx + 1}`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>

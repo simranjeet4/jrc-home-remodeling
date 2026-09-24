@@ -85,6 +85,7 @@ ol {
    SHARED LAYOUT & UTILITIES
    ========================================================================== */
 
+.hr-container,
 .container {
   width: 100%;
   max-width: var(--container-max, 1650px);

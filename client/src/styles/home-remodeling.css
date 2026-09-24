@@ -846,21 +846,29 @@
 .marquee-track p {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   font-family: "Poppins", "Montserrat", sans-serif;
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 76px;
+  font-weight: 600;
+  line-height: 1.2;
   color: #160A05;
   letter-spacing: -0.5px;
   margin: 0;
 }
 
+.marquee-track p span {
+  font-size: 76px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #160A05;
+}
+
 .marquee-track img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 147px !important;
+  height: 80px !important;
+  border-radius: 50px !important;
   vertical-align: middle;
-  object-fit: contain;
+  object-fit: cover !important;
 }
 
 @keyframes marquee {

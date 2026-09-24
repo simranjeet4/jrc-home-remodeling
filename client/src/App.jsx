@@ -4,7 +4,6 @@ import ScrollToTop from './hooks/ScrollToTop';
 // Layout
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import StickyBottomBar from './components/layout/StickyBottomBar';
 
 // Core & Service Pages
 import Home from './pages/Home';
@@ -198,7 +197,6 @@ function App() {
       </main>
 
       <Footer />
-      <StickyBottomBar />
     </>
   );
 }

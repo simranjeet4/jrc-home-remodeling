@@ -138,7 +138,10 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
 	transition: .4s;
 }
 .marquee img {
-    border-radius: 50px;
+    width: 147px !important;
+    height: 80px !important;
+    border-radius: 50px !important;
+    object-fit: cover !important;
     vertical-align: middle;
 }
 .marquee {
@@ -156,8 +159,19 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
 }
 
 .marquee-track span {
-    font-size: 18px;
+    font-size: 76px;
     font-weight: 600;
+    line-height: 1.2;
+}
+
+.marquee-track p {
+    font-size: 76px;
+    font-weight: 600;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
 }
 
 @keyframes marquee {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../styles/basement.css";
+import HomeRemodelingBadges from "../components/sections/HomeRemodelingBadges";
 
 export default function BasementRemodeling() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -291,10 +292,7 @@ export default function BasementRemodeling() {
 				</div>
 					</div>
 				</div>
-		<div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-f2bc172 e-con-full e-flex e-con e-parent" data-id="f2bc172" data-element_type="container" data-e-type="container">
-				<div className="elementor-element elementor-element-38e9023 elementor-widget elementor-widget-text-editor" data-id="38e9023" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-									<div className="marquee"><div className="marquee-track"><p><img decoding="async" src="/assets/images/monogram-img.jpg" /> Quality Painting Excellence</p><p><img decoding="async" src="/assets/images/monogram-img.jpg" /> Certified Remodeling Guarantee</p></div></div>								</div>
-				</div>
+		<HomeRemodelingBadges />
 		
         {/* Section 6: FAQs */}
         <div className="elementor-element elementor-element-3505fe3 e-flex e-con-boxed e-con e-parent">

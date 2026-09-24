@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import '../styles/home.css';
@@ -39,8 +39,6 @@ export default function Home() {
     }
   ];
 
-  // Testimonial slider state
-  const [activeTestimonial, setActiveTestimonial] = useState(1);
   const testimonials = [
     {
       text: 'JRC did an awesome job with our kitchen floor! They were responsive, pleasant, professional, had good communication, were on time, and most importantly, did a great job! We are so happy with the results and look forward to working with Monica and her team again.',
@@ -55,6 +53,17 @@ export default function Home() {
       user: 'Toni Starner'
     }
   ];
+
+  // Testimonial slider state
+  const [activeTestimonial, setActiveTestimonial] = useState(1);
+
+  // Auto-play testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [testimonials.length]);
 
   const services = [
     { name: 'Home Remodeling', icon: '/assets/images/home-re.png', link: '/home-remodeling' },
@@ -265,8 +274,8 @@ export default function Home() {
           <div className="elementor-container elementor-column-gap-default">
             <div className="elementor-column elementor-col-100 elementor-top-column elementor-element" data-element_type="column">
               <div className="elementor-widget-wrap elementor-element-populated">
-                <h2 className="services-heading">Our Special Services</h2>
-                <p className="services-intro">
+                <h2 className="services-heading" style={{ textAlign: "center" }}>Our Special Services</h2>
+                <p className="services-intro" style={{ textAlign: "center", margin: "0 auto 50px" }}>
                   Curating a home that suites you and your family is essential to the place that you call home. Our homes mean more to us than they ever did as we are now doing a lot of our everyday work from the same place we rest. Knowing you have a space that is made by you for you is essential to a positive outlook. Your workspace and your home space can be all the difference in your overall comfort. At JRC Remodeling we address the complete project to make sure you don't have to worry.
                 </p>
 
@@ -308,14 +317,16 @@ export default function Home() {
                     ❮
                   </button>
 
-                  <div className="home-testimonial-card">
-                    <p className="home-testimonial-quote">
-                      "{testimonials[activeTestimonial].text}"
-                    </p>
-                    <p className="home-testimonial-author">
-                      {testimonials[activeTestimonial].user}
-                    </p>
-                  </div>
+                  <div className="home-testimonial-card-viewport">
+                      <div key={activeTestimonial} className="home-testimonial-card slide-fade">
+                        <p className="home-testimonial-quote">
+                          "{testimonials[activeTestimonial].text}"
+                        </p>
+                        <p className="home-testimonial-author">
+                          {testimonials[activeTestimonial].user}
+                        </p>
+                      </div>
+                    </div>
 
                   <button
                     type="button"

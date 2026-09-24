@@ -57,18 +57,16 @@ export default function Footer() {
                 />
               </Link>
               <div className="footer-map-wrapper">
-                <a
-                  href="https://maps.google.com/maps?q=JRC%20Remodeling%205138%20w%2046th%20Ave"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="JRC Remodeling Office Map"
-                >
-                  <img
-                    src="/assets/images/footer-map.png"
-                    alt="JRC Remodeling Denver Office Location Map"
-                    className="footer-map-img"
-                  />
-                </a>
+                <iframe
+                  title="JRC Remodeling Denver Office Location Map"
+                  src="https://maps.google.com/maps?q=JRC%20Remodeling%205138%20w%2046th%20Ave&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, borderRadius: '4px', display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 
