@@ -185,6 +185,7 @@
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
+  display: none;
   transform: translateY(8px);
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
@@ -193,7 +194,15 @@
 .nav-item:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
+  display: block;
   transform: translateY(0);
+}
+
+@media (max-width: 1400px) {
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
 }
 
 .dropdown-link {
