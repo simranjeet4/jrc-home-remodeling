@@ -204,3 +204,12 @@
     min-height: 420px !important;
   }
 }
+
+
+@media (max-width: 767px) {
+  .about-sec2-grid,
+  .about-sec4-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}

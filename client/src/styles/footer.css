@@ -242,3 +242,24 @@
     padding: 0 20px;
   }
 }
+
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .footer-col-title {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+  }
+  .footer-container {
+    padding: 0 16px !important;
+  }
+  .footer-map-wrapper iframe {
+    height: 190px !important;
+  }
+  .footer-logo-img {
+    max-width: 320px !important;
+  }
+}

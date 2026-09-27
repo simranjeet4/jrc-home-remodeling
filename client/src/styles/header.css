@@ -480,3 +480,17 @@
     font-size: 10px;
   }
 }
+
+
+@media (max-width: 576px) {
+  .jrc-header {
+    padding: 8px 0;
+  }
+  .brand-logo-img {
+    width: 170px !important;
+  }
+  .mobile-menu-drawer {
+    width: 290px !important;
+    max-width: 85vw !important;
+  }
+}

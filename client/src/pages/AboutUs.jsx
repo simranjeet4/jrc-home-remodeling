@@ -1,8 +1,10 @@
+import C3DRectangularCubeSlider from '../components/about/C3DRectangularCubeSlider';
 
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import '../styles/about.css';
 import HomeRemodelingBadges from '../components/sections/HomeRemodelingBadges';
 
 export default function AboutUs() {
@@ -34,20 +36,7 @@ export default function AboutUs() {
 
       <article className="about-us-page">
         {/* Section 1: Hero Banner */}
-        <section
-          style={{
-            position: 'relative',
-            minHeight: '420px',
-            backgroundImage: "url('/assets/images/about/about-hero-bg.webp')",
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            color: '#FFFFFF'
-          }}
-        >
+        <section className="about-hero-section">
           {/* Dark Overlay */}
           <div
             style={{
@@ -68,17 +57,7 @@ export default function AboutUs() {
               padding: '40px 24px'
             }}
           >
-            <h1
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: '52px',
-                fontWeight: '700',
-                color: '#FFFFFF',
-                marginBottom: '12px'
-              }}
-            >
-              About Us
-            </h1>
+            <h1 className="about-hero-title">About Us</h1>
             <div
               style={{
                 fontSize: '15px',
@@ -96,7 +75,7 @@ export default function AboutUs() {
         </section>
 
         {/* Section 2: Get to Know JRC Home Remodeling */}
-        <section ref={section2Ref} style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
+        <section ref={section2Ref} className="about-sec2-section" style={{ backgroundColor: "#FFFFFF" }}>
           <div
             className="hr-container"
             style={{
@@ -272,18 +251,7 @@ export default function AboutUs() {
                     WELCOME TO JRC
                   </div>
 
-                  <h2
-                    style={{
-                      fontFamily: "'Poppins', sans-serif",
-                      fontSize: '42px',
-                      fontWeight: '700',
-                      color: '#160A05',
-                      lineHeight: '1.2',
-                      marginBottom: '20px'
-                    }}
-                  >
-                    Get to Know JRC Home Remodeling
-                  </h2>
+                  <h2 className="about-sec2-heading" style={{ color: "#160A05", marginBottom: "20px" }}>Get to Know JRC Home Remodeling</h2>
 
                   <p
                     style={{
@@ -395,16 +363,7 @@ export default function AboutUs() {
         </section>
 
         {/* Section 3: Our Remodeling Process */}
-        <section
-          style={{
-            position: 'relative',
-            backgroundColor: '#FAF5EE',
-            backgroundImage: "url('/assets/images/about/about-process-bg.jpg')",
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-            padding: '90px 0'
-          }}
-        >
+        <section className="about-sec3-section">
           <div
             className="hr-container"
             style={{
@@ -432,26 +391,10 @@ export default function AboutUs() {
               WELCOME TO JRC
             </div>
 
-            <h2
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: '42px',
-                fontWeight: '700',
-                color: '#160A05',
-                marginBottom: '50px'
-              }}
-            >
-              Our Remodeling Process
-            </h2>
+            <h2 className="about-sec3-heading" style={{ color: "#160A05" }}>Our Remodeling Process</h2>
 
             {/* 4 Process Cards */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                gap: '24px'
-              }}
-            >
+            <div className="about-process-grid">
               {/* Step 1: Consultation */}
               <div
                 style={{
@@ -728,7 +671,7 @@ export default function AboutUs() {
         </section>
 
         {/* Section 4: Why Choose JRC Home Remodeling */}
-        <section ref={section4Ref} style={{ backgroundColor: '#FFFFFF', padding: '90px 0' }}>
+        <section ref={section4Ref} className="about-sec4-section" style={{ backgroundColor: "#FFFFFF" }}>
           <div
             className="hr-container"
             style={{
@@ -738,7 +681,7 @@ export default function AboutUs() {
               padding: '0 24px'
             }}
           >
-            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 60px' }}>
+            <div className="about-sec4-header" style={{ textAlign: "center", margin: "0 auto 60px" }}>
               <div
                 style={{
                   display: 'inline-block',
@@ -755,17 +698,7 @@ export default function AboutUs() {
               >
                 WHAT WE DO
               </div>
-              <h2
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '40px',
-                  fontWeight: '700',
-                  color: '#160A05',
-                  lineHeight: '1.25'
-                }}
-              >
-                Why Choose JRC Home Remodeling For Your Remodeling Services
-              </h2>
+              <h2 className="about-sec4-heading" style={{ color: "#160A05" }}>Why Choose JRC Home Remodeling For Your Remodeling Services</h2>
             </div>
 
             <div
@@ -968,7 +901,7 @@ export default function AboutUs() {
         </section>
 
         {/* Section 5: What Our Clients Say About Our Painting Company */}
-        <section style={{ backgroundColor: '#132B45', padding: '90px 0', color: '#FFFFFF' }}>
+        <section className="about-sec5-section" style={{ backgroundColor: "#132B45", color: "#FFFFFF" }}>
           <div
             className="hr-container"
             style={{
@@ -996,27 +929,10 @@ export default function AboutUs() {
                 LATEST PROJECT
               </div>
 
-              <h2
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: '42px',
-                  fontWeight: '700',
-                  color: '#FFFFFF',
-                  lineHeight: '1.2'
-                }}
-              >
-                What Our Clients Say About Our Painting Company
-              </h2>
+              <h2 className="about-sec5-heading" style={{ color: "#FFFFFF" }}>What Our Clients Say About Our Painting Company</h2>
             </div>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '40px',
-                alignItems: 'stretch'
-              }}
-            >
+            <div className="about-sec5-grid">
               {/* Left Column: Cityscape Photo Card with Avatar Stack */}
               <div
                 style={{
@@ -1097,87 +1013,8 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* Right Column: Active Testimonial Card */}
-              <div
-                style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '20px',
-                  padding: '40px',
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between'
-                }}
-              >
-                {/* Quotation Mark Watermark */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '20px',
-                    right: '30px',
-                    fontSize: '80px',
-                    fontFamily: 'Georgia, serif',
-                    color: 'rgba(255, 255, 255, 0.15)',
-                    lineHeight: 1,
-                    userSelect: 'none'
-                  }}
-                >
-                  &rdquo;
-                </div>
-
-                <div>
-                  {/* Star Rating */}
-                  <div style={{ color: '#FFB800', fontSize: '20px', marginBottom: '20px', letterSpacing: '2px' }}>
-                    ★★★★★
-                  </div>
-
-                  {/* Quote Text */}
-                  <p
-                    style={{
-                      fontSize: '16px',
-                      lineHeight: '1.7',
-                      color: '#E0E6ED',
-                      fontStyle: 'italic',
-                      margin: 0,
-                      position: 'relative',
-                      zIndex: 2
-                    }}
-                  >
-                    "Remodeled three bathrooms. We were very impressed with the attention to detail. Always on time, professional, easy to reach. GREAT work!"
-                  </p>
-                </div>
-
-                {/* Author Info */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '16px',
-                    marginTop: '28px',
-                    position: 'relative',
-                    zIndex: 2
-                  }}
-                >
-                  <img
-                    src="/assets/images/about/toni-starner.jpg"
-                    alt="Toni Starner"
-                    style={{
-                      width: '56px',
-                      height: '56px',
-                      borderRadius: '50%',
-                      border: '2px solid #F45404',
-                      objectFit: 'cover'
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontSize: '18px', fontWeight: '700', color: '#FFFFFF' }}>
-                      Toni Starner
-                    </div>
-                    <div style={{ fontSize: '13px', color: '#A0B4C8' }}>Verified Customer</div>
-                  </div>
-                </div>
-              </div>
+              {/* Right Column: 3D Rectangular Cube Rotating Testimonial Slider */}
+              <C3DRectangularCubeSlider />
             </div>
           </div>
         </section>

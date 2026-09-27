@@ -1,0 +1,144 @@
+﻿/* ======================================================================
+   3D RECTANGULAR CUBE ROTATING TESTIMONIAL - COMPACT SLEEK DESIGN
+   ====================================================================== */
+.cube-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 4px 0;
+}
+
+.cube-viewport {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  overflow: visible;
+}
+
+.cube-stage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #19365A !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 !important;
+  padding: 20px 20px;
+  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backface-visibility: hidden;
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.45);
+  transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
+}
+
+.cube-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 8px;
+}
+
+.cube-stars {
+  color: #FFB800;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.cube-quote-watermark {
+  font-size: 26px;
+  font-family: Georgia, serif;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.cube-card-content {
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.cube-quote-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #FFFFFF;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.cube-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+}
+
+.cube-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50% !important;
+  border: 2px solid #FFFFFF;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cube-author-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .cube-slider-wrapper {
+    max-width: 100%;
+  }
+  .cube-viewport {
+    height: 280px;
+    perspective: 800px;
+  }
+  .cube-face {
+    padding: 18px 16px;
+  }
+  .cube-quote-text {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 450px) {
+  .cube-viewport {
+    height: 290px;
+    perspective: 600px;
+  }
+  .cube-face {
+    padding: 16px 14px;
+  }
+}

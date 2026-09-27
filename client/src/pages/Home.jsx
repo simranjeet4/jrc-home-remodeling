@@ -148,7 +148,7 @@ export default function Home() {
             onClick={() => setActiveHeroSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
             aria-label="Previous Slide"
           >
-            ❮
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
           </button>
           <button
             type="button"
@@ -156,7 +156,7 @@ export default function Home() {
             onClick={() => setActiveHeroSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1))}
             aria-label="Next Slide"
           >
-            ❯
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
           </button>
 
           <div className="home-hero-dots">
@@ -314,8 +314,8 @@ export default function Home() {
                     onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
                     aria-label="Previous Testimonial"
                   >
-                    ❮
-                  </button>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
 
                   <div className="home-testimonial-card-viewport">
                       <div key={activeTestimonial} className="home-testimonial-card slide-fade">
@@ -334,8 +334,8 @@ export default function Home() {
                     onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
                     aria-label="Next Testimonial"
                   >
-                    ❯
-                  </button>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
                 </div>
 
                 <div className="home-testimonial-dots-outside">

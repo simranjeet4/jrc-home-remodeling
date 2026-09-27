@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY, FOOTER_QUICK_LINKS } from '../../content/siteData';
 import { subscribeNewsletter } from '../../services/api';
@@ -137,7 +137,7 @@ export default function Footer() {
       <div className="footer-bottom-bar">
         <div className="footer-container">
           <p className="footer-copyright-text">
-            ©Copyright 2026 JRC Home Remodeling. All Rights Reserved.
+            Copyright &copy; 2026 JRC Home Remodeling. All Rights Reserved.
           </p>
         </div>
       </div>

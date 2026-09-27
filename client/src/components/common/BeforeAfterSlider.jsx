@@ -5,7 +5,7 @@ export default function BeforeAfterSlider({
   afterImage,
   beforeAlt = 'Before Renovation',
   afterAlt = 'After Renovation',
-  height = '480px',
+  height = 'clamp(280px, 45vh, 480px)',
   beforeLabel = 'BEFORE',
   afterLabel = 'AFTER',
   initialPosition = 50,
@@ -56,6 +56,7 @@ export default function BeforeAfterSlider({
         overflow: 'hidden',
         cursor: 'ew-resize',
         userSelect: 'none',
+        touchAction: 'pan-y',
         boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
       }}
     >

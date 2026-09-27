@@ -271,3 +271,33 @@ ol {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Floating Badge Mobile Overrides */
+@media (max-width: 576px) {
+  .jrc-floating-call-btn {
+    bottom: 16px !important;
+    left: 12px !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  }
+  .call-btn-link {
+    padding: 8px 12px !important;
+    gap: 8px !important;
+  }
+  .call-btn-icon-wrap {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .call-btn-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .call-btn-heading {
+    font-size: 10px !important;
+  }
+  .call-btn-phone {
+    font-size: 12px !important;
+  }
+}
