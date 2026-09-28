@@ -61,6 +61,8 @@
 .hr-badges-section {
   background-color: #FFFFFF;
   padding: 50px 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -201,7 +203,8 @@
 
 @media (max-width: 991px) {
   .about-sec4-img-wrapper {
-    min-height: 420px !important;
+    min-height: auto !important;
+    height: auto !important;
   }
 }
 

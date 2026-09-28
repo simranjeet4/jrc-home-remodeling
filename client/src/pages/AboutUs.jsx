@@ -875,8 +875,6 @@ export default function AboutUs() {
                   borderRadius: '24px',
                   overflow: 'hidden',
                   position: 'relative',
-                  height: '100%',
-                  minHeight: '480px',
                   boxShadow: '0 12px 36px rgba(0,0,0,0.1)'
                 }}
               >
@@ -935,6 +933,7 @@ export default function AboutUs() {
             <div className="about-sec5-grid">
               {/* Left Column: Cityscape Photo Card with Avatar Stack */}
               <div
+                className="about-sec5-left-card"
                 style={{
                   position: 'relative',
                   borderRadius: '20px',

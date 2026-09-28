@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../../styles/c3d-cube.css';
 
 const reviewsData = [
@@ -64,7 +64,7 @@ export default function C3DRectangularCubeSlider() {
       <div className="cube-viewport" ref={viewportRef}>
         <div 
           className="cube-stage"
-          style={{ transform: `rotateY(${rotationY}deg)` }}
+          style={{ transform: `translateZ(-${cubeDepth}px) rotateY(${rotationY}deg)` }}
         >
           {reviewsData.map((review, idx) => {
             const faceAngle = idx * anglePerSlide;
@@ -111,6 +111,19 @@ export default function C3DRectangularCubeSlider() {
             );
           })}
         </div>
+      </div>
+
+      {/* Navigation Indicators */}
+      <div className="cube-dots-row">
+        {reviewsData.map((_, dotIdx) => (
+          <button
+            key={dotIdx}
+            type="button"
+            className={`cube-dot ${dotIdx === currentIndex ? 'cube-dot-active' : ''}`}
+            onClick={() => setCurrentIndex(dotIdx)}
+            aria-label={`Go to review ${dotIdx + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

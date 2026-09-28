@@ -2144,10 +2144,22 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
    UNIFORM MOBILE SECTION PADDING (TOP/BOTTOM 30PX, LEFT/RIGHT 15PX)
    ======================================================== */
 @media (max-width: 767px) {
+  /* Prevent horizontal overflow on entire homepage */
+  html, body, #root, .elementor-6093 {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* All outer sections: top/bottom 30px, STRICT 0px side padding */
   section,
   .section,
   .elementor-section,
   .elementor-top-section,
+  .elementor-6093 section,
+  .elementor-6093 .elementor-section,
+  .elementor-6093 .elementor-top-section,
   .elementor-6093 .elementor-element-2087d61,
   .elementor-6093 .elementor-element-6357f38,
   .elementor-6093 .elementor-element-f9cfbf9,
@@ -2157,57 +2169,6 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
   .elementor-6093 .elementor-element-0df0ae2 {
     padding-top: 30px !important;
     padding-bottom: 30px !important;
-  }
-
-  .container,
-  .hr-container,
-  .elementor-container,
-  .e-con-inner,
-  .elementor-6093 .elementor-element-351328f .elementor-container,
-  .elementor-6093 .elementor-element-287e501 .elementor-container,
-  .elementor-6093 .elementor-element-815c040 {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    box-sizing: border-box !important;
-  }
-}
-
-
-/* ========================================================
-   REMOVE EXTRA NESTED MOBILE PADDING (ONLY KEEP 15PX CONTAINER PADDING)
-   ======================================================== */
-@media (max-width: 767px) {
-  /* Reset outer section margins */
-  .elementor-6093 section,
-  .elementor-6093 .elementor-section,
-  .elementor-6093 .elementor-top-section {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Strictly enforce single 15px container side padding */
-  .elementor-6093 .container,
-  .elementor-6093 .hr-container,
-  .elementor-6093 .elementor-container {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Eliminate nested side padding from columns, widget wraps, and inner containers */
-  .elementor-6093 .e-con-inner,
-  .elementor-6093 .elementor-column,
-  .elementor-6093 .elementor-widget-wrap,
-  .elementor-6093 .elementor-element-populated,
-  .elementor-6093 .elementor-widget-container,
-  .elementor-6093 .elementor-widget,
-  .elementor-6093 .testimonial-left-col,
-  .elementor-6093 .google-right-col,
-  .elementor-6093 .elementor-element-815c040 {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
@@ -2217,113 +2178,51 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
     box-sizing: border-box !important;
   }
 
-  /* Card side padding inside containers */
-  .elementor-6093 .elementor-element-0e74335,
-  .elementor-6093 .elementor-element-33138a3 {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+  /* Strictly enforce single 15px container side padding from screen edges */
+  .elementor-6093 .container,
+  .elementor-6093 .hr-container,
+  .elementor-6093 .elementor-container,
+  .elementor-6093 > .elementor-element > .e-con-inner,
+  .elementor-6093 > .e-parent > .e-con-inner,
+  .elementor-6093 .elementor-element-2087d61 > .e-con-inner,
+  .elementor-6093 .elementor-element-6357f38 .elementor-container,
+  .elementor-6093 .elementor-element-f9cfbf9 .elementor-container,
+  .elementor-6093 .elementor-element-351328f .elementor-container,
+  .elementor-6093 .elementor-element-ef5cc89 > .e-con-inner,
+  .elementor-6093 .elementor-element-287e501 .elementor-container,
+  .elementor-6093 .elementor-element-0df0ae2 .elementor-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Eliminate nested side padding from columns, widget wraps, and inner child containers */
+  .elementor-6093 .e-child > .e-con-inner,
+  .elementor-6093 .elementor-column,
+  .elementor-6093 .elementor-widget-wrap,
+  .elementor-6093 .elementor-element-populated,
+  .elementor-6093 .elementor-widget-container,
+  .elementor-6093 .elementor-widget,
+  .elementor-6093 .testimonial-left-col,
+  .elementor-6093 .google-right-col,
+  .elementor-6093 .elementor-element-815c040,
+  .elementor-6093 .elementor-element-328a4ed,
+  .elementor-6093 .elementor-element-9ad94a4,
+  .elementor-6093 .elementor-element-9ad94a4 figure {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-}
 
-
-/* ========================================================
-   SERVICE AREAS BLUE CARD MOBILE OVERFLOW & BOTTOM OFFSET FIX
-   ======================================================== */
-@media (max-width: 767px) {
-  .elementor-6093 .elementor-element-0e74335 {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
-    margin: 0 !important;
-    padding: 28px 20px 36px 20px !important;
-    border-radius: 12px !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: visible !important;
-    background-size: cover !important;
-  }
-
-  .elementor-6093 .elementor-element-cbfb864 {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .elementor-6093 .elementor-icon-list-items {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px 12px !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .elementor-6093 .elementor-icon-list-item {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  .elementor-6093 .elementor-icon-list-text {
-    font-size: 14px !important;
-    line-height: 1.3 !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .elementor-6093 .elementor-icon-list-items {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px 10px !important;
-  }
-  .elementor-6093 .elementor-icon-list-text {
-    font-size: 13px !important;
-  }
-}
-
-
-/* ========================================================
-   SECTION 8 (SERVICE AREAS) REMOVE BOTTOM GAP ON MOBILE
-   ======================================================== */
-@media (max-width: 767px) {
-  .elementor-6093 .elementor-element-0df0ae2 {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  .elementor-6093 .elementor-element-0df0ae2 .elementor-container {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-    gap: 16px !important;
-  }
-
-  .elementor-6093 .elementor-element-328a4ed,
-  .elementor-6093 .elementor-element-9ad94a4,
-  .elementor-6093 .elementor-element-9ad94a4 figure,
-  .elementor-6093 .elementor-element-9ad94a4 img {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .jrc-footer .footer-main {
-    padding-top: 30px !important;
-  }
-}
-
-
-/* ========================================================
-   REMOVE DARK SPACING FROM HERO SECTION ON MOBILE ONLY
-   ======================================================== */
-@media (max-width: 767px) {
+  /* Section 1: Hero Slider Safe Edge Spacing & Arrow Clearance */
   .home-hero-slider {
     position: relative !important;
     width: 100% !important;
@@ -2359,77 +2258,484 @@ div#eael-post-block-23fe6df .eael-post-block-item .eael-entry-thumbnail {
   .home-hero-content {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    padding-left: 45px !important;
+    padding-right: 45px !important;
     margin: 0 auto !important;
-  }
-}
-
-
-/* ========================================================
-   SERVICE AREAS BLUE CARD HEIGHT & BOTTOM SPACE FIX (MOBILE ONLY)
-   ======================================================== */
-@media (max-width: 767px) {
-  .elementor-6093 .elementor-element-0e74335,
-  .elementor-6093 .elementor-element-0e74335 > .elementor-widget-wrap,
-  .elementor-6093 .elementor-element-0e74335 > .elementor-element-populated {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    padding-top: 24px !important;
-    padding-bottom: 24px !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-    box-sizing: border-box !important;
-    display: block !important;
-    flex: none !important;
-  }
-
-  .elementor-6093 .elementor-element-cb531aa,
-  .elementor-6093 .elementor-element-cb531aa h2 {
-    margin-top: 0 !important;
-    margin-bottom: 14px !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .elementor-6093 .elementor-element-cbfb864,
-  .elementor-6093 .elementor-icon-list-items {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-}
-
-
-/* Small Mobile (< 450px) Containment for Homepage */
-@media (max-width: 450px) {
-  .elementor-6093 .elementor-section,
-  .elementor-6093 .elementor-top-section,
-  .elementor-6093 .elementor-container,
-  .elementor-6093 .e-con-inner {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
     box-sizing: border-box !important;
-    overflow-x: hidden !important;
+  }
+
+  .home-hero-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    word-break: break-word !important;
+  }
+
+  .home-hero-description {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 22px !important;
+  }
+
+  .home-hero-arrow {
+    width: 34px !important;
+    height: 34px !important;
+    z-index: 5 !important;
+  }
+
+  .home-hero-arrow.prev { left: 6px !important; }
+  .home-hero-arrow.next { right: 6px !important; }
+
+  /* Section 2: Welcome Section & Kitchen Before/After Images */
+  .elementor-6093 .elementor-element-932baa2 .elementor-heading-title {
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .elementor-6093 .elementor-element-5065ddc h2,
+  .elementor-6093 .elementor-element-5065ddc .elementor-heading-title {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
+    word-break: break-word !important;
+  }
+
+  .elementor-6093 .elementor-element-b1606d0 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+  }
+
+  .elementor-6093 .elementor-element-b1606d0 .elementor-widget-image {
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-b1606d0 figure.wp-caption {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-b1606d0 img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  /* Section 3: 5 Portfolio Photos Grid */
+  .elementor-6093 .elementor-element-6357f38 .elementor-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .elementor-6093 .elementor-element-6357f38 .elementor-column {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .elementor-6093 .elementor-element-6357f38 .elementor-column:last-child {
+    grid-column: span 2 !important;
+  }
+
+  .elementor-6093 .elementor-element-6357f38 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  /* Section 4: Special Services Grid (12 circular cards) */
+  .elementor-6093 .services-heading {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .elementor-6093 .services-intro {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 0 auto 28px !important;
+    text-align: center !important;
+  }
+
+  .elementor-6093 .home-services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-service-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-service-icon-wrap {
+    width: 76px !important;
+    height: 76px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .elementor-6093 .home-service-icon-wrap img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .elementor-6093 .home-service-title {
+    font-size: 13.5px !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Section 5: Trusted by Homeowners (Blue) & Google Reviews */
+  .elementor-6093 .elementor-element-351328f {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .elementor-6093 .elementor-element-351328f .elementor-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 26px !important;
+  }
+
+  .elementor-6093 .elementor-element-76d4371 h2,
+  .elementor-6093 .elementor-element-76d4371 .elementor-heading-title {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .elementor-6093 .elementor-element-c958802 h2,
+  .elementor-6093 .elementor-element-c958802 .elementor-heading-title {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 16px !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .elementor-6093 .home-testimonial-outer-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-testimonial-arrow-outside {
+    padding: 2px !important;
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .elementor-6093 .home-testimonial-card-viewport {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .elementor-6093 .home-testimonial-card {
+    padding: 18px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-testimonial-quote {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    min-height: auto !important;
+    margin-bottom: 10px !important;
+    word-break: break-word !important;
+  }
+
+  .elementor-6093 .home-testimonial-author {
+    font-size: 14px !important;
+  }
+
+  .elementor-6093 .home-google-card {
+    border-radius: 12px !important;
+    padding: 24px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-google-card img {
+    max-width: 190px !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .elementor-6093 .home-google-btn {
+    padding: 10px 24px !important;
+    font-size: 15px !important;
+    border-radius: 50px !important;
+    display: inline-block !important;
+  }
+
+  /* Section 6: Bath, Kitchen, Basement Contractors & Bathtub Before/After */
+  .elementor-6093 .elementor-element-2d2aa7d img {
+    max-width: 220px !important;
+    height: auto !important;
+    margin-bottom: 12px !important;
+  }
+
+  .elementor-6093 .elementor-element-3de7308 h2,
+  .elementor-6093 .elementor-element-3de7308 .elementor-heading-title {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
+    word-break: break-word !important;
+  }
+
+  .elementor-6093 .elementor-element-a6cab62 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+  }
+
+  .elementor-6093 .elementor-element-a6cab62 .elementor-widget-image {
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-a6cab62 figure.wp-caption {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-a6cab62 img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  /* Section 7: Split Vanity & 5 Engineering Capabilities */
+  .elementor-6093 .elementor-element-287e501 .elementor-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .elementor-6093 .elementor-element-480f3ef {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-480f3ef .elementor-widget-image {
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-480f3ef figure.wp-caption {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-480f3ef img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+    background-color: #1B619E !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 .elementor-image-box-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 .elementor-image-box-img {
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    flex: 0 0 40px !important;
+    margin: 0 !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 .elementor-image-box-img img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 .elementor-image-box-title {
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+    color: #FFFFFF !important;
+  }
+
+  .elementor-6093 .elementor-element-33138a3 .elementor-image-box-description {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Section 8: Service Areas Blue Card & Map Image */
+  .elementor-6093 .elementor-element-0df0ae2 {
+    padding-top: 30px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .elementor-6093 .elementor-element-0df0ae2 .elementor-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .elementor-6093 .elementor-element-0e74335 {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 20px 14px !important;
+    border-radius: 12px !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    background-size: cover !important;
+  }
+
+  .elementor-6093 .elementor-element-cb531aa h2,
+  .elementor-6093 .elementor-element-cb531aa .elementor-heading-title {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 14px !important;
+    word-break: break-word !important;
+  }
+
+  .elementor-6093 .elementor-element-cbfb864 {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-6093 .elementor-icon-list-items {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-6093 .elementor-icon-list-text {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+
+  .elementor-6093 .elementor-element-328a4ed {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-6093 .elementor-element-9ad94a4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-6093 .elementor-element-9ad94a4 figure {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .elementor-6093 .elementor-element-9ad94a4 img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .jrc-footer .footer-main {
+    padding-top: 30px !important;
   }
 }
 
-/* Mobile Heading H2: 32px */
-@media (max-width: 767px) {
-  .elementor-6093 .elementor-element-5065ddc h2,
-  .elementor-6093 .elementor-element-76d4371 h2,
-  .elementor-6093 .elementor-element-3de7308 h2,
-  .elementor-6093 .elementor-element-cb531aa h2 {
-    font-size: 32px !important;
-    line-height: 1.25 !important;
+/* ========================================================
+   SMALL MOBILE BREAKPOINT (< 450px) - STRICT 15PX EDGE RULE
+   ======================================================== */
+@media (max-width: 450px) {
+  /* Enforce 0px side padding on sections */
+  .elementor-6093 section,
+  .elementor-6093 .elementor-section,
+  .elementor-6093 .elementor-top-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Enforce single 15px container side padding */
+  .elementor-6093 .container,
+  .elementor-6093 .hr-container,
+  .elementor-6093 .elementor-container,
+  .elementor-6093 > .elementor-element > .e-con-inner,
+  .elementor-6093 > .e-parent > .e-con-inner,
+  .elementor-6093 .elementor-element-2087d61 > .e-con-inner,
+  .elementor-6093 .elementor-element-6357f38 .elementor-container,
+  .elementor-6093 .elementor-element-f9cfbf9 .elementor-container,
+  .elementor-6093 .elementor-element-351328f .elementor-container,
+  .elementor-6093 .elementor-element-ef5cc89 > .e-con-inner,
+  .elementor-6093 .elementor-element-287e501 .elementor-container,
+  .elementor-6093 .elementor-element-0df0ae2 .elementor-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .elementor-6093 .home-services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px 8px !important;
+  }
+
+  .elementor-6093 .home-service-title {
+    font-size: 13px !important;
   }
 }

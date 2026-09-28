@@ -1,24 +1,24 @@
-﻿/* ======================================================================
+/* ======================================================================
    3D RECTANGULAR CUBE ROTATING TESTIMONIAL - COMPACT SLEEK DESIGN
    ====================================================================== */
 .cube-slider-wrapper {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 520px;
   margin: 0 auto;
-  min-height: 280px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 4px 0;
+  padding: 0;
 }
 
 .cube-viewport {
   position: relative;
   width: 100%;
-  height: 270px;
-  perspective: 1000px;
+  height: 280px;
+  perspective: 1200px;
   perspective-origin: 50% 50%;
   overflow: visible;
 }
@@ -28,7 +28,7 @@
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cube-face {
@@ -38,15 +38,15 @@
   height: 100%;
   background: #19365A !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0 !important;
-  padding: 20px 20px;
+  border-radius: 20px !important;
+  padding: 24px 24px;
   box-sizing: border-box !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   backface-visibility: hidden;
-  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.45);
-  transition: opacity 1.5s ease-in-out, filter 1.5s ease-in-out;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
 }
 
 .cube-header-row {
@@ -56,19 +56,19 @@
   width: 100%;
   position: relative;
   z-index: 2;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .cube-stars {
   color: #FFB800;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 2px;
 }
 
 .cube-quote-watermark {
-  font-size: 26px;
+  font-size: 28px;
   font-family: Georgia, serif;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.25);
   line-height: 1;
   user-select: none;
   pointer-events: none;
@@ -80,11 +80,12 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .cube-quote-text {
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 13.5px;
+  line-height: 1.6;
   color: #FFFFFF;
   font-style: italic;
   font-weight: 300;
@@ -96,10 +97,10 @@
 .cube-author-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   position: relative;
   z-index: 2;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .cube-avatar {
@@ -109,12 +110,44 @@
   border: 2px solid #FFFFFF;
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .cube-author-name {
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
   color: #FFFFFF;
+}
+
+/* Navigation Indicators */
+.cube-dots-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.cube-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.cube-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cube-dot-active {
+  width: 24px;
+  border-radius: 8px;
+  background: #F45404;
 }
 
 @media (max-width: 767px) {
@@ -122,23 +155,29 @@
     max-width: 100%;
   }
   .cube-viewport {
-    height: 280px;
-    perspective: 800px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  .cube-face {
+    padding: 20px 20px;
+    border-radius: 16px !important;
+  }
+  .cube-quote-text {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 450px) {
+  .cube-viewport {
+    height: 310px;
+    perspective: 1000px;
   }
   .cube-face {
     padding: 18px 16px;
   }
   .cube-quote-text {
     font-size: 12.5px;
-  }
-}
-
-@media (max-width: 450px) {
-  .cube-viewport {
-    height: 290px;
-    perspective: 600px;
-  }
-  .cube-face {
-    padding: 16px 14px;
+    line-height: 1.5;
   }
 }

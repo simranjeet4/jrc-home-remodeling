@@ -825,6 +825,8 @@
 .hr-badges-section {
   background-color: #FFFFFF;
   padding: 60px 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
