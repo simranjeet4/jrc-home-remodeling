@@ -905,13 +905,13 @@
     }
   },
   "handyman-near-me": {
-    "title": "JRC Handyman – Trusted Local Home Repairs & Remodeling",
-    "metaDesc": "Reliable, affordable handyman and remodeling services in Denver. Licensed, insured, and top-rated. Call JRC Handyman for repairs and remodels today!",
+    "title": "Denver Handyman Services | Reliable Repairs & Home Fixes",
+    "metaDesc": "Trusted local handyman in Denver. Quality home repairs, drywall fixes, installations, and maintenance. Free estimates!",
     "canonical": "https://jrchomeremodeling.com/handyman-near-me/",
     "hero": {
       "pill": "HANDYMAN SERVICES NEAR YOU",
       "title": "Denver's Trusted Handyman — Repairs, Installations & Home Fixes Big or Small",
-      "desc": "Leaky or damaged roof? JRC Home Remodeling delivers fast, professional roof repairs and full roof replacements to protect your home — on time and on budget. With 25+ years of experience and free roof inspections, we’re the roofing team Denver homeowners count on.",
+      "desc": "From minor drywall repairs and fixture installations to full home maintenance days, JRC Home Remodeling delivers fast, reliable handyman services across the Denver metro — on time, on budget, and done right the first time.",
       "bg": "Gemini_Generated_Image_32e84732e84732e8-scaled.jpg"
     },
     "whatWeDo": {
@@ -919,7 +919,7 @@
       "title": "Reliable Handyman Services for Every Room & Every Repair",
       "cards": [
         {
-          "title": "Home Repairs Drywall",
+          "title": "Home Repairs & Drywall",
           "icon": "house-damage.png",
           "desc": "Doors, windows, faucets, cabinets, tile, flooring, fences, decks — we fix what needs fixing before small problems become big ones."
         },
@@ -977,39 +977,63 @@
     },
     "process": {
       "pill": "WORKING PROCESS",
-      "title": "Our Simple 5-Step Handyman Process",
+      "title": "Our Step-by-Step Remodeling Process",
       "steps": [
         {
           "num": "1",
-          "title": "Contact Our Team",
-          "desc": "Call us or request service online and tell us what needs attention — a single repair or a full to-do list."
+          "title": "Get a Free Quote",
+          "desc": "Contact us or use our online form to request a no-obligation estimate."
         },
         {
           "num": "2",
-          "title": "Free Estimate",
-          "desc": "We provide clear, upfront pricing before any work begins — no surprises, no hidden fees."
+          "title": "Schedule a Consultation",
+          "desc": "We visit your home to discuss your goals, budget, and timeline in person."
         },
         {
           "num": "3",
-          "title": "Schedule a Convenient Appointment",
-          "desc": "Choose a time that works best for your schedule. We offer flexible appointments across the Denver metro."
+          "title": "Remodeling Begins",
+          "desc": "Our team starts the project, keeping you updated and the site clean throughout."
         },
         {
           "num": "4",
-          "title": "Professional Job Completion",
-          "desc": "Our handyman arrives prepared and completes every task efficiently, with care and attention to detail."
-        },
-        {
-          "num": "5",
           "title": "Final Walkthrough",
-          "desc": "We confirm everything meets your expectations and leave your home clean before we consider the job done."
+          "desc": "We review the finished work together to make sure everything meets your expectations."
         }
       ]
     },
     "faqs": {
       "pill": "ASK A QUESTION",
       "title": "Frequently Asked Questions",
-      "items": []
+      "items": [
+        {
+          "q": "What types of handyman services do you provide in Denver?",
+          "a": "We handle a wide range of repairs and installations, including drywall repair, door and window adjustments, fixture replacement, TV mounting, shelving, tile, carpentry, and general home maintenance."
+        },
+        {
+          "q": "How much does a typical handyman repair cost?",
+          "a": "Costs depend on the scope of the work. We provide clear, itemized estimates before starting any job so you know exactly what to expect with no hidden fees."
+        },
+        {
+          "q": "Do you offer free estimates for handyman jobs?",
+          "a": "Yes. Every job starts with a free, no-obligation estimate so you can make an informed decision before committing."
+        },
+        {
+          "q": "Are your handyman technicians licensed and insured?",
+          "a": "Yes. JRC Home Remodeling and our handyman professionals are fully licensed and insured, protecting both your property and our team throughout the project."
+        },
+        {
+          "q": "How quickly can you schedule an appointment?",
+          "a": "We offer flexible scheduling across the Denver metro area, often providing same-week appointments depending on current project availability."
+        },
+        {
+          "q": "Can you handle multiple repairs in a single visit?",
+          "a": "Absolutely. Many homeowners hire us for a half-day or full-day punch list to tackle multiple miscellaneous home repairs all in one visit."
+        },
+        {
+          "q": "What areas across the Denver metro do you serve?",
+          "a": "We serve homeowners throughout the Denver metro, including Arvada, Aurora, Brighton, Broomfield, Castle Rock, Centennial, Cherry Creek, Commerce City, Denver, Englewood, Parker, Golden, Greenwood Village, Lafayette, Lakewood, Lone Tree, Morrison, Northglenn, Thornton, Westminster, Wheat Ridge, and Superior, CO."
+        }
+      ]
     }
   },
   "fast-countertop-services": {

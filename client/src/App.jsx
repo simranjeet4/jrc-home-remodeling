@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
 
@@ -6,53 +7,53 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
 // Core & Service Pages
-import Home from './pages/Home';
-import HomeRemodeling from './pages/HomeRemodeling';
-import AboutUs from './pages/AboutUs';
-import Services from './pages/Services';
-import ContactUs from './pages/ContactUs';
-import Blog from './pages/Blog';
-import KitchenRemodeling from './pages/KitchenRemodeling';
-import BathroomRemodeling from './pages/BathroomRemodeling';
-import BasementRemodeling from './pages/BasementRemodeling';
-import JrcTile from './pages/JrcTile';
-import JrcDecks from './pages/JrcDecks';
-import JrcPainting from './pages/JrcPainting';
-import JrcFrameAndDrywall from './pages/JrcFrameAndDrywall';
-import BathtubShowerConversions from './pages/BathtubShowerConversions';
-import JunkRemovalDemolition from './pages/JunkRemovalDemolition';
-import LandscapeDesignNearMe from './pages/LandscapeDesignNearMe';
-import FloorInstallers from './pages/FloorInstallers';
-import RoofRepair from './pages/RoofRepair';
-import HandymanNearMe from './pages/HandymanNearMe';
-import FastCountertopServices from './pages/FastCountertopServices';
-import ConcreteServices from './pages/ConcreteServices';
+const Home = lazy(() => import('./pages/Home'));
+const HomeRemodeling = lazy(() => import('./pages/HomeRemodeling'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Services = lazy(() => import('./pages/Services'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const Blog = lazy(() => import('./pages/Blog'));
+const KitchenRemodeling = lazy(() => import('./pages/KitchenRemodeling'));
+const BathroomRemodeling = lazy(() => import('./pages/BathroomRemodeling'));
+const BasementRemodeling = lazy(() => import('./pages/BasementRemodeling'));
+const JrcTile = lazy(() => import('./pages/JrcTile'));
+const JrcDecks = lazy(() => import('./pages/JrcDecks'));
+const JrcPainting = lazy(() => import('./pages/JrcPainting'));
+const JrcFrameAndDrywall = lazy(() => import('./pages/JrcFrameAndDrywall'));
+const BathtubShowerConversions = lazy(() => import('./pages/BathtubShowerConversions'));
+const JunkRemovalDemolition = lazy(() => import('./pages/JunkRemovalDemolition'));
+const LandscapeDesignNearMe = lazy(() => import('./pages/LandscapeDesignNearMe'));
+const FloorInstallers = lazy(() => import('./pages/FloorInstallers'));
+const RoofRepair = lazy(() => import('./pages/RoofRepair'));
+const HandymanNearMe = lazy(() => import('./pages/HandymanNearMe'));
+const FastCountertopServices = lazy(() => import('./pages/FastCountertopServices'));
+const ConcreteServices = lazy(() => import('./pages/ConcreteServices'));
 
 // System & Legal Pages
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsConditions from './pages/TermsConditions';
-import ThankYou from './pages/ThankYou';
-import NotFound from './pages/NotFound';
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
+const ThankYou = lazy(() => import('./pages/ThankYou'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Location Pages (18 Mandatory)
-import Arvada from './pages/locations/Arvada';
-import Aurora from './pages/locations/Aurora';
-import Brighton from './pages/locations/Brighton';
-import Broomfield from './pages/locations/Broomfield';
-import CastleRock from './pages/locations/CastleRock';
-import Centennial from './pages/locations/Centennial';
-import CherryCreek from './pages/locations/CherryCreek';
-import CommerceCity from './pages/locations/CommerceCity';
-import Denver from './pages/locations/Denver';
-import Englewood from './pages/locations/Englewood';
-import Golden from './pages/locations/Golden';
-import GreenwoodVillage from './pages/locations/GreenwoodVillage';
-import HighlandRanch from './pages/locations/HighlandRanch';
-import Lafayette from './pages/locations/Lafayette';
-import Lakewood from './pages/locations/Lakewood';
-import Littleton from './pages/locations/Littleton';
-import LoneTree from './pages/locations/LoneTree';
-import Morrison from './pages/locations/Morrison';
+const Arvada = lazy(() => import('./pages/locations/Arvada'));
+const Aurora = lazy(() => import('./pages/locations/Aurora'));
+const Brighton = lazy(() => import('./pages/locations/Brighton'));
+const Broomfield = lazy(() => import('./pages/locations/Broomfield'));
+const CastleRock = lazy(() => import('./pages/locations/CastleRock'));
+const Centennial = lazy(() => import('./pages/locations/Centennial'));
+const CherryCreek = lazy(() => import('./pages/locations/CherryCreek'));
+const CommerceCity = lazy(() => import('./pages/locations/CommerceCity'));
+const Denver = lazy(() => import('./pages/locations/Denver'));
+const Englewood = lazy(() => import('./pages/locations/Englewood'));
+const Golden = lazy(() => import('./pages/locations/Golden'));
+const GreenwoodVillage = lazy(() => import('./pages/locations/GreenwoodVillage'));
+const HighlandRanch = lazy(() => import('./pages/locations/HighlandRanch'));
+const Lafayette = lazy(() => import('./pages/locations/Lafayette'));
+const Lakewood = lazy(() => import('./pages/locations/Lakewood'));
+const Littleton = lazy(() => import('./pages/locations/Littleton'));
+const LoneTree = lazy(() => import('./pages/locations/LoneTree'));
+const Morrison = lazy(() => import('./pages/locations/Morrison'));
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
       <Header />
 
       <main id="content">
+        <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
         <Routes>
           {/* Primary Page & Root */}
           <Route path="/" element={<Home />} />
@@ -194,6 +196,7 @@ function App() {
           {/* 404 Fallback */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </main>
 
       <Footer />

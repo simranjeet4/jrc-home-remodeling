@@ -1,4 +1,7 @@
+import { useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import C3DRectangularCubeSlider from '../components/about/C3DRectangularCubeSlider';
 import EstimateForm from '../components/forms/EstimateForm';
 import BeforeAfterSlider from '../components/common/BeforeAfterSlider';
 import { COMPANY } from '../content/siteData';
@@ -9,6 +12,12 @@ import '../styles/kitchen.css';
  * Exact pixel-perfect recreation of https://jrchomeremodeling.com/kitchen-remodeling/
  */
 export default function KitchenRemodeling() {
+  const partnerRef = useRef(null);
+  const { scrollYProgress: partnerScroll } = useScroll({
+    target: partnerRef,
+    offset: ['start end', 'end start']
+  });
+  const yPartnerImage = useTransform(partnerScroll, [0, 1], [50, -50]);
   const trustPoints = [
     {
       title: 'Licensed & Insured',
@@ -350,22 +359,9 @@ export default function KitchenRemodeling() {
                 </div>
               </div>
 
-              {/* Right Column: Review Quote Card */}
+              {/* Right Column: 3D Rectangular Cube Rotating Testimonial Slider */}
               <div className="kitchen-reviews-card-box">
-                <div className="kitchen-review-white-card">
-                  <div className="kitchen-stars-row">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                  </div>
-                  <p className="kitchen-review-quote">
-                    "JRC did an awesome job with our kitchen floor! They were responsive, pleasant, professional, had good communication, were on time, and most importantly, did a great job! We are so happy with the results and look forward to working with Monica and her team again."
-                  </p>
-                  <div className="kitchen-review-author-wrap">
-                    <img src="/assets/images/user9.jpg" alt="Bliss Bernal" className="kitchen-author-pic" />
-                    <div className="kitchen-author-info">
-                      <h4 className="kitchen-author-name">Bliss Bernal</h4>
-                    </div>
-                  </div>
-                </div>
+                <C3DRectangularCubeSlider />
               </div>
             </div>
           </div>

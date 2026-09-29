@@ -2,7 +2,7 @@
  * HomeRemodelingServices
  * Section 2: "WHAT WE DO"
  * - 2-column header layout (tag + title on left, narrative on right)
- * - 4 clean transparent service columns sitting directly on #F3E7D9
+ * - 4 service columns sitting on #F3E7D9 with white rounded icon badge & divider
  */
 export default function HomeRemodelingServices() {
   const services = [
@@ -49,19 +49,20 @@ export default function HomeRemodelingServices() {
           </div>
         </div>
 
-        {/* 4 Flat Service Columns */}
+        {/* 4 Service Columns */}
         <div className="hr-services-grid">
           {services.map((item) => (
             <div key={item.title} className="hr-service-item">
-              <div className="hr-service-icon-wrap">
+              <div className="hr-service-icon-box">
                 <img
                   src={item.icon}
                   alt={item.title}
-                  width="42"
-                  height="42"
+                  width="48"
+                  height="48"
                   className="hr-service-icon"
                 />
               </div>
+              <div className="hr-service-divider" />
               <h3 className="hr-service-item-title">{item.title}</h3>
               <p className="hr-service-item-desc">{item.desc}</p>
             </div>

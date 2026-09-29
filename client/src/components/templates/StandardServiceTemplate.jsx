@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { COMPANY } from '../../content/siteData';
 import servicesData from '../../content/servicesData.json';
 import HomeRemodelingBadges from '../sections/HomeRemodelingBadges';
@@ -12,7 +13,14 @@ const DEFAULT_STEPS = [
     title: 'Get a Free Quote',
     desc: 'Contact us or use our online form to request a no-obligation estimate.',
     icon: (
-      <svg viewBox="0 0 512 512" width="26" height="26" fill="currentColor">
+      <svg
+        aria-hidden="true"
+        className="e-font-icon-svg e-fas-phone-alt"
+        viewBox="0 0 512 512"
+        width="34"
+        height="34"
+        fill="currentColor"
+      >
         <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z" />
       </svg>
     ),
@@ -22,8 +30,15 @@ const DEFAULT_STEPS = [
     title: 'Schedule a Consultation',
     desc: 'We visit your home to discuss your goals, budget, and timeline in person.',
     icon: (
-      <svg viewBox="0 0 448 512" width="26" height="26" fill="currentColor">
-        <path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z" />
+      <svg
+        aria-hidden="true"
+        className="e-font-icon-svg e-fas-calendar-check"
+        viewBox="0 0 448 512"
+        width="34"
+        height="34"
+        fill="currentColor"
+      >
+        <path d="M436 160H12c-6.627 0-12-5.373-12-12v-36c0-26.51 21.49-48 48-48h48V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h128V12c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v52h48c26.51 0 48 21.49 48 48v36c0 6.627-5.373 12-12 12zM12 192h424c6.627 0 12 5.373 12 12v260c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V204c0-6.627 5.373-12 12-12zm333.296 95.947l-28.169-28.398c-4.667-4.705-12.265-4.736-16.97-.068L194.12 364.665l-45.98-46.352c-4.667-4.705-12.266-4.736-16.971-.068l-28.397 28.17c-4.705 4.667-4.736 12.265-.068 16.97l82.601 83.269c4.667 4.705 12.265 4.736 16.97.068l142.953-141.805c4.705-4.667 4.736-12.265.068-16.97z" />
       </svg>
     ),
   },
@@ -32,8 +47,15 @@ const DEFAULT_STEPS = [
     title: 'Remodeling Begins',
     desc: 'Our team starts the project, keeping you updated and the site clean throughout.',
     icon: (
-      <svg viewBox="0 0 512 512" width="26" height="26" fill="currentColor">
-        <path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.1 0-52.7z" />
+      <svg
+        aria-hidden="true"
+        className="e-font-icon-svg e-fas-tools"
+        viewBox="0 0 512 512"
+        width="34"
+        height="34"
+        fill="currentColor"
+      >
+        <path d="M501.1 395.7L384 278.6c-23.1-23.1-57.6-27.6-85.4-13.9L192 158.1V96L64 0 0 64l96 128h62.1l106.6 106.6c-13.6 27.8-9.2 62.3 13.9 85.4l117.1 117.1c14.6 14.6 38.2 14.6 52.7 0l52.7-52.7c14.5-14.6 14.5-38.2 0-52.7zM331.7 225c28.3 0 54.9 11 74.9 31l19.4 19.4c15.8-6.9 30.8-16.5 43.8-29.5 37.1-37.1 49.7-89.3 37.9-136.7-2.2-9-13.5-12.1-20.1-5.5l-74.4 74.4-67.9-11.3L334 98.9l74.4-74.4c6.6-6.6 3.4-17.9-5.7-20.2-47.4-11.7-99.6.9-136.6 37.9-28.5 28.5-41.9 66.1-41.2 103.6l82.1 82.1c8.1-1.9 16.5-2.9 24.7-2.9zm-103.9 82l-56.7-56.7L18.7 402.8c-25 25-25 65.5 0 90.5s65.5 25 90.5 0l123.6-123.6c-7.6-19.9-9.9-41.6-5-62.7zM64 472c-13.2 0-24-10.8-24-24 0-13.3 10.7-24 24-24s24 10.7 24 24c0 13.2-10.7 24-24 24z" />
       </svg>
     ),
   },
@@ -42,8 +64,15 @@ const DEFAULT_STEPS = [
     title: 'Final Walkthrough',
     desc: 'We review the finished work together to make sure everything meets your expectations.',
     icon: (
-      <svg viewBox="0 0 512 512" width="26" height="26" fill="currentColor">
-        <path d="M349.565 98.783C295.978 98.783 251.721 64 184.348 64c-24.955 0-47.309 4.384-68.043 12.013V40c0-13.255-10.745-24-24-24s-24 10.745-24 24v432c0 13.255 10.745 24 24 24s24-10.745 24-24v-166.45c20.734 7.629 43.088 12.013 68.043 12.013 67.373 0 111.63-34.783 165.217-34.783 53.587 0 97.844 34.783 165.217 34.783 13.255 0 24-10.745 24-24V122.783c0-13.255-10.745-24-24-24-67.373 0-111.63-34.783-165.217-34.783zm117.217 172.934c-47.671-5.183-88.665-27.15-141.217-27.15-53.587 0-97.844 34.783-165.217 34.783-17.65 0-33.829-2.316-48.043-6.502V124.969c14.214 4.186 30.393 6.502 48.043 6.502 67.373 0 111.63-34.783 165.217-34.783 52.552 0 93.546 21.967 141.217 27.15v147.879z" />
+      <svg
+        aria-hidden="true"
+        className="e-font-icon-svg e-fas-flag-checkered"
+        viewBox="0 0 512 512"
+        width="34"
+        height="34"
+        fill="currentColor"
+      >
+        <path d="M243.2 189.9V258c26.1 5.9 49.3 15.6 73.6 22.3v-68.2c-26-5.8-49.4-15.5-73.6-22.2zm223.3-123c-34.3 15.9-76.5 31.9-117 31.9C296 98.8 251.7 64 184.3 64c-25 0-47.3 4.4-68 12 2.8-7.3 4.1-15.2 3.6-23.6C118.1 24 94.8 1.2 66.3 0 34.3-1.3 8 24.3 8 56c0 19 9.5 35.8 24 45.9V488c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24v-94.4c28.3-12.1 63.6-22.1 114.4-22.1 53.6 0 97.8 34.8 165.2 34.8 48.2 0 86.7-16.3 122.5-40.9 8.7-6 13.8-15.8 13.8-26.4V95.9c.1-23.3-24.2-38.8-45.4-29zM169.6 325.5c-25.8 2.7-50 8.2-73.6 16.6v-70.5c26.2-9.3 47.5-15 73.6-17.4zM464 191c-23.6 9.8-46.3 19.5-73.6 23.9V286c24.8-3.4 51.4-11.8 73.6-26v70.5c-25.1 16.1-48.5 24.7-73.6 27.1V286c-27 3.7-47.9 1.5-73.6-5.6v67.4c-23.9-7.4-47.3-16.7-73.6-21.3V258c-19.7-4.4-40.8-6.8-73.6-3.8v-70c-22.4 3.1-44.6 10.2-73.6 20.9v-70.5c33.2-12.2 50.1-19.8 73.6-22v71.6c27-3.7 48.4-1.3 73.6 5.7v-67.4c23.7 7.4 47.2 16.7 73.6 21.3v68.4c23.7 5.3 47.6 6.9 73.6 2.7V143c27-4.8 52.3-13.6 73.6-22.5z" />
       </svg>
     ),
   },
@@ -51,19 +80,19 @@ const DEFAULT_STEPS = [
 
 const DEFAULT_PROJECTS = [
   {
-    title: 'Kitchen Renovation',
-    client: 'Charissa Walton, Denver',
-    image: '/assets/images/Gemini_Generated_Image_335e07335e07335e-scaled.jpg',
+    title: 'Custom Composite Deck Build',
+    client: 'Christine, Denver',
+    image: '/assets/images/267.jpg',
   },
   {
-    title: 'Basement Finish',
-    client: 'Bliss Bernal, Castle Rock',
-    image: '/assets/images/2149366705.jpg',
+    title: 'Deck Remodel & Staining',
+    client: 'Amelia, Castle Rock',
+    image: '/assets/images/17102.jpg',
   },
   {
-    title: 'Bathroom Remodel',
-    client: 'Toni Starner, Lakewood',
-    image: '/assets/images/photo-1765745518752-68a289300789.jpeg',
+    title: 'Pergola & Deck Restoration',
+    client: 'Jack William, Lakewood',
+    image: '/assets/images/703.jpg',
   },
 ];
 
@@ -94,11 +123,30 @@ export default function StandardServiceTemplate({
   faqTag,
   faqTitle,
   faqs,
-  showMarquee = false,
-  showBadges = false,
+  showMarquee = true,
+  showBadges = true,
   compactAbout = false,
 }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  // Parallax scroll refs
+  const aboutRef = useRef(null);
+  const { scrollYProgress: aboutScroll } = useScroll({
+    target: aboutRef,
+    offset: ['start end', 'end start'],
+  });
+  const yWorker = useTransform(aboutScroll, [0, 1], [40, -40]);
+  const yInterior = useTransform(aboutScroll, [0, 1], [65, -65]);
+
+  const projectsRef = useRef(null);
+  const { scrollYProgress: projScroll } = useScroll({
+    target: projectsRef,
+    offset: ['start end', 'end start'],
+  });
+  const yProj1 = useTransform(projScroll, [0, 1], [-45, 45]);
+  const yProj2 = useTransform(projScroll, [0, 1], [45, -45]);
+  const yProj3 = useTransform(projScroll, [0, 1], [-45, 45]);
+  const yTransforms = [yProj1, yProj2, yProj3];
 
   // If serviceSlug is provided, pull fallback data from servicesData.json
   const data = (serviceSlug && servicesData[serviceSlug]) || {};
@@ -139,11 +187,11 @@ export default function StandardServiceTemplate({
 
   // Latest Projects
   const finalProjectsTag = projectsTag || data.projects?.pill || "LATEST PROJECTS";
-  const finalProjectsTitle = projectsTitle || data.projects?.title || "Projects That Speak for Themselves";
+  const finalProjectsTitle = projectsTitle || data.projects?.title || "Decks That Speak for Themselves";
   const finalProjects = projects || (data.projects?.cards && data.projects.cards.length > 0
     ? data.projects.cards.map((c, i) => ({
         title: c.title,
-        client: c.desc || (i === 0 ? 'Denver' : i === 1 ? 'Castle Rock' : 'Lakewood'),
+        client: c.desc || (i === 0 ? 'Christine, Denver' : i === 1 ? 'Amelia, Castle Rock' : 'Jack William, Lakewood'),
         image: c.image ? `/assets/images/${c.image}` : DEFAULT_PROJECTS[i % DEFAULT_PROJECTS.length].image,
       }))
     : DEFAULT_PROJECTS);
@@ -171,6 +219,10 @@ export default function StandardServiceTemplate({
   const finalFaqTag = faqTag || data.faqs?.pill || "ASK A QUESTION";
   const finalFaqTitle = faqTitle || data.faqs?.title || "Frequently Asked Questions";
   const finalFaqs = faqs !== undefined ? faqs : (data.faqs?.items || []);
+
+  const toggleFaq = (idx) => {
+    setOpenFaqIndex((prev) => (prev === idx ? null : idx));
+  };
 
   return (
     <>
@@ -238,15 +290,16 @@ export default function StandardServiceTemplate({
               <div className="hr-services-grid">
                 {finalServices.map((item, idx) => (
                   <div key={idx} className="hr-service-item">
-                    <div className="hr-service-icon-wrap">
+                    <div className="hr-service-icon-box">
                       <img
                         src={item.icon || '/assets/images/home-renovation.png'}
                         alt={item.title}
-                        width="42"
-                        height="42"
+                        width="44"
+                        height="44"
                         className="hr-service-icon"
                       />
                     </div>
+                    <div className="hr-service-divider" />
                     <h3 className="hr-service-item-title">{item.title}</h3>
                     <p className="hr-service-item-desc">{item.desc}</p>
                   </div>
@@ -257,19 +310,29 @@ export default function StandardServiceTemplate({
         )}
 
         {/* Section 3: Get To Know Us */}
-        <section className={`hr-about-section ${compactAbout ? 'hr-about-compact' : ''}`}>
+        <section ref={aboutRef} className={`hr-about-section ${compactAbout ? 'hr-about-compact' : ''}`}>
           <div className="hr-container">
             <div className="hr-about-grid">
               {/* Left Column: Visual Collage & Progress */}
               <div className="hr-about-collage-col">
                 <div className="hr-about-subcol-left">
                   <div className="hr-about-worker-img-wrap">
-                    <img
+                    <motion.img
                       src={finalGtkImages[0]}
-                      alt="JRC craftsman"
+                      alt="Craftsman at work"
                       className="hr-about-worker-img"
+                      style={{
+                        y: yWorker,
+                        width: '100%',
+                        height: 'calc(100% + 100px)',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        top: '-50px',
+                        left: 0,
+                      }}
                     />
                   </div>
+
                   <div className="hr-metric-card">
                     <h4 className="hr-metric-title">Company Progress</h4>
                     <div className="hr-metric-bar-group">
@@ -281,6 +344,7 @@ export default function StandardServiceTemplate({
                         <div className="hr-progress-bar-fill" style={{ width: '100%' }}></div>
                       </div>
                     </div>
+
                     <div className="hr-metric-bar-group">
                       <div className="hr-metric-header">
                         <span className="hr-metric-label">Client Satisfaction</span>
@@ -295,10 +359,19 @@ export default function StandardServiceTemplate({
 
                 <div className="hr-about-subcol-right">
                   <div className="hr-about-interior-img-wrap">
-                    <img
+                    <motion.img
                       src={finalGtkImages[1]}
-                      alt="Modern renovation interior"
+                      alt="Finished craftsmanship work"
                       className="hr-about-interior-img"
+                      style={{
+                        y: yInterior,
+                        width: '100%',
+                        height: 'calc(100% + 140px)',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        top: '-70px',
+                        left: 0,
+                      }}
                     />
                   </div>
                 </div>
@@ -328,10 +401,10 @@ export default function StandardServiceTemplate({
                         height="44"
                       />
                     </div>
-                    <h4 className="hr-vision-card-title">Our Mission</h4>
-                    <p className="hr-vision-card-desc">
-                      {finalMission}
-                    </p>
+                    <div className="hr-vision-text">
+                      <h3 className="hr-vision-title">Our Mission</h3>
+                      <p className="hr-vision-desc">{finalMission}</p>
+                    </div>
                   </div>
 
                   <div className="hr-vision-card">
@@ -343,21 +416,21 @@ export default function StandardServiceTemplate({
                         height="44"
                       />
                     </div>
-                    <h4 className="hr-vision-card-title">Our Vision</h4>
-                    <p className="hr-vision-card-desc">
-                      {finalVision}
-                    </p>
+                    <div className="hr-vision-text">
+                      <h3 className="hr-vision-title">Our Vision</h3>
+                      <p className="hr-vision-desc">{finalVision}</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="hr-about-actions">
-                  <Link to="/about-us" className="hr-btn-orange">
+                <div className="hr-about-cta-group">
+                  <Link to="/about-us" className="btn hr-btn-orange">
                     <span>More About Us</span>
-                    <span className="hr-btn-arrow">↗</span>
+                    <span className="hr-btn-arrow">&#8599;</span>
                   </Link>
-                  <a href={`tel:${COMPANY.phoneRaw}`} className="hr-btn-outline">
+                  <a href={`tel:${COMPANY.phoneRaw}`} className="btn hr-btn-white">
                     <span>Call For Free Quote</span>
-                    <span className="hr-btn-arrow">↗</span>
+                    <span className="hr-btn-arrow">&#8599;</span>
                   </a>
                 </div>
               </div>
@@ -367,7 +440,7 @@ export default function StandardServiceTemplate({
 
         {/* Section 4: Latest Projects */}
         {finalProjects.length > 0 && (
-          <section className="hr-projects-section">
+          <section ref={projectsRef} className="hr-projects-section">
             <div className="hr-container">
               <div className="hr-section-header">
                 <div className="hr-tag-pill">
@@ -377,16 +450,25 @@ export default function StandardServiceTemplate({
               </div>
 
               <div className="hr-projects-grid">
-                {finalProjects.map((item, idx) => (
+                {finalProjects.slice(0, 3).map((item, idx) => (
                   <div key={idx} className="hr-project-card-item">
-                    <div
-                      className="hr-project-img"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    >
-                      <div className="hr-project-banner">
-                        <h3 className="hr-project-banner-title">{item.title}</h3>
-                        <p className="hr-project-banner-client">{item.client}</p>
-                      </div>
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className="hr-project-card-img"
+                      style={{
+                        y: yTransforms[idx % 3],
+                        width: '100%',
+                        height: 'calc(100% + 120px)',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        top: '-60px',
+                        left: 0,
+                      }}
+                    />
+                    <div className="hr-project-banner">
+                      <h3 className="hr-project-banner-title">{item.title}</h3>
+                      <p className="hr-project-banner-client">{item.client}</p>
                     </div>
                   </div>
                 ))}
@@ -437,7 +519,7 @@ export default function StandardServiceTemplate({
           </section>
         )}
 
-        {/* Section 6: FAQ (only if items present) */}
+        {/* Section 6: FAQ (Smooth Accordion & Social Proof Badge) */}
         {finalFaqs.length > 0 && (
           <section className="hr-faq-section">
             <div className="hr-container">
@@ -448,76 +530,100 @@ export default function StandardServiceTemplate({
                   </div>
                   <h2 className="hr-faq-title">{finalFaqTitle}</h2>
 
-                  <div className="hr-skyline-container">
+                  <div className="hr-faq-skyline-card">
                     <img
-                      src="/assets/images/faq-skyline.jpg"
+                      src="/assets/images/57893.jpg"
                       alt="Denver Colorado Skyline"
-                      className="hr-skyline-img"
+                      className="hr-faq-skyline-img"
                     />
 
-                    <div className="hr-skyline-badge">
-                      <div className="hr-skyline-avatars">
-                        <img
-                          src="/assets/images/user9.jpg"
-                          alt="Satisfied customer avatar"
-                          className="hr-skyline-avatar"
-                        />
-                        <img
-                          src="/assets/images/user8.jpg"
-                          alt="Satisfied customer avatar"
-                          className="hr-skyline-avatar"
-                        />
-                        <img
-                          src="/assets/images/user7.jpg"
-                          alt="Satisfied customer avatar"
-                          className="hr-skyline-avatar"
-                        />
-                      </div>
-                      <div className="hr-skyline-badge-text">
-                        <span>Trusted By </span>
-                        <span className="hr-orange-text">1000+</span>
-                        <br />
-                        <span>Satisfied Customers</span>
+                    <div className="hr-faq-skyline-overlay">
+                      <div className="hr-faq-social-proof">
+                        <div className="hr-faq-avatars">
+                          <img
+                            src="/assets/images/user9.jpg"
+                            alt="Satisfied client avatar"
+                            className="hr-faq-avatar"
+                            width="48"
+                            height="48"
+                          />
+                          <img
+                            src="/assets/images/user8.jpg"
+                            alt="Satisfied client avatar"
+                            className="hr-faq-avatar"
+                            width="48"
+                            height="48"
+                          />
+                          <img
+                            src="/assets/images/user7.jpg"
+                            alt="Satisfied client avatar"
+                            className="hr-faq-avatar"
+                            width="48"
+                            height="48"
+                          />
+                        </div>
+                        <div className="hr-faq-proof-text">
+                          Trusted By <span className="orange-text">1000+</span>
+                          <br />
+                          Satisfied Customers
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="hr-faq-right-col">
-                  <div className="hr-faq-accordion">
+                  <div className="hr-faq-accordion-list">
                     {finalFaqs.map((faq, idx) => {
                       const isOpen = openFaqIndex === idx;
                       return (
                         <div
                           key={idx}
-                          className={`hr-faq-item ${isOpen ? 'active' : ''}`}
+                          className={`hr-faq-item-card ${isOpen ? 'is-active' : ''}`}
                         >
                           <button
                             type="button"
-                            className="hr-faq-question-btn"
-                            onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                            className={`hr-faq-header-btn ${isOpen ? 'is-active' : ''}`}
+                            onClick={() => toggleFaq(idx)}
                             aria-expanded={isOpen}
                           >
                             <span className="hr-faq-question-text">{faq.q}</span>
-                            <span
-                              className={`hr-faq-chevron-icon ${isOpen ? 'rotated' : ''}`}
-                              aria-hidden="true"
+                            <motion.div
+                              className="hr-faq-chevron-box"
+                              animate={{ rotate: isOpen ? 90 : 0 }}
+                              transition={{ duration: 0.25, ease: 'easeInOut' }}
                             >
                               <svg
+                                aria-hidden="true"
+                                className="hr-faq-chevron-icon"
                                 viewBox="0 0 256 512"
-                                width="14"
-                                height="14"
+                                width="9"
+                                height="15"
                                 fill="currentColor"
                               >
                                 <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
                               </svg>
-                            </span>
+                            </motion.div>
                           </button>
-                          {isOpen && (
-                            <div className="hr-faq-answer-panel">
-                              <p>{faq.a}</p>
-                            </div>
-                          )}
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                key="answer"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{
+                                  duration: 0.32,
+                                  ease: [0.25, 0.1, 0.25, 1.0],
+                                }}
+                                style={{ overflow: 'hidden' }}
+                              >
+                                <div className="hr-faq-answer-inner">
+                                  <p>{faq.a}</p>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       );
                     })}
@@ -528,21 +634,7 @@ export default function StandardServiceTemplate({
           </section>
         )}
 
-        {/* Optional Marquee Ribbon */}
-        {showMarquee && (
-          <section style={{ backgroundColor: '#F45404', padding: '16px 0', overflow: 'hidden' }}>
-            <div style={{ display: 'flex', gap: '30px', whiteSpace: 'nowrap', color: '#FFFFFF', fontWeight: 'bold', fontSize: '15px', letterSpacing: '2px', justifyContent: 'center' }}>
-              <span>KITCHEN REMODELING ★</span>
-              <span>BATHROOM REMODELING ★</span>
-              <span>BASEMENT FINISHING ★</span>
-              <span>WHOLE-HOME REMODELING ★</span>
-              <span>COLORADO CRAFTSMANSHIP ★</span>
-              <span>CUSTOM FINISHES ★</span>
-            </div>
-          </section>
-        )}
-
-        {/* Section 7: Badges */}
+        {/* Section 7: Monogram Trust Badges Marquee */}
         {showBadges && <HomeRemodelingBadges />}
       </article>
     </>

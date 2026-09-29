@@ -1,13 +1,23 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * HomeRemodelingFAQ
- * Section 6: "ASK A QUESTION"
- * - Left column: Tag, title, Denver skyline photograph, and overlay social proof avatar badge
- * - Right column: 7 interactive accordion items with right chevron arrows
+ * Section: "ASK A QUESTION" / "Frequently Asked Questions"
+ * - Exact match with reference design
+ * - Left column:
+ *   - Tag pill: "ASK A QUESTION"
+ *   - Title: "Frequently Asked Questions"
+ *   - Denver skyline photograph card with rounded corners (20px)
+ *   - Bottom gradient overlay with 3 overlapping customer avatars
+ *   - Text: "Trusted By 1000+ Satisfied Customers" (1000+ highlighted in orange)
+ * - Right column:
+ *   - 7 white accordion pill cards
+ *   - Smooth open/close accordion animation via Framer Motion
+ *   - Smoothly rotating right chevron arrow (rotates 90deg when open)
  */
 export default function HomeRemodelingFAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
@@ -48,82 +58,109 @@ export default function HomeRemodelingFAQ() {
     <section className="hr-faq-section">
       <div className="hr-container">
         <div className="hr-faq-grid">
-          {/* Left Column: Title & Denver Skyline Visual */}
+          {/* Left Column: Pill, Title, Skyline Card with Social Proof Badge */}
           <div className="hr-faq-left-col">
             <div className="hr-tag-pill">
               <span>ASK A QUESTION</span>
             </div>
             <h2 className="hr-faq-title">Frequently Asked Questions</h2>
 
-            {/* Skyline Image Container with Overlay Trust Badge */}
-            <div className="hr-skyline-container">
+            <div className="hr-faq-skyline-card">
               <img
-                src="/assets/images/faq-skyline.jpg"
+                src="/assets/images/57893.jpg"
                 alt="Denver Colorado Skyline"
-                className="hr-skyline-img"
+                className="hr-faq-skyline-img"
               />
-
-              {/* Floating Social Proof Badge */}
-              <div className="hr-trusted-badge-overlay">
-                <div className="hr-avatar-group">
-                  <img
-                    src="/assets/images/user9.jpg"
-                    alt="Satisfied client avatar"
-                    className="hr-avatar-img"
-                    width="40"
-                    height="40"
-                  />
-                  <img
-                    src="/assets/images/user8.jpg"
-                    alt="Satisfied client avatar"
-                    className="hr-avatar-img"
-                    width="40"
-                    height="40"
-                  />
-                  <img
-                    src="/assets/images/user7.jpg"
-                    alt="Satisfied client avatar"
-                    className="hr-avatar-img"
-                    width="40"
-                    height="40"
-                  />
-                </div>
-                <div className="hr-trusted-text">
-                  <strong>Trusted By 1000+</strong>
-                  <span>Satisfied Customers</span>
+              <div className="hr-faq-skyline-overlay">
+                <div className="hr-faq-social-proof">
+                  <div className="hr-faq-avatars">
+                    <img
+                      src="/assets/images/user9.jpg"
+                      alt="Satisfied Customer"
+                      className="hr-faq-avatar"
+                      width="48"
+                      height="48"
+                    />
+                    <img
+                      src="/assets/images/user8.jpg"
+                      alt="Satisfied Customer"
+                      className="hr-faq-avatar"
+                      width="48"
+                      height="48"
+                    />
+                    <img
+                      src="/assets/images/user7.jpg"
+                      alt="Satisfied Customer"
+                      className="hr-faq-avatar"
+                      width="48"
+                      height="48"
+                    />
+                  </div>
+                  <div className="hr-faq-proof-text">
+                    Trusted By <span className="orange-text">1000+</span>
+                    <br />
+                    Satisfied Customers
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Rounded Pill Accordion Items */}
+          {/* Right Column: 7 Smoothly Animated FAQ Accordion Items */}
           <div className="hr-faq-right-col">
-            <div className="hr-accordion">
+            <div className="hr-faq-accordion-list">
               {faqs.map((item, idx) => {
                 const isOpen = openIndex === idx;
 
                 return (
                   <div
                     key={item.q}
-                    className={`hr-faq-pill-item ${isOpen ? 'is-open' : ''}`}
+                    className={`hr-faq-item-card ${isOpen ? 'is-active' : ''}`}
                   >
                     <button
                       type="button"
-                      className="hr-faq-pill-header"
+                      className={`hr-faq-header-btn ${isOpen ? 'is-active' : ''}`}
                       onClick={() => toggleFAQ(idx)}
                       aria-expanded={isOpen}
                     >
-                      <span className="hr-faq-pill-question">{item.q}</span>
-                      <span className="hr-faq-pill-arrow">
-                        {isOpen ? '⌄' : '›'}
-                      </span>
+                      <span className="hr-faq-question-text">{item.q}</span>
+                      <motion.div
+                        className="hr-faq-chevron-box"
+                        animate={{ rotate: isOpen ? 90 : 0 }}
+                        transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="hr-faq-chevron-icon"
+                          viewBox="0 0 256 512"
+                          width="9"
+                          height="15"
+                          fill="currentColor"
+                        >
+                          <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                      </motion.div>
                     </button>
 
-                    {isOpen && (
-                      <div className="hr-faq-pill-body">
-                        <p>{item.a}</p>
-                      </div>
-                    )}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="answer"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{
+                            duration: 0.32,
+                            ease: [0.25, 0.1, 0.25, 1.0],
+                          }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <div className="hr-faq-answer-inner">
+                            <p>{item.a}</p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}
