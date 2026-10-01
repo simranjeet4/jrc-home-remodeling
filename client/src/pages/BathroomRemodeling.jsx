@@ -6,7 +6,7 @@ import '../styles/bathroom.css';
 
 /**
  * BathroomRemodeling Component
- * Full reconstruction of https://jrchomeremodeling.com/bathroom-remodeling/
+ * 100% Exact match with reference design screenshot
  */
 export default function BathroomRemodeling() {
   const services = [
@@ -61,7 +61,7 @@ export default function BathroomRemodeling() {
       role: 'Denver Homeowner',
     },
     {
-      quote: 'I have used JRC twice now – once, to add a bathroom to a basement, and then again to install custom shower tile. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn’t hesitate to use them again!',
+      quote: 'I have used JRC twice now — once, to add a bathroom to a basement, and then again to install custom shower tile. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn\'t hesitate to use them again!',
       author: 'Charissa Walton',
       role: 'Denver Homeowner',
     },
@@ -92,7 +92,7 @@ export default function BathroomRemodeling() {
       </Helmet>
 
       <article className="bathroom-page">
-        {/* Section 0: Hero with Before/After Slider */}
+        {/* Section 0: Hero with Edge-to-Edge 860px Before/After Slider */}
         <section className="bathroom-hero-section">
           <div className="bathroom-hero-container">
             <div className="bathroom-hero-grid">
@@ -148,83 +148,102 @@ export default function BathroomRemodeling() {
               </div>
 
               <div className="bathroom-trust-item">
-                <div className="bathroom-trust-icon">🏠</div>
+                <div className="bathroom-trust-icon-wrap">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="#F45404">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                  </svg>
+                </div>
                 <div className="bathroom-trust-num">40+ Remodeling Projects</div>
                 <div className="bathroom-trust-sub">Completed</div>
               </div>
 
               <div className="bathroom-trust-item">
-                <div className="bathroom-trust-icon">🛡️</div>
+                <div className="bathroom-trust-icon-wrap">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="#F45404">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
                 <div className="bathroom-trust-num">Local Remodeling</div>
                 <div className="bathroom-trust-sub">Specialists</div>
               </div>
 
               <div className="bathroom-trust-item">
-                <div className="bathroom-trust-icon">⏰</div>
+                <div className="bathroom-trust-icon-wrap">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="#F45404">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                  </svg>
+                </div>
                 <div className="bathroom-trust-num">Free Consultations</div>
                 <div className="bathroom-trust-sub">Available</div>
               </div>
             </div>
 
-            <a href="#estimate-form" className="bathroom-trust-btn">
+            <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 32px' }}>
               Schedule Free Consultation
             </a>
           </div>
         </section>
 
-        {/* Section 2: Second Transformation & Photo Gallery */}
+        {/* Section 2: See the Difference Section with Slider & 4 Thumbnails */}
         <section id="transformations" className="bathroom-transform-section">
           <div className="hr-container">
-            <div className="hr-tag-pill">
+            <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
               <span>BATHROOM RENOVATIONS</span>
             </div>
-            <h2 className="hr-section-title">
+            <h2 className="hr-section-title" style={{ maxWidth: '820px', margin: '0 auto 16px' }}>
               See the Difference a Professional Bathroom Renovations Makes
             </h2>
-            <p style={{ maxWidth: '780px', margin: '0 auto 40px', color: '#555', fontSize: '16px' }}>
+            <p className="bathroom-transform-desc">
               At JRC Home Remodeling, we pride ourselves on delivering high-quality bathroom renovations quickly and efficiently, with many projects completed within just one week. Our skilled team works closely with you every step of the way, maintaining clear communication and attention to detail from start to finish.
             </p>
 
-            <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '980px', margin: '0 auto 30px' }}>
               <BeforeAfterSlider
-                beforeImage="/assets/images/Gemini_Generated_Image_9v5rgw9v5rgw9v5r.jpg"
-                afterImage="/assets/images/Gemini_Generated_Image_9v5rgw9v5rgw9v5r-1.jpg"
+                beforeImage="/assets/images/photo-1771239048293-72abf673adb2.jpeg"
+                afterImage="/assets/images/photo-1765745518752-68a289300789.jpeg"
                 beforeAlt="Before bathroom renovation"
                 afterAlt="After luxury bathroom remodel"
-                height="650px"
+                height="600px"
               />
             </div>
 
-            {/* 4 Project Gallery Photos */}
+            {/* 4 Project Gallery Thumbnails */}
             <div className="bathroom-gallery-grid">
               {galleryImages.map((src, idx) => (
-                <img
-                  key={idx}
-                  src={src}
-                  alt={`Bathroom remodel project ${idx + 1}`}
-                  className="bathroom-gallery-img"
-                  loading="lazy"
-                />
+                <div key={idx} className="bathroom-gallery-item">
+                  <img
+                    src={src}
+                    alt={`Bathroom renovation detail ${idx + 1}`}
+                    className="bathroom-gallery-img"
+                  />
+                </div>
               ))}
+            </div>
+
+            <div style={{ marginTop: '35px' }}>
+              <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 32px' }}>
+                Get Free Estimate
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Section 3: 6 Services Grid */}
+        {/* Section 3: Transform Your Bathroom Into a Luxury Retreat */}
         <section className="bathroom-services-section">
-          <div className="hr-container">
-            <div className="hr-section-header text-center">
-              <div className="hr-tag-pill">
-                <span>WHAT WE OFFER</span>
-              </div>
-              <h2 className="hr-section-title">
-                Transform Your Bathroom Into a Luxury Retreat
-              </h2>
+          <div className="hr-container text-center">
+            <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
+              <span>BATHROOM REMODEL CONTRACTOR</span>
             </div>
+            <h2 className="hr-section-title" style={{ maxWidth: '800px', margin: '0 auto 16px' }}>
+              Transform Your Bathroom Into a Luxury Retreat
+            </h2>
+            <p style={{ maxWidth: '780px', margin: '0 auto 40px', color: '#555', fontSize: '16px', lineHeight: '1.6' }}>
+              From custom walk-in showers to complete master bath overhauls, we provide comprehensive bathroom remodeling services tailored to your style, budget, and everyday needs.
+            </p>
 
             <div className="bathroom-services-grid">
-              {services.map((s) => (
-                <div key={s.title} className="bathroom-service-item">
+              {services.map((s, i) => (
+                <div key={i} className="bathroom-service-item">
                   <div className="bathroom-service-icon-wrap">
                     <img src={s.icon} alt={s.title} className="bathroom-service-icon" />
                   </div>
@@ -232,6 +251,12 @@ export default function BathroomRemodeling() {
                   <p className="bathroom-service-desc">{s.desc}</p>
                 </div>
               ))}
+            </div>
+
+            <div style={{ marginTop: '40px' }}>
+              <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 32px' }}>
+                Get Free Estimate
+              </a>
             </div>
           </div>
         </section>
@@ -241,7 +266,7 @@ export default function BathroomRemodeling() {
           <div className="hr-container">
             <div className="bathroom-why-grid">
               <div>
-                <div className="hr-tag-pill">
+                <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
                   <span>WHY CHOOSE US</span>
                 </div>
                 <h2 className="bathroom-why-title">
@@ -253,6 +278,11 @@ export default function BathroomRemodeling() {
                 <p className="bathroom-why-desc">
                   A professional bathroom contractor can help design a walk-in shower that fits your space perfectly and meets your everyday needs.
                 </p>
+                <ul className="bathroom-why-checklist">
+                  <li><span className="check-icon">✓</span> <strong>Custom Designs</strong> - Tailored layout, materials, and fixtures</li>
+                  <li><span className="check-icon">✓</span> <strong>Honest Pricing</strong> - Clear estimates with zero hidden fees</li>
+                  <li><span className="check-icon">✓</span> <strong>Expert Workmanship</strong> - Quality installation from licensed pros</li>
+                </ul>
                 <a href={`tel:${COMPANY.phoneRaw}`} className="btn hr-btn-orange" style={{ padding: '13px 28px', display: 'inline-block' }}>
                   Talk With a Remodeling Expert
                 </a>
@@ -272,7 +302,7 @@ export default function BathroomRemodeling() {
         {/* Section 5: What Denver Homeowners Say About Us */}
         <section className="bathroom-reviews-section">
           <div className="hr-container">
-            <div className="hr-tag-pill">
+            <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
               <span>BATHROOM REMODEL NEAR ME</span>
             </div>
             <h2 className="hr-section-title">
@@ -291,16 +321,16 @@ export default function BathroomRemodeling() {
               ))}
             </div>
 
-            <a href="#estimate-form" className="bathroom-trust-btn">
-              Get Free Quotes
+            <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 32px' }}>
+              Get Free Estimate
             </a>
           </div>
         </section>
 
-        {/* Section 6 & 7: Our Latest Bathroom Remodels */}
+        {/* Section 6: Our Latest Bathroom Remodels (Video & Reels Row) */}
         <section className="bathroom-videos-section">
           <div className="hr-container">
-            <div className="hr-tag-pill">
+            <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
               <span>OUR WORK</span>
             </div>
             <h2 className="hr-section-title">
@@ -341,40 +371,40 @@ export default function BathroomRemodeling() {
           </div>
         </section>
 
-        {/* Section 8: Bottom Estimate Form & Service Areas */}
+        {/* Section 7: Dark Navy Estimate Form & Service Areas */}
         <section id="estimate-form" className="bathroom-bottom-section">
           <div className="hr-container">
             <div className="bathroom-bottom-grid">
               <div>
-                <div className="hr-tag-pill">
+                <div className="hr-tag-pill hr-tag-pill-dark" style={{ marginBottom: '14px' }}>
                   <span>FREE ESTIMATE</span>
                 </div>
                 <h2 className="bathroom-bottom-title">
                   Get Your Free Remodeling Estimate Today
                 </h2>
                 <p className="bathroom-bottom-desc">
-                  No pressure. No obligation. Just expert recommendations for your space and budget. We know that when you’re happy with your new bathroom, it leads to great reviews—and that’s what we strive for on every project.
+                  No pressure. No obligation. Just expert recommendations for your space and budget. We know that when you're happy with your new bathroom, it leads to great reviews—and that's what we strive for on every project.
                 </p>
 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '8px' }}>
-                    <span style={{ color: '#F45404' }}>✓</span> Know your remodeling options
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '10px', color: '#FFFFFF' }}>
+                    <span style={{ color: '#F45404', fontWeight: 800 }}>✓</span> Know your remodeling options
                   </li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '8px' }}>
-                    <span style={{ color: '#F45404' }}>✓</span> Understand expected costs
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '10px', color: '#FFFFFF' }}>
+                    <span style={{ color: '#F45404', fontWeight: 800 }}>✓</span> Understand expected costs
                   </li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '8px' }}>
-                    <span style={{ color: '#F45404' }}>✓</span> Plan your upgrade confidently
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', fontWeight: 600, marginBottom: '10px', color: '#FFFFFF' }}>
+                    <span style={{ color: '#F45404', fontWeight: 800 }}>✓</span> Plan your upgrade confidently
                   </li>
                 </ul>
 
                 <h3 className="bathroom-areas-title">
-                  Serving Homeowner Across Denver
+                  Serving Homeowners Across Denver
                 </h3>
                 <div className="bathroom-areas-grid">
                   {serviceAreas.map((area) => (
                     <div key={area} className="bathroom-area-item">
-                      {area}
+                      <span style={{ color: '#F45404' }}>•</span> {area}
                     </div>
                   ))}
                 </div>
@@ -392,7 +422,7 @@ export default function BathroomRemodeling() {
           </div>
         </section>
 
-        {/* Section 9: Ready to Upgrade Your Bathroom? */}
+        {/* Section 8: Bottom CTA Banner */}
         <section
           className="bathroom-cta-banner"
           style={{ backgroundImage: "url('/assets/images/10-Hidden-Bathroom-Remodel-Costs-to-Keep-in-Mind-Picsart-AiImageEnhancer-1.webp')" }}
@@ -402,13 +432,13 @@ export default function BathroomRemodeling() {
               Ready to Upgrade Your Bathroom?
             </h2>
             <p className="bathroom-cta-desc">
-              If you’re considering a bathroom renovation near me, converting your tub to a walk-in shower is a smart, practical upgrade that enhances both comfort and style.
+              If you're considering a bathroom renovation near me, converting your tub to a walk-in shower is a smart, practical upgrade that enhances both comfort and style.
             </p>
             <div className="bathroom-cta-actions">
               <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '14px 32px' }}>
                 Get Free Estimate
               </a>
-              <a href={`tel:${COMPANY.phoneRaw}`} className="btn hr-btn-white" style={{ padding: '14px 32px' }}>
+              <a href={`tel:${COMPANY.phoneRaw}`} className="btn hr-btn-blue" style={{ padding: '14px 32px' }}>
                 Call {COMPANY.phone}
               </a>
             </div>
