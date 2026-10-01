@@ -104,13 +104,13 @@ export default function BathroomRemodeling() {
                   Your Dream Bathroom Starts Here
                 </h1>
                 <p className="bathroom-hero-desc">
-                  If you're searching for a bathroom renovation near me or planning a bathroom remodel near me, JRC Home Remodeling is the team you can trust to bring your vision to life.
+                  If you're searching for a <strong>bathroom renovation near me</strong> or planning a <strong>bathroom remodel near me</strong>, <strong>JRC Home Remodeling</strong> is the team you can trust to bring your vision to life.
                 </p>
                 <div className="bathroom-hero-cta-group">
                   <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 28px' }}>
                     Get Free Estimate
                   </a>
-                  <a href="#transformations" className="btn hr-btn-white" style={{ padding: '13px 28px' }}>
+                  <a href="#transformations" className="btn hr-btn-blue" style={{ padding: '13px 28px' }}>
                     View Transformations
                   </a>
                 </div>
