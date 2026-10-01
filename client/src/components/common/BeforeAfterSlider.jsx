@@ -9,6 +9,8 @@ export default function BeforeAfterSlider({
   beforeLabel = 'BEFORE',
   afterLabel = 'AFTER',
   initialPosition = 50,
+  className = '',
+  style = {},
 }) {
   const [position, setPosition] = useState(initialPosition);
   const containerRef = useRef(null);
@@ -44,6 +46,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
+      className={className ? `before-after-slider ${className}` : 'before-after-slider'}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
@@ -58,6 +61,7 @@ export default function BeforeAfterSlider({
         userSelect: 'none',
         touchAction: 'pan-y',
         boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+        ...style,
       }}
     >
       {/* After Image (Background) */}

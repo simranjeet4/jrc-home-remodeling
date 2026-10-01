@@ -94,9 +94,9 @@ export default function BathroomRemodeling() {
       <article className="bathroom-page">
         {/* Section 0: Hero with Before/After Slider */}
         <section className="bathroom-hero-section">
-          <div className="hr-container">
+          <div className="bathroom-hero-container">
             <div className="bathroom-hero-grid">
-              <div>
+              <div className="bathroom-hero-left">
                 <div className="hr-tag-pill">
                   <span>BATHROOM REMODEL NEAR ME</span>
                 </div>
@@ -104,7 +104,7 @@ export default function BathroomRemodeling() {
                   Your Dream Bathroom Starts Here
                 </h1>
                 <p className="bathroom-hero-desc">
-                  If you’re searching for a bathroom renovation near me or planning a bathroom remodel near me, JRC Home Remodeling is the team you can trust to bring your vision to life.
+                  If you're searching for a bathroom renovation near me or planning a bathroom remodel near me, JRC Home Remodeling is the team you can trust to bring your vision to life.
                 </p>
                 <div className="bathroom-hero-cta-group">
                   <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 28px' }}>
@@ -120,13 +120,14 @@ export default function BathroomRemodeling() {
               </div>
 
               {/* Right Side Before/After Slider */}
-              <div>
+              <div className="bathroom-hero-slider-wrap">
                 <BeforeAfterSlider
                   beforeImage="/assets/images/Rdv6lB5v-1.jpeg"
                   afterImage="/assets/images/ch6kGaOC.jpeg"
                   beforeAlt="Outdated beige laminate bathroom"
                   afterAlt="Modern subway tile and glass shower remodel"
-                  height="480px"
+                  height="860px"
+                  style={{ borderRadius: 0 }}
                 />
               </div>
             </div>
