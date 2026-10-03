@@ -239,12 +239,13 @@
 /* Right Overlapping Review Card Matching Screenshot 100% */
 .loc-hero-review-card {
   background-color: #FAF4EC;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
   padding: 38px 45px 28px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
   position: relative;
   z-index: 15;
   margin-top: -120px;
+  margin-right: -60px;
   color: #160A05;
 }
 
@@ -330,6 +331,8 @@
   }
   .loc-hero-review-card {
     margin-top: 0;
+    margin-right: -30px;
+    border-radius: 16px 0 0 16px;
     padding: 28px 24px;
   }
   .loc-review-quote-text {
