@@ -107,37 +107,64 @@ export default function LocationPageTemplate({
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
-      {/* 1. Hero Section */}
+            {/* 1. Hero Section */}
       <section
         className="loc-hero"
         style={{
-          backgroundImage: `url('/assets/images/${hero.bg || '3913-1.jpg'}')`
+          backgroundImage: `url('/assets/images/${hero.bg || '2149343635.jpg'}')`
         }}
       >
         <div className="loc-hero-overlay" />
-        <div className="loc-container loc-hero-content">
-          {hero.pill && (
-            <div className="loc-pill loc-pill-light">
-              <span>{hero.pill}</span>
+        <div className="loc-container loc-hero-container">
+          <div className="loc-hero-grid">
+            <div className="loc-hero-left">
+              {hero.pill && (
+                <div className="loc-pill loc-pill-light">
+                  <span>{hero.pill}</span>
+                </div>
+              )}
+              <h1 className="loc-hero-title">{hero.title}</h1>
+              <p className="loc-hero-desc">{hero.desc}</p>
+              <div className="loc-hero-actions">
+                <Link to="/services" className="loc-btn-orange">
+                  View Our Services <span className="loc-btn-arrow">↗</span>
+                </Link>
+              </div>
             </div>
-          )}
-          <h1 className="loc-hero-title">{hero.title}</h1>
-          <p className="loc-hero-desc">{hero.desc}</p>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <Link to="/services" className="loc-btn-orange">
-              View Our Services
-            </Link>
-            <a href={`tel:${COMPANY.phoneRaw}`} className="loc-btn-outline" style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}>
-              Call {COMPANY.phone}
-            </a>
+
+            {/* Overlapping Review Card matching screenshot */}
+            <div className="loc-hero-review-card">
+              <div className="loc-review-star-graphic">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="#FFE5B4">
+                  <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                </svg>
+              </div>
+              <p className="loc-review-quote-text">
+                "{testimonial.quote}"
+              </p>
+              <div className="loc-review-divider" />
+              <div className="loc-review-author-row">
+                <div className="loc-review-author-info">
+                  <div className="loc-review-author-name">{testimonial.author}</div>
+                  <div className="loc-review-stars">
+                    Google Review <span style={{ color: '#FFB800' }}>★★★★★</span>
+                  </div>
+                </div>
+                <img
+                  src={`/assets/images/${testimonial.avatar || 'user9.jpg'}`}
+                  alt={testimonial.author}
+                  className="loc-review-avatar"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Stats & Testimonial Bar */}
+      {/* 2. Stats Bar Below Hero */}
       <section className="loc-stats-bar">
         <div className="loc-container">
-          <div className="loc-stats-grid">
+          <div className="loc-stats-container">
             <div className="loc-stats-left">
               {stats.map((st, i) => (
                 <div key={i} className="loc-stat-item">
@@ -145,12 +172,6 @@ export default function LocationPageTemplate({
                   <div className="loc-stat-lbl">{st.label}</div>
                 </div>
               ))}
-            </div>
-
-            <div className="loc-testimonial-box">
-              <div className="loc-testimonial-stars">★★★★★</div>
-              <p className="loc-testimonial-quote">{testimonial.quote}</p>
-              <div className="loc-testimonial-author">— {testimonial.author}</div>
             </div>
           </div>
         </div>

@@ -90,8 +90,8 @@
 /* 1. Hero Section */
 .loc-hero {
   position: relative;
-  min-height: 663px;
-  padding: 130px 0 110px;
+  min-height: 560px;
+  padding: 95px 0 65px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -106,55 +106,158 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(14, 8, 4, 0.65), rgba(14, 8, 4, 0.72));
+  background: linear-gradient(rgba(14, 8, 4, 0.58), rgba(14, 8, 4, 0.68));
   z-index: 1;
 }
 
-.loc-hero-content {
+.loc-hero-container {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  width: 100%;
 }
 
-.loc-hero-title {
-  font-size: 46px;
-  font-weight: 700;
-  line-height: 1.18;
-  color: #FFFFFF;
-  margin-bottom: 18px;
+.loc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 50px;
+  align-items: flex-end;
 }
 
-.loc-hero-desc {
-  font-size: 16px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 28px;
+.loc-hero-left {
   max-width: 680px;
 }
 
-/* 2. Stats & Testimonial Bar */
-.loc-stats-bar {
-  background-color: #FFF5E9;
-  padding: 65px 0;
-  border-bottom: 1px solid #EAD8C7;
+.loc-hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
-.loc-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+.loc-hero-desc {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 30px;
+}
+
+.loc-hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.loc-btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #F45404;
+  color: #FFFFFF !important;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.loc-btn-arrow {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Overlapping Review Card Matching Screenshot */
+.loc-hero-review-card {
+  background-color: #FAF6F0;
+  border-radius: 20px;
+  padding: 36px 40px 28px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 3;
+  margin-bottom: -110px;
+  color: #160A05;
+}
+
+.loc-review-star-graphic {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  opacity: 0.85;
+}
+
+.loc-review-quote-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.32;
+  color: #160A05;
+  margin-bottom: 24px;
+  padding-right: 40px;
+}
+
+.loc-review-divider {
+  border-bottom: 1px solid #E5E0D8;
+  margin-bottom: 18px;
+}
+
+.loc-review-author-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.loc-review-author-info {
+  text-align: right;
+}
+
+.loc-review-author-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #160A05;
+}
+
+.loc-review-stars {
+  font-size: 12px;
+  color: #777777;
+  margin-top: 2px;
+}
+
+.loc-review-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FFFFFF;
+}
+
+/* 2. Stats Bar Below Hero */
+.loc-stats-bar {
+  background-color: #FFFFFF;
+  padding: 35px 0 40px;
+  border-bottom: 1px solid #EAEAEA;
+  position: relative;
+  z-index: 1;
+}
+
+.loc-stats-container {
+  display: flex;
   align-items: center;
 }
 
 .loc-stats-left {
   display: flex;
-  gap: 36px;
-  flex-wrap: wrap;
+  gap: 45px;
+  width: 55%;
 }
 
 .loc-stat-item {
-  border-right: 1px solid #E5D5C5;
-  padding-right: 32px;
+  border-right: 1px solid #EAEAEA;
+  padding-right: 45px;
 }
 
 .loc-stat-item:last-child {
@@ -163,7 +266,8 @@
 }
 
 .loc-stat-num {
-  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
   font-weight: 700;
   color: #160A05;
   line-height: 1;
@@ -171,37 +275,36 @@
 }
 
 .loc-stat-lbl {
-  font-size: 14px;
-  color: #666666;
-  font-weight: 500;
-}
-
-.loc-testimonial-box {
-  background-color: #FFFFFF;
-  border-radius: 16px;
-  padding: 24px 28px;
-  border: 1px solid #EAD8C7;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.loc-testimonial-stars {
-  color: #FFA500;
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.loc-testimonial-quote {
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.55;
-  color: #333333;
-  margin-bottom: 10px;
-}
-
-.loc-testimonial-author {
+  font-family: "Work Sans", sans-serif;
   font-size: 13px;
-  font-weight: 700;
-  color: #160A05;
+  color: #777777;
+  font-weight: 500;
+  max-width: 120px;
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .loc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .loc-hero-review-card {
+    margin-bottom: 0;
+    padding: 28px 24px;
+  }
+  .loc-review-quote-text {
+    font-size: 18px;
+  }
+  .loc-stats-left {
+    width: 100%;
+    gap: 25px;
+  }
+  .loc-stat-item {
+    padding-right: 20px;
+  }
+  .loc-stat-num {
+    font-size: 32px;
+  }
 }
 
 /* 3. What We Do */
