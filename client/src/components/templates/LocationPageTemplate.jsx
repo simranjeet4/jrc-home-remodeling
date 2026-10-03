@@ -135,7 +135,7 @@ export default function LocationPageTemplate({
 
       {/* 2. Full Width Stats & Review Section */}
       <section className="loc-stats-bar">
-        <div className="loc-container">
+        <div className="loc-container-fluid">
           <div className="loc-stats-grid">
             {/* Left Stats Columns */}
             <div className="loc-stats-left">

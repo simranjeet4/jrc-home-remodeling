@@ -6,6 +6,14 @@
   background-color: #FFFFFF;
 }
 
+
+.loc-container-fluid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
 .loc-container {
   width: 100%;
   max-width: 1650px;
