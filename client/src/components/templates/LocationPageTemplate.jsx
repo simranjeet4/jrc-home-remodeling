@@ -150,19 +150,19 @@ export default function LocationPageTemplate({
             {/* Right Overlapping Review Card matching screenshot 100% */}
             <div className="loc-hero-review-card">
               <div className="loc-review-star-graphic">
-                <svg width="146" height="146" viewBox="0 0 24 24" fill="#FDE3B8">
+                <svg width="140" height="140" viewBox="0 0 24 24" fill="#FDE3B8">
                   <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
                 </svg>
               </div>
               <p className="loc-review-quote-text">
-                "{testimonial.quote}"
+                {testimonial.quote}
               </p>
               <div className="loc-review-divider" />
               <div className="loc-review-author-row">
                 <div className="loc-review-author-info">
                   <div className="loc-review-author-name">{testimonial.author}</div>
                   <div className="loc-review-stars">
-                    Google Review <span style={{ color: '#FFB800', fontSize: '14px', marginLeft: '4px' }}>★★★★★</span>
+                    Google Review <span className="loc-stars-gold">★★★★★</span>
                   </div>
                 </div>
                 <img
