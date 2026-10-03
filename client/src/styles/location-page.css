@@ -249,17 +249,12 @@
   color: #160A05;
 }
 
-.loc-review-star-graphic {
-  position: absolute;
-  top: 30px;
-  right: 35px;
-  pointer-events: none;
-}
-
-.loc-review-star-graphic svg {
-  width: 140px;
-  height: 140px;
-  fill: #FDE3B8;
+.loc-review-top-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
 }
 
 .loc-review-quote-text {
@@ -268,9 +263,26 @@
   font-weight: 600;
   line-height: 1.3;
   color: #111111;
-  margin-bottom: 28px;
-  padding-right: 110px;
   letter-spacing: -0.3px;
+  margin: 0;
+  flex: 1;
+}
+
+.loc-review-star-graphic {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.loc-review-star-graphic svg {
+  width: 140px;
+  height: 140px;
+  fill: #FDE3B8;
 }
 
 .loc-review-divider {
