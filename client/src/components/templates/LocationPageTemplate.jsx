@@ -180,34 +180,34 @@ export default function LocationPageTemplate({
 
       {/* 3. What We Do */}
       <section className="loc-wwd">
-        <div className="loc-container">
-          <div className="loc-wwd-header">
-            <div className="loc-pill">
-              <span>{whatWeDo.pill || 'WHAT WE DO'}</span>
+        <div className="loc-container-fluid">
+          <div className="loc-wwd-header-split">
+            <div className="loc-wwd-header-left">
+              <div className="loc-pill-dark">
+                <span>{whatWeDo.pill || 'WHAT WE DO'}</span>
+              </div>
+              <h2 className="loc-section-title">{whatWeDo.title}</h2>
             </div>
-            <h2 className="loc-section-title">{whatWeDo.title}</h2>
-            {whatWeDo.intro && (
-              <p style={{ color: '#555555', fontSize: '15px', lineHeight: 1.65 }}>
-                {whatWeDo.intro}
-              </p>
-            )}
+            <div className="loc-wwd-header-right">
+              {whatWeDo.intro && (
+                <p className="loc-wwd-intro-text">
+                  {whatWeDo.intro}
+                </p>
+              )}
+            </div>
           </div>
 
           <div className="loc-wwd-grid">
             {whatWeDo.cards.map((card, idx) => {
-              const linkTo = serviceLinks[card.title] || '/services';
               const iconPath = card.icon ? `/assets/images/${card.icon}` : '/assets/images/kitchen-table.png';
               return (
                 <div key={idx} className="loc-wwd-card">
                   <div className="loc-wwd-icon-box">
-                    <img src={iconPath} alt="" className="loc-wwd-icon" />
+                    <img src={iconPath} alt={card.title} className="loc-wwd-icon" />
                   </div>
+                  <div className="loc-wwd-card-divider" />
                   <h3 className="loc-wwd-title">{card.title}</h3>
                   <p className="loc-wwd-desc">{card.desc}</p>
-                  <Link to={linkTo} className="loc-wwd-link">
-                    <span>Learn More</span>
-                    <span>→</span>
-                  </Link>
                 </div>
               );
             })}
