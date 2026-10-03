@@ -107,35 +107,50 @@ export default function LocationPageTemplate({
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
 
-            {/* 1. Hero Section */}
+                  {/* 1. Hero Section */}
       <section
         className="loc-hero"
         style={{
-          backgroundImage: `url('/assets/images/${hero.bg || '2149343635.jpg'}')`
+          backgroundImage: `url('/assets/images/${hero.bg || 'arvada-basement-hero.jpg'}')`
         }}
       >
         <div className="loc-hero-overlay" />
         <div className="loc-container loc-hero-container">
-          <div className="loc-hero-grid">
-            <div className="loc-hero-left">
-              {hero.pill && (
-                <div className="loc-pill loc-pill-light">
-                  <span>{hero.pill}</span>
-                </div>
-              )}
-              <h1 className="loc-hero-title">{hero.title}</h1>
-              <p className="loc-hero-desc">{hero.desc}</p>
-              <div className="loc-hero-actions">
-                <Link to="/services" className="loc-btn-orange">
-                  View Our Services <span className="loc-btn-arrow">↗</span>
-                </Link>
+          <div className="loc-hero-left">
+            {hero.pill && (
+              <div className="loc-pill loc-pill-light">
+                <span>{hero.pill}</span>
               </div>
+            )}
+            <h1 className="loc-hero-title">{hero.title}</h1>
+            <p className="loc-hero-desc">{hero.desc}</p>
+            <div className="loc-hero-actions">
+              <Link to="/services" className="loc-btn-orange">
+                View Our Services <span className="loc-btn-arrow">↗</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Full Width Stats & Review Section */}
+      <section className="loc-stats-bar">
+        <div className="loc-container">
+          <div className="loc-stats-grid">
+            {/* Left Stats Columns */}
+            <div className="loc-stats-left">
+              {stats.map((st, i) => (
+                <div key={i} className="loc-stat-item">
+                  <div className="loc-stat-num">{st.num}</div>
+                  <div className="loc-stat-lbl">{st.label}</div>
+                </div>
+              ))}
             </div>
 
-            {/* Overlapping Review Card matching screenshot */}
+            {/* Right Overlapping Review Card matching screenshot 100% */}
             <div className="loc-hero-review-card">
               <div className="loc-review-star-graphic">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="#FFE5B4">
+                <svg width="85" height="85" viewBox="0 0 24 24" fill="#FDE3B8">
                   <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
                 </svg>
               </div>
@@ -147,7 +162,7 @@ export default function LocationPageTemplate({
                 <div className="loc-review-author-info">
                   <div className="loc-review-author-name">{testimonial.author}</div>
                   <div className="loc-review-stars">
-                    Google Review <span style={{ color: '#FFB800' }}>★★★★★</span>
+                    Google Review <span style={{ color: '#FFB800', fontSize: '14px', marginLeft: '4px' }}>★★★★★</span>
                   </div>
                 </div>
                 <img
@@ -156,22 +171,6 @@ export default function LocationPageTemplate({
                   className="loc-review-avatar"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Stats Bar Below Hero */}
-      <section className="loc-stats-bar">
-        <div className="loc-container">
-          <div className="loc-stats-container">
-            <div className="loc-stats-left">
-              {stats.map((st, i) => (
-                <div key={i} className="loc-stat-item">
-                  <div className="loc-stat-num">{st.num}</div>
-                  <div className="loc-stat-lbl">{st.label}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
