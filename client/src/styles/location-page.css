@@ -196,14 +196,21 @@
 }
 
 .loc-stats-left {
-  display: flex;
-  gap: 45px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
   align-items: center;
+  gap: 0;
 }
 
 .loc-stat-item {
   border-right: 1px solid #EAEAEA;
-  padding-right: 45px;
+  padding-right: 30px;
+  padding-left: 15px;
+}
+
+.loc-stat-item:first-child {
+  padding-left: 0;
 }
 
 .loc-stat-item:last-child {
