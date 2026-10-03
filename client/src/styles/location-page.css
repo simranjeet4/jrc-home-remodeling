@@ -183,7 +183,7 @@
 .loc-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 100px;
   align-items: center;
 }
 
@@ -233,6 +233,11 @@
   color: #160A05;
 }
 
+.loc-review-star-graphic svg {
+  width: 146px;
+  height: 146px;
+}
+
 .loc-review-star-graphic {
   position: absolute;
   top: 25px;
@@ -242,7 +247,7 @@
 
 .loc-review-quote-text {
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.32;
   color: #160A05;
