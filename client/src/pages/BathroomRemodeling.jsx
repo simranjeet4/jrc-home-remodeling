@@ -231,15 +231,17 @@ export default function BathroomRemodeling() {
         {/* Section 3: Transform Your Bathroom Into a Luxury Retreat */}
         <section className="bathroom-services-section">
           <div className="hr-container text-center">
-            <div className="hr-tag-pill" style={{ marginBottom: '14px' }}>
-              <span>BATHROOM REMODEL CONTRACTOR</span>
+            <div className="bathroom-services-header">
+              <div className="hr-tag-pill" style={{ marginBottom: '14px', display: 'inline-block' }}>
+                <span>BATHROOM REMODEL CONTRACTOR</span>
+              </div>
+              <h2 className="hr-section-title" style={{ maxWidth: '800px', margin: '0 auto 16px', textAlign: 'center' }}>
+                Transform Your Bathroom Into a Luxury Retreat
+              </h2>
+              <p style={{ maxWidth: '780px', margin: '0 auto 40px', color: '#555', fontSize: '16px', lineHeight: '1.6', textAlign: 'center' }}>
+                From custom walk-in showers to complete master bath overhauls, we provide comprehensive bathroom remodeling services tailored to your style, budget, and everyday needs.
+              </p>
             </div>
-            <h2 className="hr-section-title" style={{ maxWidth: '800px', margin: '0 auto 16px' }}>
-              Transform Your Bathroom Into a Luxury Retreat
-            </h2>
-            <p style={{ maxWidth: '780px', margin: '0 auto 40px', color: '#555', fontSize: '16px', lineHeight: '1.6' }}>
-              From custom walk-in showers to complete master bath overhauls, we provide comprehensive bathroom remodeling services tailored to your style, budget, and everyday needs.
-            </p>
 
             <div className="bathroom-services-grid">
               {services.map((s, i) => (
@@ -253,7 +255,7 @@ export default function BathroomRemodeling() {
               ))}
             </div>
 
-            <div style={{ marginTop: '40px' }}>
+            <div style={{ marginTop: '40px', textAlign: 'center', display: 'flex', justifyContent: 'center' }}>
               <a href="#estimate-form" className="btn hr-btn-orange" style={{ padding: '13px 32px' }}>
                 Get Free Estimate
               </a>
