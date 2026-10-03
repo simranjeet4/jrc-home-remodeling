@@ -217,7 +217,7 @@ export default function LocationPageTemplate({
 
       {/* 4. Why Choose Us */}
       <section className="loc-why">
-        <div className="loc-container">
+        <div className="loc-container-fluid">
           <div className="loc-why-grid">
             <div>
               <div className="loc-pill">
@@ -257,7 +257,7 @@ export default function LocationPageTemplate({
       {/* 5. Our Services / Feature Showcase (2-Column Sticky Layout) */}
       {ourServices.cards && ourServices.cards.length > 0 && (
         <section className="loc-features-section" style={{ padding: '95px 0 105px', backgroundColor: '#FFFFFF' }}>
-          <div className="loc-container">
+          <div className="loc-container-fluid">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'start' }}>
               {/* Left Column (Sticky) */}
               <div style={{ position: 'sticky', top: '50px' }}>
@@ -312,7 +312,7 @@ export default function LocationPageTemplate({
       {/* 6. FAQ Accordion */}
       {faqs.items && faqs.items.length > 0 && (
         <section className="loc-faq">
-          <div className="loc-container">
+          <div className="loc-container-fluid">
             <div className="loc-faq-header">
               <div className="loc-pill">
                 <span>{faqs.pill || 'ASK A QUESTION'}</span>
@@ -366,7 +366,7 @@ export default function LocationPageTemplate({
       {/* 8. Latest Project / Testimonials (Present on Aurora, Brighton, Broomfield, Castle Rock, Centennial, Cherry Creek) */}
       {loc.latestProject && (
         <section className="loc-latest-project" style={{ backgroundColor: '#1E3A5F', padding: '80px 0 85px' }}>
-          <div className="loc-container">
+          <div className="loc-container-fluid">
             <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '30px', alignItems: 'center', marginBottom: '45px' }}>
               <div>
                 <div className="loc-pill" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.2)' }}>
@@ -415,7 +415,7 @@ export default function LocationPageTemplate({
       {/* 9. Contact & Free Estimate Form */}
       {hasContact && (
         <section className="loc-contact" id="estimate-form">
-          <div className="loc-container">
+          <div className="loc-container-fluid">
             <div className="loc-contact-grid">
               <div>
                 <div className="loc-pill">
