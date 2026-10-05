@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import EstimateForm from '../forms/EstimateForm';
@@ -15,6 +16,15 @@ export default function LocationPageTemplate({
   showContact = true,
 }) {
   const [openFaq, setOpenFaq] = useState(null);
+
+  // Parallax scroll for Section 4 images
+  const whySectionRef = useRef(null);
+  const { scrollYProgress: whyScrollProgress } = useScroll({
+    target: whySectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const whyMainImgY = useTransform(whyScrollProgress, [0, 1], [40, -40]);
+  const whySubImgY = useTransform(whyScrollProgress, [0, 1], [30, -30]);
 
   // Normalize city to key in locationsData
   const key = (city || '')
@@ -216,14 +226,15 @@ export default function LocationPageTemplate({
       </section>
 
       {/* 4. Why Choose Us */}
-      <section className="loc-why">
+      <section className="loc-why" ref={whySectionRef}>
         <div className="loc-container">
           <div className="loc-why-grid">
             <div className="loc-why-main-col">
-              <img
+              <motion.img
                 src={mainWhyImg}
                 alt={`${city} remodeling craftsmanship`}
                 className="loc-why-img-main"
+                style={{ y: whyMainImgY, scale: 1.15 }}
               />
             </div>
 
@@ -261,10 +272,11 @@ export default function LocationPageTemplate({
 
                 {subWhyImg && (
                   <div className="loc-why-sub-col">
-                    <img
+                    <motion.img
                       src={subWhyImg}
                       alt={`${city} home renovation`}
                       className="loc-why-img-sub"
+                      style={{ y: whySubImgY, scale: 1.15 }}
                     />
                   </div>
                 )}
