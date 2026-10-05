@@ -392,7 +392,7 @@ export default function LocationPageTemplate({
                 <div className="loc-pill" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.2)' }}>
                   <span>{loc.latestProject.pill || 'LATEST PROJECT'}</span>
                 </div>
-                <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '38px', fontWeight: 700, color: '#FFFFFF', margin: '15px 0 0', lineHeight: 1.25 }}>
+                <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '38px', fontWeight: 600, color: '#FFFFFF', margin: '15px 0 0', lineHeight: 1.25 }}>
                   {loc.latestProject.title}
                 </h2>
               </div>
