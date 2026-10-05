@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import EstimateForm from '../forms/EstimateForm';
@@ -463,14 +463,36 @@ export default function LocationPageTemplate({
                         >
                           <span className="loc-faq-q-text">{faq.q}</span>
                           <span className={`loc-faq-arrow ${isOpen ? 'is-open' : ''}`}>
-                            �
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polyline points="9 18 15 12 9 6" />
+                            </svg>
                           </span>
                         </div>
-                        {isOpen && (
-                          <div className="loc-faq-a">
-                            <p>{faq.a}</p>
-                          </div>
-                        )}
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              key="content"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.35, ease: [0.04, 0.62, 0.23, 0.98] }}
+                              style={{ overflow: 'hidden' }}
+                            >
+                              <div className="loc-faq-a">
+                                <p>{faq.a}</p>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     );
                   })}

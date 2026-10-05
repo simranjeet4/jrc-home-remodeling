@@ -848,11 +848,13 @@
 }
 
 .loc-faq-arrow {
-  font-family: sans-serif;
-  font-size: 22px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   color: #333333;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
   line-height: 1;
   flex-shrink: 0;
 }
