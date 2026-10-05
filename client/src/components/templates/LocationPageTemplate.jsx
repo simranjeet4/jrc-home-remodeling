@@ -363,7 +363,7 @@ export default function LocationPageTemplate({
             <div key={i} className="loc-marquee-item">
               <div className="loc-marquee-unit">
                 <img
-                  src="/assets/images/flag-badge.svg"
+                  src="/assets/images/marquee-brush.jpg"
                   alt="USA Badge"
                   className="loc-marquee-badge"
                 />
@@ -372,7 +372,7 @@ export default function LocationPageTemplate({
 
               <div className="loc-marquee-unit">
                 <img
-                  src="/assets/images/flag-badge.svg"
+                  src="/assets/images/marquee-brush.jpg"
                   alt="USA Badge"
                   className="loc-marquee-badge"
                 />
@@ -381,7 +381,7 @@ export default function LocationPageTemplate({
 
               <div className="loc-marquee-unit">
                 <img
-                  src="/assets/images/flag-badge.svg"
+                  src="/assets/images/marquee-brush.jpg"
                   alt="USA Badge"
                   className="loc-marquee-badge"
                 />
@@ -390,7 +390,7 @@ export default function LocationPageTemplate({
 
               <div className="loc-marquee-unit">
                 <img
-                  src="/assets/images/flag-badge.svg"
+                  src="/assets/images/marquee-brush.jpg"
                   alt="USA Badge"
                   className="loc-marquee-badge"
                 />
@@ -399,7 +399,7 @@ export default function LocationPageTemplate({
 
               <div className="loc-marquee-unit">
                 <img
-                  src="/assets/images/flag-badge.svg"
+                  src="/assets/images/marquee-brush.jpg"
                   alt="USA Badge"
                   className="loc-marquee-badge"
                 />
