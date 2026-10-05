@@ -180,7 +180,7 @@ export default function LocationPageTemplate({
 
       {/* 3. What We Do */}
       <section className="loc-wwd">
-        <div className="loc-container-fluid">
+        <div className="loc-container">
           <div className="loc-wwd-header-split">
             <div className="loc-wwd-header-left">
               <div className="loc-pill-dark">

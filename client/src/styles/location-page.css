@@ -363,7 +363,7 @@
   }
 }
 
-/* 3. What We Do Section - 100% Pixel Match to Screenshot */
+/* 3. What We Do Section - User Exact Specs */
 .loc-wwd {
   padding: 90px 0 100px;
   background-color: #FFFFFF;
@@ -391,9 +391,17 @@
   margin-bottom: 18px;
 }
 
+.loc-wwd .loc-section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 35px;
+  color: #160A05;
+  margin: 0;
+}
+
 .loc-wwd-intro-text {
   font-family: "Work Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: #666666;
   margin: 0;
@@ -458,7 +466,7 @@
 
 .loc-wwd-desc {
   font-family: "Work Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: #666666;
   margin: 0;
