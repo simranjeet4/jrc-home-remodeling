@@ -555,6 +555,9 @@
 .loc-why-sub-col {
   display: flex;
   height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
 }
 
 .loc-why-img-sub {
@@ -1206,7 +1209,23 @@
 
   .loc-why-bottom-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
+  }
+
+  .loc-why-bullets-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loc-why-bullets-col .loc-btn-orange {
+    margin-bottom: 8px;
+  }
+
+  .loc-why-sub-col {
+    overflow: hidden;
+    border-radius: 16px;
+    height: 200px;
+    position: relative;
   }
 
   .loc-why-bullet-item {
