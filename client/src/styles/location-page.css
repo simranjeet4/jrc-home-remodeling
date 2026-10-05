@@ -1176,8 +1176,20 @@
     border-radius: 16px;
   }
 
+  .loc-review-star-graphic {
+    display: none !important;
+  }
+
+  .loc-review-top-grid {
+    margin-bottom: 20px;
+  }
+
   .loc-review-quote-text {
     font-size: 18px;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    padding-right: 0 !important;
   }
 
   /* Section 3: What We Do */
