@@ -7,7 +7,7 @@
   background-color: #FFFFFF;
   color: #353535;
   font-family: "Work Sans", sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .kitchen-content-container {

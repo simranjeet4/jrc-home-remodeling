@@ -477,7 +477,7 @@
   font-family: "Work Sans", sans-serif;
   color: #555555;
   background-color: #FFFFFF;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* SECTION 0: Hero */
