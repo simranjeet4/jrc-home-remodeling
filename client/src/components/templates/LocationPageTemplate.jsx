@@ -217,38 +217,58 @@ export default function LocationPageTemplate({
 
       {/* 4. Why Choose Us */}
       <section className="loc-why">
-        <div className="loc-container-fluid">
+        <div className="loc-container">
           <div className="loc-why-grid">
-            <div>
-              <div className="loc-pill">
-                <span>{whyChoose.pill || 'WHY CHOOSE US'}</span>
+            <div className="loc-why-main-col">
+              <img
+                src={mainWhyImg}
+                alt={`${city} remodeling craftsmanship`}
+                className="loc-why-img-main"
+              />
+            </div>
+
+            <div className="loc-why-content-col">
+              <div className="loc-pill-dark">
+                <span>{whyChoose.pill || 'WHY CHOOSE JRC'}</span>
               </div>
               <h2 className="loc-section-title">{whyChoose.title}</h2>
               {whyChoose.desc && (
                 <p className="loc-why-desc">{whyChoose.desc}</p>
               )}
-
-              {whyChoose.bullets && whyChoose.bullets.length > 0 && (
-                <ul className="loc-why-bullets">
-                  {whyChoose.bullets.map((b, i) => (
-                    <li key={i} className="loc-why-bullet-item">
-                      <span className="loc-why-check">✓</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+              {whyChoose.desc2 && (
+                <p className="loc-why-desc" style={{ marginTop: '14px' }}>
+                  {whyChoose.desc2}
+                </p>
               )}
 
-              <Link to="/about-us" className="loc-btn-orange">
-                More About Us
-              </Link>
-            </div>
+              <div className="loc-why-bottom-grid">
+                <div className="loc-why-bullets-col">
+                  {whyChoose.bullets && whyChoose.bullets.length > 0 && (
+                    <ul className="loc-why-bullets">
+                      {whyChoose.bullets.map((b, i) => (
+                        <li key={i} className="loc-why-bullet-item">
+                          <span className="loc-why-check">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Link to="/about-us" className="loc-btn-orange">
+                    <span>More About Us</span>
+                    <span>↗</span>
+                  </Link>
+                </div>
 
-            <div className="loc-why-images">
-              <img src={mainWhyImg} alt={`${city} remodeling craftsmanship`} className="loc-why-img-main" />
-              {subWhyImg && (
-                <img src={subWhyImg} alt={`${city} home renovation`} className="loc-why-img-sub" />
-              )}
+                {subWhyImg && (
+                  <div className="loc-why-sub-col">
+                    <img
+                      src={subWhyImg}
+                      alt={`${city} home renovation`}
+                      className="loc-why-img-sub"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
