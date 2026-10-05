@@ -356,7 +356,61 @@ export default function LocationPageTemplate({
         </section>
       )}
 
-      {/* 6. FAQ Accordion */}
+      {/* 6. Marquee Ribbon (Moved Up & Styled 100% to Screenshot) */}
+      <section className="loc-marquee">
+        <div className="loc-marquee-track">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className="loc-marquee-item">
+              <div className="loc-marquee-unit">
+                <img
+                  src="/assets/images/flag-badge.svg"
+                  alt="USA Badge"
+                  className="loc-marquee-badge"
+                />
+                <span className="loc-marquee-text">{city} Home Remodeling</span>
+              </div>
+
+              <div className="loc-marquee-unit">
+                <img
+                  src="/assets/images/flag-badge.svg"
+                  alt="USA Badge"
+                  className="loc-marquee-badge"
+                />
+                <span className="loc-marquee-text">Certified Remodeling</span>
+              </div>
+
+              <div className="loc-marquee-unit">
+                <img
+                  src="/assets/images/flag-badge.svg"
+                  alt="USA Badge"
+                  className="loc-marquee-badge"
+                />
+                <span className="loc-marquee-text">Top Rated Contractors</span>
+              </div>
+
+              <div className="loc-marquee-unit">
+                <img
+                  src="/assets/images/flag-badge.svg"
+                  alt="USA Badge"
+                  className="loc-marquee-badge"
+                />
+                <span className="loc-marquee-text">Free Estimates</span>
+              </div>
+
+              <div className="loc-marquee-unit">
+                <img
+                  src="/assets/images/flag-badge.svg"
+                  alt="USA Badge"
+                  className="loc-marquee-badge"
+                />
+                <span className="loc-marquee-text">100% Satisfaction Guaranteed</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. FAQ Accordion */}
       {faqs.items && faqs.items.length > 0 && (
         <section className="loc-faq">
           <div className="loc-container-fluid">
@@ -391,24 +445,6 @@ export default function LocationPageTemplate({
           </div>
         </section>
       )}
-
-      {/* 7. Marquee Ribbon */}
-      <section className="loc-marquee">
-        <div className="loc-marquee-track">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="loc-marquee-item">
-              <span>{city} Home Remodeling</span>
-              <span className="loc-marquee-dot">•</span>
-              <span>Certified Remodeling Guarantee</span>
-              <span className="loc-marquee-dot">•</span>
-              <span>Kitchen & Bath Specialists</span>
-              <span className="loc-marquee-dot">•</span>
-              <span>Licensed & Insured</span>
-              <span className="loc-marquee-dot">•</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* 8. Latest Project / Testimonials (Present on Aurora, Brighton, Broomfield, Castle Rock, Centennial, Cherry Creek) */}
       {loc.latestProject && (

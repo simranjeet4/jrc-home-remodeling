@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="32" viewBox="0 0 54 32" fill="none">
+  <g clip-path="url(#clip0_badge)">
+    <!-- Base Red -->
+    <rect width="54" height="32" fill="#B22234"/>
+    <!-- White Stripes -->
+    <rect y="2.46" width="54" height="2.46" fill="#FFFFFF"/>
+    <rect y="7.38" width="54" height="2.46" fill="#FFFFFF"/>
+    <rect y="12.3" width="54" height="2.46" fill="#FFFFFF"/>
+    <rect y="17.23" width="54" height="2.46" fill="#FFFFFF"/>
+    <rect y="22.15" width="54" height="2.46" fill="#FFFFFF"/>
+    <rect y="27.07" width="54" height="2.46" fill="#FFFFFF"/>
+    <!-- Blue Canton -->
+    <rect width="24" height="17.23" fill="#3C3B6E"/>
+    <!-- Canton Stars Grid -->
+    <circle cx="4" cy="3.5" r="1" fill="#FFFFFF"/>
+    <circle cx="12" cy="3.5" r="1" fill="#FFFFFF"/>
+    <circle cx="20" cy="3.5" r="1" fill="#FFFFFF"/>
+    <circle cx="8" cy="8.5" r="1" fill="#FFFFFF"/>
+    <circle cx="16" cy="8.5" r="1" fill="#FFFFFF"/>
+    <circle cx="4" cy="13.5" r="1" fill="#FFFFFF"/>
+    <circle cx="12" cy="13.5" r="1" fill="#FFFFFF"/>
+    <circle cx="20" cy="13.5" r="1" fill="#FFFFFF"/>
+  </g>
+  <!-- Capsule Outer Border -->
+  <rect x="0.5" y="0.5" width="53" height="31" rx="15.5" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+  <defs>
+    <clipPath id="clip0_badge">
+      <rect width="54" height="32" rx="16" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
