@@ -288,47 +288,62 @@ export default function LocationPageTemplate({
 
       {/* 5. Our Services / Feature Showcase (2-Column Sticky Layout) */}
       {ourServices.cards && ourServices.cards.length > 0 && (
-        <section className="loc-features-section" style={{ padding: '95px 0 105px', backgroundColor: '#FFFFFF' }}>
-          <div className="loc-container-fluid">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'start' }}>
+        <section className="loc-services-section">
+          <div className="loc-container">
+            <div className="loc-services-grid">
               {/* Left Column (Sticky) */}
-              <div style={{ position: 'sticky', top: '50px' }}>
-                <div className="loc-pill">
+              <div className="loc-services-left">
+                <div className="loc-pill-dark">
                   <span>{ourServices.pill || 'WHY CHOOSE JRC'}</span>
                 </div>
                 <h2 className="loc-section-title" style={{ margin: '0 0 18px' }}>
                   {ourServices.title}
                 </h2>
                 {ourServices.desc && (
-                  <p style={{ margin: '0 0 30px', color: '#555555', fontSize: '16px', lineHeight: 1.65 }}>
+                  <p className="loc-services-desc">
                     {ourServices.desc}
                   </p>
                 )}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ display: 'flex', marginLeft: '10px' }}>
-                    <img src="/assets/images/user9.jpg" alt="" style={{ width: '42px', height: '42px', borderRadius: '50%', border: '2px solid #FFF', marginLeft: '-10px' }} />
-                    <img src="/assets/images/user8.jpg" alt="" style={{ width: '42px', height: '42px', borderRadius: '50%', border: '2px solid #FFF', marginLeft: '-10px' }} />
-                    <img src="/assets/images/user7.jpg" alt="" style={{ width: '42px', height: '42px', borderRadius: '50%', border: '2px solid #FFF', marginLeft: '-10px' }} />
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: '15px', color: '#160A05' }}>Trusted By 1000+ Satisfied Customers</div>
-                    <div style={{ color: '#F45404', fontSize: '14px' }}>★★★★★</div>
+                <div className="loc-services-cta-row">
+                  <Link to="/services" className="loc-btn-orange">
+                    <span>View All Services</span>
+                    <span>↗</span>
+                  </Link>
+
+                  <div className="loc-services-trust">
+                    <div className="loc-services-avatars">
+                      <img src="/assets/images/user9.jpg" alt="User 9" className="loc-services-avatar" />
+                      <img src="/assets/images/user8.jpg" alt="User 8" className="loc-services-avatar" />
+                      <img src="/assets/images/user7.jpg" alt="User 7" className="loc-services-avatar" />
+                    </div>
+                    <div className="loc-services-trust-info">
+                      <div className="loc-services-trust-title">
+                        Trusted By <span className="loc-services-trust-highlight">1000+</span>
+                      </div>
+                      <div className="loc-services-trust-sub">
+                        Satisfied Customers
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Right Column (Stacked Cards) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div className="loc-services-cards">
                 {ourServices.cards.map((card, idx) => {
                   const imgPath = card.image ? `/assets/images/${card.image}` : '/assets/images/33190.jpg';
                   return (
-                    <div key={idx} style={{ borderRadius: '20px', backgroundColor: '#F6F6F6', padding: '36px 32px', minHeight: '290px', display: 'flex', flexDirection: 'row', gap: '24px', alignItems: 'flex-start', boxSizing: 'border-box' }}>
-                      <img src={imgPath} alt={card.title} style={{ width: '194px', height: '130px', objectFit: 'cover', borderRadius: '10px', flexShrink: 0 }} />
-                      <div style={{ flex: 1 }}>
-                        <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px', fontWeight: 700, color: '#160A05', margin: '0 0 10px', lineHeight: 1.3 }}>
+                    <div key={idx} className="loc-service-card">
+                      <img
+                        src={imgPath}
+                        alt={card.title}
+                        className="loc-service-card-img"
+                      />
+                      <div className="loc-service-card-content">
+                        <h3 className="loc-service-card-title">
                           {card.title}
                         </h3>
-                        <p style={{ fontFamily: 'Work Sans, sans-serif', fontSize: '15px', lineHeight: 1.65, color: '#555555', margin: 0 }}>
+                        <p className="loc-service-card-desc">
                           {card.desc}
                         </p>
                       </div>
