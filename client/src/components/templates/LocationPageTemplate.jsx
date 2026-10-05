@@ -410,37 +410,72 @@ export default function LocationPageTemplate({
         </div>
       </section>
 
-      {/* 7. FAQ Accordion */}
+      {/* 7. FAQ Accordion Section - 100% Match to Screenshot */}
       {faqs.items && faqs.items.length > 0 && (
         <section className="loc-faq">
-          <div className="loc-container-fluid">
-            <div className="loc-faq-header">
-              <div className="loc-pill">
-                <span>{faqs.pill || 'ASK A QUESTION'}</span>
-              </div>
-              <h2 className="loc-section-title">{faqs.title}</h2>
-            </div>
+          <div className="loc-container">
+            <div className="loc-faq-grid">
+              {/* Left Column: Pill, Title, Skyline Image Card with Trust Overlay */}
+              <div className="loc-faq-left">
+                <div className="loc-pill-dark">
+                  <span>{faqs.pill || 'ASK A QUESTION'}</span>
+                </div>
+                <h2 className="loc-section-title" style={{ margin: '0 0 28px' }}>
+                  {faqs.title || 'Frequently Asked Question'}
+                </h2>
 
-            <div className="loc-faq-list">
-              {faqs.items.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div key={idx} className="loc-faq-item">
-                    <div
-                      className="loc-faq-q"
-                      onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                    >
-                      <span>{faq.q}</span>
-                      <span className="loc-faq-icon">{isOpen ? '−' : '+'}</span>
+                <div className="loc-faq-img-card">
+                  <img
+                    src="/assets/images/faq-skyline.jpg"
+                    alt={`${city} skyline remodeling`}
+                    className="loc-faq-skyline-img"
+                  />
+                  <div className="loc-faq-img-overlay" />
+
+                  <div className="loc-faq-trust-badge">
+                    <div className="loc-faq-avatars">
+                      <img src="/assets/images/user9.jpg" alt="User 9" className="loc-faq-avatar" />
+                      <img src="/assets/images/user8.jpg" alt="User 8" className="loc-faq-avatar" />
+                      <img src="/assets/images/user7.jpg" alt="User 7" className="loc-faq-avatar" />
                     </div>
-                    {isOpen && (
-                      <div className="loc-faq-a">
-                        <p>{faq.a}</p>
+                    <div className="loc-faq-trust-info">
+                      <div className="loc-faq-trust-title">
+                        Trusted By <span className="loc-faq-trust-highlight">1000+</span>
                       </div>
-                    )}
+                      <div className="loc-faq-trust-sub">
+                        Satisfied Customers
+                      </div>
+                    </div>
                   </div>
-                );
-              })}
+                </div>
+              </div>
+
+              {/* Right Column: FAQ Accordion Stack */}
+              <div className="loc-faq-right">
+                <div className="loc-faq-list">
+                  {faqs.items.map((faq, idx) => {
+                    const isOpen = openFaq === idx;
+                    return (
+                      <div key={idx} className="loc-faq-item">
+                        <div
+                          className="loc-faq-q"
+                          onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                        >
+                          <span className="loc-faq-q-text">{faq.q}</span>
+                          <span className={`loc-faq-arrow ${isOpen ? 'is-open' : ''}`}>
+                            �
+                          </span>
+                        </div>
+                        {isOpen && (
+                          <div className="loc-faq-a">
+                            <p>{faq.a}</p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -707,66 +707,183 @@
   margin: 0;
 }
 
-/* 7. FAQ Accordion */
+/* 7. FAQ Accordion Section - 100% Match to Screenshot */
 .loc-faq {
-  padding: 65px 0;
-  background-color: #FAF3E9;
+  padding: 95px 0 105px;
+  background-color: #FAF4EC;
 }
 
-.loc-faq-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 30px;
+.loc-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.loc-faq-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-faq-img-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 380px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.loc-faq-skyline-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loc-faq-img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to top, rgba(14, 8, 4, 0.85), transparent);
+  z-index: 1;
+}
+
+.loc-faq-trust-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.loc-faq-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.loc-faq-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-left: -12px;
+  object-fit: cover;
+}
+
+.loc-faq-avatar:first-child {
+  margin-left: 0;
+}
+
+.loc-faq-trust-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-faq-trust-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.loc-faq-trust-highlight {
+  color: #F45404;
+  font-weight: 700;
+}
+
+.loc-faq-trust-sub {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.3;
+}
+
+.loc-faq-right {
+  display: flex;
+  flex-direction: column;
 }
 
 .loc-faq-list {
-  max-width: 880px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
 }
 
 .loc-faq-item {
   background-color: #FFFFFF;
   border-radius: 14px;
-  margin-bottom: 14px;
   border: 1px solid #EAE4D9;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.loc-faq-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  border-color: #E2DBD0;
 }
 
 .loc-faq-q {
-  padding: 22px 26px;
+  padding: 20px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 17px;
-  color: #160A05;
   user-select: none;
 }
 
-.loc-faq-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: #FFF5E9;
-  color: #F45404;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
+.loc-faq-q-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: #160A05;
+  line-height: 1.4;
+  padding-right: 15px;
+}
+
+.loc-faq-arrow {
+  font-family: sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333333;
+  transition: transform 0.3s ease;
+  line-height: 1;
   flex-shrink: 0;
 }
 
+.loc-faq-arrow.is-open {
+  transform: rotate(90deg);
+  color: #F45404;
+}
+
 .loc-faq-a {
-  padding: 0 26px 22px;
+  padding: 0 24px 22px;
+  border-top: 1px solid #FAF3E9;
+  padding-top: 16px;
+}
+
+.loc-faq-a p {
+  font-family: "Work Sans", sans-serif;
   font-size: 15px;
   line-height: 1.65;
   color: #555555;
-  border-top: 1px solid #FAF3E9;
-  margin-top: -6px;
-  padding-top: 14px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .loc-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .loc-faq-img-card {
+    height: 280px;
+  }
 }
 
 /* 6. Marquee Ribbon - 76px Font & Paintbrush Badge */
