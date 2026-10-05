@@ -379,6 +379,8 @@
 
 .loc-pill-dark {
   display: inline-block;
+  width: auto;
+  align-self: flex-start;
   background-color: #EBEBEB;
   color: #333333;
   padding: 6px 18px;
