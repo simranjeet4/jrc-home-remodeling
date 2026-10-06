@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
+import SmoothScroll from './hooks/SmoothScroll';
 
 // Layout
 import Header from './components/layout/Header';
@@ -59,6 +60,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <SmoothScroll />
       <Header />
 
       <main id="content">
