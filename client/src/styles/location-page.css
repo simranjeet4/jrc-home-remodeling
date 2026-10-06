@@ -1006,11 +1006,9 @@
 }
 
 .loc-contact-form-box {
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-  border: 1px solid #EFEFEF;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 
 /* ==========================================================================
@@ -1313,7 +1311,8 @@
 
   /* Section 9: Contact Form */
   .loc-contact-form-box {
-    padding: 28px 20px;
-    border-radius: 16px;
+    padding: 0;
+    box-shadow: none;
+    border: none;
   }
 }
