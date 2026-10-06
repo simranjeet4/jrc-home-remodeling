@@ -1316,3 +1316,213 @@
     border: none;
   }
 }
+
+
+/* ==========================================================================
+   8. Latest Project / Testimonials Section (Moved to Bottom - 100% Match to Screenshot)
+   ========================================================================== */
+.loc-latest-project {
+  background-color: #172B47;
+  padding: 85px 0 95px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loc-latest-project-header {
+  margin-bottom: 40px;
+}
+
+.loc-pill-translucent {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 6px 18px;
+  display: inline-block;
+}
+
+.loc-latest-project-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  line-height: 1.25;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.loc-latest-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Left Image Card with Overlapping Avatars Overlay */
+.loc-latest-project-img-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 380px;
+  height: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.loc-latest-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.loc-latest-project-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12, 24, 42, 0.92) 0%, rgba(12, 24, 42, 0.25) 60%, transparent 100%);
+}
+
+.loc-latest-project-trust-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 5;
+}
+
+.loc-latest-project-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.loc-latest-project-avatars img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #172B47;
+  margin-left: -12px;
+  object-fit: cover;
+}
+
+.loc-latest-project-avatars img:first-child {
+  margin-left: 0;
+}
+
+.loc-latest-project-trust-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-latest-project-trust-main {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.loc-latest-project-trust-sub {
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* Right Testimonial Quote Box */
+.loc-latest-project-quote-card {
+  background-color: #0E1B2E;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 45px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.loc-latest-project-quote-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.loc-latest-project-stars {
+  color: #FFB800;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.loc-latest-project-quote-icon {
+  line-height: 1;
+}
+
+.loc-latest-project-quote-text {
+  font-family: "Work Sans", sans-serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 32px;
+  flex: 1;
+}
+
+.loc-latest-project-author-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.loc-latest-project-author-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  object-fit: cover;
+}
+
+.loc-latest-project-author-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.loc-latest-project-author-role {
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+}
+
+.loc-latest-project-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.loc-latest-project-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.loc-latest-project-dot.is-active {
+  background-color: #F45404;
+  width: 24px;
+  border-radius: 10px;
+}
