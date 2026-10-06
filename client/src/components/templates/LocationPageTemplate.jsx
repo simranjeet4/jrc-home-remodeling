@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import EstimateForm from '../forms/EstimateForm';
+import C3DRectangularCubeSlider from '../about/C3DRectangularCubeSlider';
 import { COMPANY } from '../../content/siteData';
 import locationsData from '../../content/locationsData.json';
 import '../../styles/location-page.css';
@@ -559,6 +560,131 @@ export default function LocationPageTemplate({
       )}
     
 
+
+      {/* What Our Clients Say Section (3D Rectangular Cube Rotating Testimonial) */}
+      <section className="about-sec5-section" style={{ backgroundColor: "#132B45", color: "#FFFFFF" }}>
+        <div
+          className="hr-container"
+          style={{
+            width: '100%',
+            maxWidth: '1650px',
+            margin: '0 auto',
+            padding: '0 24px'
+          }}
+        >
+          <div style={{ marginBottom: '40px' }}>
+            <div
+              style={{
+                display: 'inline-block',
+                backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                padding: '8px 20px',
+                borderRadius: '50px',
+                fontSize: '13px',
+                fontWeight: '600',
+                letterSpacing: '1.6px',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                marginBottom: '16px'
+              }}
+            >
+              <span style={{ color: '#FFB800', marginRight: '6px' }}>●</span>
+              LATEST PROJECT
+            </div>
+
+            <h2 className="about-sec5-heading">
+              What Our Clients Say <br />
+              About Our Painting Company
+            </h2>
+          </div>
+
+          <div className="about-sec5-grid">
+            {/* Left Column: Cityscape Photo Card with Avatar Stack */}
+            <div
+              className="about-sec5-left-card"
+              style={{
+                position: 'relative',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                minHeight: '380px',
+                height: '380px',
+                backgroundImage: "url('/assets/images/about/about-city-bg.jpg')",
+                backgroundPosition: 'center center',
+                backgroundSize: 'cover',
+                boxShadow: '0 12px 30px rgba(0,0,0,0.25)',
+                display: 'flex',
+                alignItems: 'flex-end'
+              }}
+            >
+              {/* Gradient tint over image */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)'
+                }}
+              />
+
+              {/* Overlapping Avatars & Text Badge */}
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  padding: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px'
+                }}
+              >
+                <div style={{ display: 'flex' }}>
+                  <img
+                    src="/assets/images/about/user9.jpg"
+                    alt="Customer"
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      border: '2px solid #FFFFFF',
+                      objectFit: 'cover'
+                    }}
+                  />
+                  <img
+                    src="/assets/images/about/user8.jpg"
+                    alt="Customer"
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      border: '2px solid #FFFFFF',
+                      objectFit: 'cover',
+                      marginLeft: '-12px'
+                    }}
+                  />
+                  <img
+                    src="/assets/images/about/user7.jpg"
+                    alt="Customer"
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '50%',
+                      border: '2px solid #FFFFFF',
+                      objectFit: 'cover',
+                      marginLeft: '-12px'
+                    }}
+                  />
+                </div>
+                <div style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF', lineHeight: '1.35' }}>
+                  Trusted By <span style={{ color: '#F45404' }}>1000+</span>
+                  <br />
+                  Satisfied Customers
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: 3D Rectangular Cube Rotating Testimonial Slider */}
+            <C3DRectangularCubeSlider />
+          </div>
+        </div>
+      </section>
     </article>
   );
 }
