@@ -924,10 +924,14 @@ export default function AboutUs() {
                   marginBottom: '16px'
                 }}
               >
+                <span style={{ color: '#FFB800', marginRight: '6px' }}>●</span>
                 LATEST PROJECT
               </div>
 
-              <h2 className="about-sec5-heading" style={{ color: "#FFFFFF" }}>What Our Clients Say About Our Painting Company</h2>
+              <h2 className="about-sec5-heading">
+                What Our Clients Say <br />
+                About Our Painting Company
+              </h2>
             </div>
 
             <div className="about-sec5-grid">
@@ -938,7 +942,8 @@ export default function AboutUs() {
                   position: 'relative',
                   borderRadius: '20px',
                   overflow: 'hidden',
-                  minHeight: '340px',
+                  minHeight: '380px',
+                  height: '380px',
                   backgroundImage: "url('/assets/images/about/about-city-bg.jpg')",
                   backgroundPosition: 'center center',
                   backgroundSize: 'cover',
@@ -1004,7 +1009,7 @@ export default function AboutUs() {
                       }}
                     />
                   </div>
-                  <div style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF' }}>
+                  <div style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF', lineHeight: '1.35' }}>
                     Trusted By <span style={{ color: '#F45404' }}>1000+</span>
                     <br />
                     Satisfied Customers

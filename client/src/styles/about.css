@@ -509,3 +509,45 @@
     padding-bottom: 60px !important;
   }
 }
+
+/* ==========================================================================
+   SECTION 5: WHAT OUR CLIENTS SAY ABOUT OUR PAINTING COMPANY (3D CUBE)
+   ========================================================================== */
+.about-sec5-heading {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+}
+
+.about-sec5-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 1023px) {
+  .about-sec5-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .about-sec5-left-card {
+    min-height: 340px !important;
+    height: 340px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-sec5-heading {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  .about-sec5-left-card {
+    min-height: 260px !important;
+    height: 260px !important;
+    border-radius: 16px !important;
+  }
+}

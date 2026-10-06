@@ -1,12 +1,11 @@
 /* ======================================================================
-   3D RECTANGULAR CUBE ROTATING TESTIMONIAL - COMPACT SLEEK DESIGN
+   3D RECTANGULAR CUBE ROTATING TESTIMONIAL SLIDER - PREMIUM NAVY CUBE
    ====================================================================== */
 .cube-slider-wrapper {
   position: relative;
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  min-height: 300px;
+  max-width: 100%;
+  height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,10 +16,11 @@
 .cube-viewport {
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 340px;
   perspective: 1200px;
   perspective-origin: 50% 50%;
   overflow: visible;
+  touch-action: pan-y;
 }
 
 .cube-stage {
@@ -28,7 +28,7 @@
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  transition: transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cube-face {
@@ -38,15 +38,16 @@
   height: 100%;
   background: #19365A !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px !important;
-  padding: 24px 24px;
+  border-radius: 0px !important; /* Locked sharp 90° corners */
+  padding: 28px 28px;
   box-sizing: border-box !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  backface-visibility: hidden;
+  backface-visibility: visible;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-  transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+  transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, filter, opacity;
 }
 
 .cube-header-row {
@@ -56,7 +57,6 @@
   width: 100%;
   position: relative;
   z-index: 2;
-  margin-bottom: 10px;
 }
 
 .cube-stars {
@@ -80,15 +80,15 @@
   flex-grow: 1;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 14px 0;
 }
 
 .cube-quote-text {
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   color: #FFFFFF;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -100,7 +100,6 @@
   gap: 14px;
   position: relative;
   z-index: 2;
-  margin-top: 10px;
 }
 
 .cube-avatar {
@@ -125,7 +124,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 12px;
   width: 100%;
 }
 
@@ -147,37 +146,49 @@
 .cube-dot-active {
   width: 24px;
   border-radius: 8px;
-  background: #F45404;
+  background: #F45404 !important;
 }
 
-@media (max-width: 767px) {
+/* Tablet (< 1024px) */
+@media (max-width: 1023px) {
   .cube-slider-wrapper {
-    max-width: 100%;
+    height: 360px;
   }
   .cube-viewport {
-    height: 300px;
-    perspective: 1000px;
-  }
-  .cube-face {
-    padding: 20px 20px;
-    border-radius: 16px !important;
-  }
-  .cube-quote-text {
-    font-size: 13px;
-    line-height: 1.55;
+    height: 320px;
   }
 }
 
-@media (max-width: 450px) {
+/* Mobile (< 767px) */
+@media (max-width: 767px) {
+  .cube-slider-wrapper {
+    height: 350px;
+  }
   .cube-viewport {
     height: 310px;
     perspective: 1000px;
   }
   .cube-face {
+    padding: 22px 20px;
+  }
+  .cube-quote-text {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 450px) {
+  .cube-slider-wrapper {
+    height: 340px;
+  }
+  .cube-viewport {
+    height: 300px;
+  }
+  .cube-face {
     padding: 18px 16px;
   }
   .cube-quote-text {
-    font-size: 12.5px;
+    font-size: 13.5px;
     line-height: 1.5;
   }
 }
