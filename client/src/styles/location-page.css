@@ -477,7 +477,7 @@
 
 /* 4. Why Choose Us Section - 100% Match to Screenshot */
 .loc-why {
-  padding: 30px 0;
+  padding: 30px 0 !important;
   background-color: #FFFFFF;
 }
 
@@ -1114,14 +1114,16 @@
   }
 
   /* Section Padding */
-  .loc-hero,
+  .loc-stats-bar,
   .loc-wwd,
   .loc-why,
   .loc-services-section,
+  .loc-marquee,
   .loc-faq,
+  .loc-latest-project,
   .loc-contact {
-    padding-top: 50px !important;
-    padding-bottom: 60px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
   }
 
   .loc-container,
