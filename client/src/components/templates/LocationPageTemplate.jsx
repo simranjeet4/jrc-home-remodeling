@@ -505,7 +505,7 @@ export default function LocationPageTemplate({
 
       {/* 8. Latest Project / Testimonials (Present on Aurora, Brighton, Broomfield, Castle Rock, Centennial, Cherry Creek) */}
       {loc.latestProject && (
-        <section className="loc-latest-project" style={{ backgroundColor: '#1E3A5F', padding: '80px 0 85px' }}>
+        <section className="loc-latest-project" style={{ backgroundColor: '#1E3A5F', padding: '30px 0' }}>
           <div className="loc-container-fluid">
             <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '30px', alignItems: 'center', marginBottom: '45px' }}>
               <div>
