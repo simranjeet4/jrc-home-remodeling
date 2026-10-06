@@ -919,6 +919,8 @@
   display: flex;
   align-items: center;
   gap: 22px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .loc-marquee-badge {
@@ -958,22 +960,7 @@
   }
 }
 
-@media (max-width: 600px) {
-  .loc-marquee {
-    padding: 30px 0 !important;
-  }
-  .loc-marquee-text {
-    font-size: 36px;
-  }
-  .loc-marquee-badge {
-    width: 60px;
-    height: 30px;
-  }
-  .loc-marquee-track,
-  .loc-marquee-item {
-    gap: 24px;
-  }
-}
+
 
 /* 8. Contact Form Section */
 .loc-contact {
@@ -1274,21 +1261,37 @@
 
   /* Section 6: Marquee Ribbon */
   .loc-marquee {
-    padding: 24px 0;
-  }
-
-  .loc-marquee-text {
-    font-size: 32px !important;
-  }
-
-  .loc-marquee-badge {
-    width: 65px;
-    height: 35px;
+    padding: 30px 0 !important;
   }
 
   .loc-marquee-track,
   .loc-marquee-item {
-    gap: 24px;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .loc-marquee-unit {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .loc-marquee-badge {
+    width: 60px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .loc-marquee-text {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* Section 7: FAQ Accordion */
