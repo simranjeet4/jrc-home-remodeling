@@ -16,7 +16,6 @@ export default function LocationPageTemplate({
   showContact = true,
 }) {
   const [openFaq, setOpenFaq] = useState(null);
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   // Parallax scroll for Section 4 images
   const whySectionRef = useRef(null);
@@ -101,41 +100,6 @@ export default function LocationPageTemplate({
     'Basement Remodeling': '/basement-remodeling',
     'Whole-Home Remodeling': '/services',
   };
-
-  
-  const latestProject = loc.latestProject || {
-    pill: 'LATEST PROJECT',
-    title: `What Our Clients Say About Our ${city} Remodeling Team`,
-    sub: 'Trusted By 1000+ Satisfied Customers',
-    items: [
-      {
-        text: "I have used JRC twice now - once, to add a bathroom to a basement, and then again to install a tile backsplash in the kitchen. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn't hesitate to use them again!",
-        author: "Charissa Walton",
-        role: "Verified Homeowner",
-        avatar: "user7.jpg"
-      },
-      {
-        text: "JRC did an awesome job with our kitchen floor! They were responsive, pleasant, professional, had good communication, were on time, and most importantly, did a great job!",
-        author: "Bliss Bernal",
-        role: "Verified Homeowner",
-        avatar: "user9.jpg"
-      },
-      {
-        text: "Remodeled three bathrooms. We were very impressed with the attention to detail. Always on time, professional, easy to reach. GREAT work!",
-        author: "Toni Starner",
-        role: "Verified Homeowner",
-        avatar: "user8.jpg"
-      }
-    ]
-  };
-
-  const featuredTestimonial = (latestProject.items && latestProject.items[activeTestimonial])
-    ? latestProject.items[activeTestimonial]
-    : {
-        text: "I have used JRC twice now - once, to add a bathroom to a basement, and then again to install a tile backsplash in the kitchen. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn't hesitate to use them again!",
-        author: "Charissa Walton",
-        avatar: "user7.jpg"
-      };
 
   const mainWhyImg = whyChoose.images && whyChoose.images[0]
     ? `/assets/images/${whyChoose.images[0]}`
@@ -534,55 +498,6 @@ export default function LocationPageTemplate({
                   })}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 8. Latest Project / Testimonials (Present on Aurora, Brighton, Broomfield, Castle Rock, Centennial, Cherry Creek) */}
-      {loc.latestProject && (
-        <section className="loc-latest-project" style={{ backgroundColor: '#1E3A5F', padding: '80px 0 85px' }}>
-          <div className="loc-container-fluid">
-            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '30px', alignItems: 'center', marginBottom: '45px' }}>
-              <div>
-                <div className="loc-pill" style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.2)' }}>
-                  <span>{loc.latestProject.pill || 'LATEST PROJECT'}</span>
-                </div>
-                <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '38px', fontWeight: 600, color: '#FFFFFF', margin: '15px 0 0', lineHeight: 1.25 }}>
-                  {loc.latestProject.title}
-                </h2>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'flex-end' }}>
-                <div style={{ display: 'flex', marginLeft: '10px' }}>
-                  <img src="/assets/images/user9.jpg" alt="" style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #1E3A5F', marginLeft: '-10px' }} />
-                  <img src="/assets/images/user8.jpg" alt="" style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #1E3A5F', marginLeft: '-10px' }} />
-                  <img src="/assets/images/user7.jpg" alt="" style={{ width: '40px', height: '40px', borderRadius: '50%', border: '2px solid #1E3A5F', marginLeft: '-10px' }} />
-                </div>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: '14px', color: '#FFFFFF' }}>{loc.latestProject.sub || 'Trusted By 1000+ Satisfied Customers'}</div>
-                  <div style={{ color: '#F45404', fontSize: '13px' }}>★★★★★</div>
-                </div>
-              </div>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
-              {loc.latestProject.items.map((rev, idx) => (
-                <div key={idx} style={{ backgroundColor: '#1E3A5F', border: '1px solid rgba(255, 255, 255, 0.15)', borderRadius: '8px', padding: '30px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ color: '#FFB800', fontSize: '16px', marginBottom: '14px' }}>★★★★★</div>
-                    <p style={{ fontFamily: 'Work Sans, sans-serif', fontSize: '16px', lineHeight: 1.6, color: '#FFFFFF', margin: 0 }}>
-                      "{rev.text}"
-                    </p>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginTop: '24px' }}>
-                    <img src={`/assets/images/${rev.avatar || 'user7.jpg'}`} alt={rev.author} style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover' }} />
-                    <div>
-                      <div style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 600, fontSize: '16px', color: '#FFFFFF' }}>{rev.author}</div>
-                      <div style={{ fontFamily: 'Work Sans, sans-serif', fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)' }}>{rev.role || 'Verified Homeowner'}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
