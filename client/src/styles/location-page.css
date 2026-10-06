@@ -182,7 +182,7 @@
 .loc-stats-bar {
   width: 100%;
   background-color: #FFFFFF;
-  padding: 30px 0;
+  padding: 45px 0 55px;
   border-bottom: 1px solid #EAEAEA;
   position: relative;
   z-index: 10;
@@ -365,7 +365,7 @@
 
 /* 3. What We Do Section - User Exact Specs */
 .loc-wwd {
-  padding: 30px 0;
+  padding: 90px 0 100px;
   background-color: #FFFFFF;
 }
 
@@ -477,7 +477,7 @@
 
 /* 4. Why Choose Us Section - 100% Match to Screenshot */
 .loc-why {
-  padding: 30px 0 !important;
+  padding: 95px 0 105px;
   background-color: #FFFFFF;
 }
 
@@ -571,7 +571,7 @@
 
 /* 5. Our Services / Feature Showcase (2-Column Sticky Stack) */
 .loc-services-section {
-  padding: 30px 0;
+  padding: 95px 0 105px;
   background-color: #FFFFFF;
 }
 
@@ -712,7 +712,7 @@
 
 /* 7. FAQ Accordion Section - 100% Match to Screenshot */
 .loc-faq {
-  padding: 30px 0;
+  padding: 95px 0 105px;
   background-color: #FAF4EC;
 }
 
@@ -894,7 +894,7 @@
 /* 6. Marquee Ribbon - 76px Font & Paintbrush Badge */
 .loc-marquee {
   background-color: #FFFFFF;
-  padding: 30px 0;
+  padding: 40px 0;
   overflow: hidden;
   white-space: nowrap;
   border-top: 1px solid #EFEFEF;
@@ -977,7 +977,7 @@
 
 /* 8. Contact Form Section */
 .loc-contact {
-  padding: 30px 0;
+  padding: 95px 0 105px;
   background-color: #FFFFFF;
 }
 
@@ -1113,7 +1113,7 @@
     line-height: 1.6 !important;
   }
 
-  /* Section Padding */
+  /* Section Padding Mobile */
   .loc-stats-bar,
   .loc-wwd,
   .loc-why,
