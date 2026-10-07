@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import C3DRectangularCubeSlider from '../components/about/C3DRectangularCubeSlider';
+import BeforeAfterSlider from '../components/common/BeforeAfterSlider';
 import '../styles/home.css';
 
 const servicesStackList = [
@@ -105,19 +106,20 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Image Showcase */}
+            {/* Right Image Showcase - Interactive Automated Before/After Comparison Slider */}
             <div className="home-sec1-right">
-              <div className="home-sec1-img-card">
-                <img
-                  src="/assets/images/about-hero-bg.webp"
-                  alt="Transform Your Home With Expert Remodeling Services"
-                  className="home-sec1-img"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/images/33190.jpg';
-                  }}
-                />
-              </div>
+              <BeforeAfterSlider
+                beforeImage="/assets/images/hero-bathroom-before.webp"
+                afterImage="/assets/images/hero-bathroom-after.webp"
+                beforeAlt="Before Bathroom Renovation"
+                afterAlt="After Bathroom Renovation"
+                beforeLabel="BEFORE"
+                afterLabel="AFTER"
+                height="480px"
+                autoAnimate={true}
+                animationDuration={6}
+                className="home-hero-slider"
+              />
             </div>
           </div>
         </section>
@@ -552,3 +554,4 @@ export default function Home() {
     </>
   );
 }
+
