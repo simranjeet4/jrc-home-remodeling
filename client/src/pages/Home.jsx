@@ -1,555 +1,555 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import C3DRectangularCubeSlider from '../components/about/C3DRectangularCubeSlider';
 import '../styles/home.css';
 
+const servicesStackList = [
+  { name: 'Home Remodeling', path: '/home-remodeling' },
+  { name: 'Kitchen Remodeling', path: '/kitchen-remodeling' },
+  { name: 'Basement Remodeling', path: '/basement-remodeling' },
+  { name: 'Bathroom Remodeling', path: '/bathroom-remodeling' },
+  { name: 'JRC Tile', path: '/jrc-tile' },
+  { name: 'JRC Decks', path: '/jrc-decks' },
+  { name: 'JRC Painting', path: '/jrc-painting' },
+  { name: 'JRC Frame And Drywall', path: '/jrc-frame-and-drywall' },
+  { name: 'Bathtub Shower Conversions', path: '/bathtub-shower-conversions' },
+  { name: 'Junk Removal & Demolition', path: '/junk-removal-demolition' },
+  { name: 'Landscape Design', path: '/landscape-design-near-me' },
+  { name: 'Floor Installers', path: '/floor-installers' },
+  { name: 'Roof Repair', path: '/roof-repair' },
+  { name: 'Fast Countertop Services By JRC Countertops', path: '/countertop-services-near-me' }
+];
+
+const featureTabServices = [
+  {
+    id: 'home-remodel',
+    title: 'Home Remodeling',
+    desc: 'Transform your entire living space with comprehensive, custom home remodeling. From structural reconfiguration to luxury interior finishes, JRC Home Remodeling delivers unmatched quality.',
+    image: '/assets/images/vintage-kitchen-design-tips.jpg',
+    highlights: ['Complete Space Transformation', 'In-House Framing & Drywall', 'Transparent Timelines & Budgeting']
+  },
+  {
+    id: 'kitchen-remodel',
+    title: 'Kitchen Remodeling',
+    desc: 'Create the gourmet kitchen of your dreams with custom cabinetry, quartz countertops, designer backsplashes, and optimized functional layouts.',
+    image: '/assets/images/33190.jpg',
+    highlights: ['Custom Cabinetry & Islands', 'Quartz & Granite Counters', 'Premium Tile Backsplashes']
+  },
+  {
+    id: 'bathroom-remodel',
+    title: 'Bathroom Remodeling',
+    desc: 'Turn outdated bathrooms into spa-like retreats with walk-in tile showers, freestanding tubs, custom vanities, and high-efficiency fixtures.',
+    image: '/assets/images/project-bathroom.jpg',
+    highlights: ['Walk-In Tile Showers', 'Custom Vanity Installation', 'Waterproof Flooring & Lighting']
+  },
+  {
+    id: 'basement-finish',
+    title: 'Basement Finishing',
+    desc: 'Maximize your home square footage with custom basement finishes, wet bars, home theaters, guest suites, and full bathrooms.',
+    image: '/assets/images/project-basement.jpg',
+    highlights: ['Egress Windows & Suites', 'Custom Wet Bars & Theaters', 'Moisture-Resistant Materials']
+  },
+  {
+    id: 'jrc-decks',
+    title: 'JRC Decks',
+    desc: 'Expand your outdoor living space with composite or natural wood decks built for Colorado weather and entertaining.',
+    image: '/assets/images/about-why-choose.jpg',
+    highlights: ['Trex & Composite Decks', 'Custom Railing Systems', 'Built for Altitude & Seasons']
+  },
+  {
+    id: 'jrc-tile',
+    title: 'JRC Tile',
+    desc: 'Expert tile installation for floors, walls, backsplashes, and custom showers using porcelain, ceramic, marble, and natural stone.',
+    image: '/assets/images/tile-re.png',
+    highlights: ['Precision Layout & Alignment', 'Waterproof Substrate Systems', 'Custom Pattern & Mosaic Work']
+  }
+];
+
 export default function Home() {
-  // Hero slider state
-  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
-  const heroSlides = [
-    {
-      id: 1,
-      image: '/assets/images/JRC_new_1_AF.webp',
-      title: 'TRANSFORM YOUR HOME WITH EXPERT REMODELING SERVICES',
-      description: 'Transform your home with expert remodeling services. From kitchen upgrades to full-home renovations, we deliver high-quality craftsmanship and personalized solutions to bring your vision to life.',
-      btn1Text: '303-418-2167',
-      btn1Link: 'tel:303-418-2167',
-      btn2Text: 'Request a Quote',
-      btn2Link: '/contact-us'
-    },
-    {
-      id: 2,
-      image: '/assets/images/JRC_new_2_BF.webp',
-      title: 'Remodel. Refresh. Reimagine.',
-      description: 'Bring new life to your home with expert remodeling that enhances comfort, style, and value — from kitchens and baths to full-home transformations.',
-      btn1Text: '303-418-2167',
-      btn1Link: 'tel:303-418-2167',
-      btn2Text: 'Request a Quote',
-      btn2Link: '/contact-us'
-    },
-    {
-      id: 3,
-      image: '/assets/images/JRC_new_2_AF.webp',
-      title: 'Smart, Stylish Bathroom Upgrades',
-      description: 'Upgrade your bathroom with sleek designs, modern fixtures, and smart solutions that combine comfort with elegance.',
-      btn1Text: '303-418-2167',
-      btn1Link: 'tel:303-418-2167',
-      btn2Text: 'Request a Quote',
-      btn2Link: '/contact-us'
-    }
-  ];
+  const [activeTab, setActiveTab] = useState('home-remodel');
 
-  const testimonials = [
-    {
-      text: 'JRC did an awesome job with our kitchen floor! They were responsive, pleasant, professional, had good communication, were on time, and most importantly, did a great job! We are so happy with the results and look forward to working with Monica and her team again.',
-      user: 'Bliss Bernal'
-    },
-    {
-      text: "I have used JRC twice now - once, to add a bathroom to a basement, and then again to install a tile backsplash in the kitchen. They offered great pricing, were communicative every step of the way, and both projects turned out beautifully. I wouldn't hesitate to use them again!",
-      user: 'Charissa Walton'
-    },
-    {
-      text: 'Remodeled three bathrooms. We were very impressed with the attention to detail. Always on time, professional, easy to reach. GREAT work!',
-      user: 'Toni Starner'
-    }
-  ];
-
-  // Testimonial slider state
-  const [activeTestimonial, setActiveTestimonial] = useState(1);
-
-  // Auto-play testimonials
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-    }, 4500);
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
-
-  const services = [
-    { name: 'Home Remodeling', icon: '/assets/images/home-re.png', link: '/home-remodeling' },
-    { name: 'Kitchen Remodeling', icon: '/assets/images/kitchen-re.png', link: '/kitchen-remodeling' },
-    { name: 'Basement Remodeling', icon: '/assets/images/basemnt.png', link: '/basement-remodeling' },
-    { name: 'Bathroom Remodeling', icon: '/assets/images/bathr.png', link: '/bathroom-remodeling' },
-    { name: 'Jrc Tile', icon: '/assets/images/tile-re.png', link: '/jrc-tile' },
-    { name: 'Jrc Decks', icon: '/assets/images/deck-re.png', link: '/jrc-decks' },
-    { name: 'Jrc Painting', icon: '/assets/images/paint-r.png', link: '/jrc-painting' },
-    { name: 'Jrc Frame And Drywall', icon: '/assets/images/frame.png', link: '/jrc-frame-and-drywall' },
-    { name: 'Bath Shower Conversions', icon: '/assets/images/shower.png', link: '/bathtub-shower-conversions' },
-    { name: 'Junk Removal & Demolition', icon: '/assets/images/junk-re.png', link: '/junk-removal-demolition' },
-    { name: 'Landscape Design', icon: '/assets/images/lands-re.png', link: '/landscape-design-near-me' },
-    { name: 'Floor Installers', icon: '/assets/images/floor.png', link: '/floor-installers' }
-  ];
-
-  const serviceAreas = [
-    'Arvada, CO',
-    'Aurora, CO',
-    'Brighton, CO',
-    'Broomfield, CO',
-    'Castle Rock, CO',
-    'parker, CO',
-    'Centennial, CO',
-    'Cherry-creek, CO',
-    'Commerce-city, CO',
-    'Denver, CO',
-    'Englewood, CO',
-    'Superior, CO',
-    'Golden, CO',
-    'Greenwood-village, CO',
-    'Lafayette, CO',
-    'Lakewood, CO',
-    'Lone-tree, CO',
-    'Morrison, CO',
-    'Northglenn, CO',
-    'Thornton,CO',
-    'Westminster, CO',
-    'Wheat-ridge, CO'
-  ];
+  const currentTabContent = featureTabServices.find((s) => s.id === activeTab) || featureTabServices[0];
 
   return (
     <>
       <Helmet>
         <title>Denver Home Remodeling | From Outdated to Outstanding By JRC</title>
-        <meta
-          name="description"
-          content="Transform your home with JRC Home Remodeling. Expert kitchen, bathroom, basement, and whole home renovations across the Denver Metro Area. Get a free estimate!"
-        />
+        <meta name="description" content="Denver home remodelers. Transform your home with expert remodeling services. Get a free estimate!" />
         <link rel="canonical" href="https://jrchomeremodeling.com/" />
       </Helmet>
 
-      <div data-elementor-type="wp-page" data-elementor-id="6093" className="elementor elementor-6093">
-        {/* SECTION 1: HERO SLIDER */}
-        <div className="home-hero-slider">
-          {heroSlides.map((slide, idx) => (
-            <div
-              key={slide.id}
-              className={`home-hero-slide ${idx === activeHeroSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url("${slide.image}")` }}
-            >
-              <div className="home-hero-slide-overlay" />
-              <div className="home-hero-content">
-                <h1 className="home-hero-title">{slide.title}</h1>
-                <p className="home-hero-description">{slide.description}</p>
-                <div className="home-hero-buttons">
-                  <a href={slide.btn1Link} className="home-hero-btn-primary">
-                    {slide.btn1Text}
-                  </a>
-                  <Link to={slide.btn2Link} className="home-hero-btn-secondary">
-                    {slide.btn2Text}
+      <article className="home-page-mockup">
+        {/* ==========================================
+            SECTION 1: HERO BANNER (SPLIT LAYOUT)
+           ========================================== */}
+        <section className="home-sec1-hero">
+          <div className="hr-container home-sec1-grid">
+            {/* Left Content */}
+            <div className="home-sec1-left">
+              <div className="home-pill-white">FOR ALL YOUR NEEDS</div>
+              <h1 className="home-sec1-title">
+                Transform Your Home With Expert Remodeling Services
+              </h1>
+              <p className="home-sec1-desc">
+                At JRC Home Remodeling, we transform your living space with expert craftsmanship, transparent communication, and top-quality materials built to last.
+              </p>
+              <div className="home-sec1-cta-group">
+                <Link to="/contact-us" className="loc-btn-orange">
+                  <span>GET A FREE ESTIMATE</span>
+                  <span>➔</span>
+                </Link>
+                <Link to="/services" className="loc-btn-blue">
+                  <span>OUR SERVICES</span>
+                  <span>➔</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Image Showcase */}
+            <div className="home-sec1-right">
+              <div className="home-sec1-img-card">
+                <img
+                  src="/assets/images/about-hero-bg.webp"
+                  alt="Transform Your Home With Expert Remodeling Services"
+                  className="home-sec1-img"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/images/33190.jpg';
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            SECTION 2: DARK NAVY STATS & VIDEO SHOWCASE
+           ========================================== */}
+        <section className="home-sec2-navy">
+          <div className="hr-container">
+            <div className="home-sec-header text-center">
+              <div className="home-pill-navy">
+                <span className="home-dot-gold">●</span> EXPERT SERVICES
+              </div>
+              <h2 className="home-sec-title text-white">
+                Your Trusted Experts In Professional Remodeling Services
+              </h2>
+            </div>
+
+            {/* 3 Stat Feature Cards */}
+            <div className="home-sec2-stats-grid">
+              <div className="home-sec2-stat-card">
+                <div className="home-stat-icon">🏠</div>
+                <h3 className="home-stat-num">50+ Combined Experience</h3>
+                <p className="home-stat-desc">Decades of combined remodeling & construction expertise.</p>
+              </div>
+
+              <div className="home-sec2-stat-card">
+                <div className="home-stat-icon">🛠️</div>
+                <h3 className="home-stat-num">4 Construction Crews</h3>
+                <p className="home-stat-desc">Dedicated full-time in-house crews ready to start.</p>
+              </div>
+
+              <div className="home-sec2-stat-card">
+                <div className="home-stat-icon">🛡️</div>
+                <h3 className="home-stat-num">100% Licensed & Insured</h3>
+                <p className="home-stat-desc">Full protection and peace of mind on every job.</p>
+              </div>
+            </div>
+
+            {/* Featured Video Player Box */}
+            <div className="home-sec2-video-box">
+              <div className="home-video-wrapper">
+                <img
+                  src="/assets/images/about-team-blueprint.jpg"
+                  alt="Professional remodeling team in action"
+                  className="home-video-thumb"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/images/33190.jpg';
+                  }}
+                />
+                <div className="home-video-overlay">
+                  <button type="button" className="home-play-btn" aria-label="Play Video">
+                    ▶
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            SECTION 3: WELCOME & ABOUT NARRATIVE (3-COL)
+           ========================================== */}
+        <section className="home-sec3-welcome">
+          <div className="hr-container home-sec3-grid">
+            {/* Col 1: Text Intro */}
+            <div className="home-sec3-col1">
+              <div className="home-pill-orange">ABOUT US</div>
+              <h2 className="home-sec3-title">Welcome To JRC Home Remodeling</h2>
+              <p className="home-sec3-p">
+                At JRC Home Remodeling, we take pride in delivering top-tier residential renovation services across the Denver metropolitan area. Founded on principles of integrity, craftsmanship, and transparent pricing, our team brings decades of combined experience to every kitchen, bathroom, basement, and full-home transformation.
+              </p>
+              <p className="home-sec3-p">
+                We manage every phase from initial scoping to final walk-through, ensuring your vision is realized seamlessly.
+              </p>
+              <Link to="/about-us" className="loc-btn-orange" style={{ marginTop: '16px' }}>
+                <span>MORE ABOUT US</span>
+                <span>➔</span>
+              </Link>
+            </div>
+
+            {/* Col 2: Center Image Card */}
+            <div className="home-sec3-col2">
+              <div className="home-sec3-img-card">
+                <img
+                  src="/assets/images/33190.jpg"
+                  alt="Modern kitchen countertop"
+                  className="home-sec3-img"
+                />
+              </div>
+            </div>
+
+            {/* Col 3: Accordion Menu (Vision, Mission, Values) */}
+            <div className="home-sec3-col3">
+              <div className="home-vision-list">
+                <div className="home-vision-item">
+                  <span>Our Vision</span>
+                  <button type="button" className="home-vision-arrow" aria-label="Expand Vision">➔</button>
+                </div>
+                <div className="home-vision-item">
+                  <span>Our Mission</span>
+                  <button type="button" className="home-vision-arrow" aria-label="Expand Mission">➔</button>
+                </div>
+                <div className="home-vision-item">
+                  <span>Our Values</span>
+                  <button type="button" className="home-vision-arrow" aria-label="Expand Values">➔</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            SECTION 4: HUGE VERTICAL SERVICES TYPOGRAPHY STACK
+           ========================================== */}
+        <section className="home-sec4-services-list">
+          <div className="hr-container">
+            <div className="home-services-stack">
+              {servicesStackList.map((item, idx) => (
+                <div key={idx} className="home-stack-item">
+                  <Link to={item.path} className="home-stack-link">
+                    - {item.name}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            SECTION 5: FEATURE SHOWCASE (BEIGE INTERACTIVE TABS)
+           ========================================== */}
+        <section className="home-sec5-beige">
+          <div className="hr-container">
+            <div className="home-sec-header text-center">
+              <div className="home-pill-beige">OUR SERVICES</div>
+              <h2 className="home-sec-title">
+                Your Trusted Experts In Professional Remodeling Services
+              </h2>
+            </div>
+
+            <div className="home-sec5-tabs-grid">
+              {/* Left Column: Vertical Tabs Menu */}
+              <div className="home-sec5-tabs-menu">
+                {featureTabServices.map((service) => (
+                  <button
+                    key={service.id}
+                    type="button"
+                    className={`home-tab-btn ${activeTab === service.id ? 'home-tab-active' : ''}`}
+                    onClick={() => setActiveTab(service.id)}
+                  >
+                    <span>{service.title}</span>
+                    <span className="home-tab-arrow">➔</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Right Column: Active Service Display Card */}
+              <div className="home-sec5-card">
+                <div className="home-card-left">
+                  <img
+                    src={currentTabContent.image}
+                    alt={currentTabContent.title}
+                    className="home-card-img"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/images/33190.jpg';
+                    }}
+                  />
+                </div>
+                <div className="home-card-right">
+                  <h3 className="home-card-title">{currentTabContent.title}</h3>
+                  <p className="home-card-desc">{currentTabContent.desc}</p>
+                  
+                  <ul className="home-card-bullets">
+                    {currentTabContent.highlights.map((h, i) => (
+                      <li key={i} className="home-card-bullet-item">
+                        <span className="home-check-icon">✓</span>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link to="/services" className="loc-btn-orange" style={{ marginTop: '20px' }}>
+                    <span>LEARN MORE</span>
+                    <span>➔</span>
                   </Link>
                 </div>
               </div>
             </div>
-          ))}
-
-          {/* Navigation Controls */}
-          <button
-            type="button"
-            className="home-hero-arrow prev"
-            onClick={() => setActiveHeroSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-            aria-label="Previous Slide"
-          >
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          </button>
-          <button
-            type="button"
-            className="home-hero-arrow next"
-            onClick={() => setActiveHeroSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1))}
-            aria-label="Next Slide"
-          >
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </button>
-
-          <div className="home-hero-dots">
-            {heroSlides.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`home-hero-dot ${idx === activeHeroSlide ? 'active' : ''}`}
-                onClick={() => setActiveHeroSlide(idx)}
-                aria-label={`Slide ${idx + 1}`}
-              />
-            ))}
           </div>
-        </div>
+        </section>
 
-        {/* SECTION 2: WELCOME & BEFORE/AFTER KITCHEN */}
-        <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-2087d61 e-flex e-con-boxed e-con e-parent" data-id="2087d61" data-element_type="container" data-e-type="container">
-          <div className="e-con-inner">
-            <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-28e93a7 e-flex e-con-boxed e-con e-child" data-id="28e93a7" data-element_type="container" data-e-type="container">
-              <div className="e-con-inner">
-                <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-9586630 e-flex e-con-boxed e-con e-child" data-id="9586630" data-element_type="container" data-e-type="container">
-                  <div className="e-con-inner">
-                    <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-0138418 e-flex e-con-boxed e-con e-child" data-id="0138418" data-element_type="container" data-e-type="container">
-                      <div className="e-con-inner">
-                        <div className="elementor-element elementor-element-932baa2 elementor-widget elementor-widget-heading" data-id="932baa2" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                          <h1 className="elementor-heading-title elementor-size-default">HOUSE RENOVATION COMPANY</h1>
-                        </div>
-                        <div className="elementor-element elementor-element-5065ddc elementor-widget__width-initial elementor-widget elementor-widget-heading" data-id="5065ddc" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
-                          <h2 className="elementor-heading-title elementor-size-default">Welcome To jrc home remodeling!</h2>
-                        </div>
-                        <div className="elementor-element elementor-element-fa91a05 elementor-widget elementor-widget-text-editor" data-id="fa91a05" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-                          <p>We specialize in <strong>bath, kitchen, and basement remodels</strong>. Our experience as a company comes from over 40 fix-and-flips. Our process is proven to work with many projects completed, and the relationships we have with our contractors are what make us special.</p>
-                        </div>
-                        <div className="elementor-element elementor-element-8ff0d2e elementor-widget elementor-widget-button" data-id="8ff0d2e" data-element_type="widget" data-e-type="widget" data-widget_type="button.default">
-                          <a className="elementor-button elementor-button-link elementor-size-sm" href="tel:303-418-2167">
-                            <span className="elementor-button-content-wrapper">
-                              <span className="elementor-button-text">Call us: 303-418-2167</span>
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-861c82d e-flex e-con-boxed e-con e-child" data-id="861c82d" data-element_type="container" data-e-type="container">
-                      <div className="e-con-inner">
-                        <div className="elementor-element elementor-element-a66885d elementor-widget elementor-widget-text-editor" data-id="a66885d" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-                          <p>With our experience in working in our own homes, we thought we would bring the expertise to you. Contractors just want to do the work, we are there to make sure of your satisfaction and handle the project so the headache is not yours. Whether you are looking to remodel your entire home, your kitchen, your bathroom(s), or your basement, give us a call to get started with your free estimate.</p>
-                          <p>Our project manager will handle your project from start to finish and make sure the job is finished to your satisfaction. The headache and liability are on our hands when you sign up with us, so the headache is ours to handle. The goal of remodeling for us is to add value to a home that can be enjoyed by both the person who does the remodel, but to hold up for years to come without fear of losing resale value. Get started with a free estimate today.&nbsp;</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-b1606d0 e-con-full e-flex e-con e-child" data-id="b1606d0" data-element_type="container" data-e-type="container">
-                  <div className="elementor-element elementor-element-f3a0aa3 elementor-widget elementor-widget-image" data-id="f3a0aa3" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                    <figure className="wp-caption">
-                      <img alt="Kitchen interior before remodeling" loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/kitchen-before.webp" className="attachment-full size-full" />
-                      <figcaption className="widget-image-caption wp-caption-text">Before</figcaption>
-                    </figure>
-                  </div>
-                  <div className="elementor-element elementor-element-319677e elementor-widget elementor-widget-image" data-id="319677e" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                    <figure className="wp-caption">
-                      <img alt="Modern kitchen after remodel" loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/kitchen-after.webp" className="attachment-full size-full" />
-                      <figcaption className="widget-image-caption wp-caption-text">After</figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
+        {/* ==========================================
+            SECTION 6: WHY CHOOSE JRC HOME REMODELING
+           ========================================== */}
+        <section className="home-sec6-why">
+          <div className="hr-container">
+            <div className="home-sec-header text-center">
+              <div className="home-pill-orange">WHY CHOOSE US</div>
+              <h2 className="home-sec-title">
+                Why Choose JRC Home Remodeling For Your Remodeling Services
+              </h2>
             </div>
-          </div>
-        </div>
 
-        {/* SECTION 3: 5 PORTFOLIO PHOTOS ROW */}
-        <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-6357f38 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="6357f38" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-          <div className="elementor-container elementor-column-gap-default">
-            <div className="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-7f48989" data-id="7f48989" data-element_type="column" data-e-type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-c27f8d7 elementor-widget elementor-widget-image" data-id="c27f8d7" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                  <img loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/kitchen.webp" className="attachment-full size-full" alt="Kitchen island remodel" />
+            <div className="home-sec6-grid">
+              {/* Left Column: 3 Feature Items */}
+              <div className="home-sec6-left">
+                <div className="home-why-feature">
+                  <div className="home-why-icon">🎨</div>
+                  <div>
+                    <h3 className="home-why-feature-title">Quality Workmanship</h3>
+                    <p className="home-why-feature-desc">We use premium materials and precision techniques for long-lasting durability.</p>
+                  </div>
+                </div>
+
+                <div className="home-why-feature">
+                  <div className="home-why-icon">📐</div>
+                  <div>
+                    <h3 className="home-why-feature-title">Range of Planning</h3>
+                    <p className="home-why-feature-desc">Comprehensive end-to-end planning with transparent scheduling & budgeting.</p>
+                  </div>
+                </div>
+
+                <div className="home-why-feature">
+                  <div className="home-why-icon">🏗️</div>
+                  <div>
+                    <h3 className="home-why-feature-title">Top-Tier Craftsmen</h3>
+                    <p className="home-why-feature-desc">Skilled in-house professionals dedicated to your satisfaction.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-ecebed5" data-id="ecebed5" data-element_type="column" data-e-type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-711cc0c elementor-widget elementor-widget-image" data-id="711cc0c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                  <img loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/bedroom.webp" className="attachment-full size-full" alt="Master bedroom renovation" />
-                </div>
-              </div>
-            </div>
-            <div className="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-5bd5d68" data-id="5bd5d68" data-element_type="column" data-e-type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-91ecb5c elementor-widget elementor-widget-image" data-id="91ecb5c" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                  <img loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/basement.webp" className="attachment-full size-full" alt="Finished basement remodel" />
-                </div>
-              </div>
-            </div>
-            <div className="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-287a2d1" data-id="287a2d1" data-element_type="column" data-e-type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-2442434 elementor-widget elementor-widget-image" data-id="2442434" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                  <img loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/bathroom.webp" className="attachment-full size-full" alt="Modern bathroom vanity" />
-                </div>
-              </div>
-            </div>
-            <div className="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-151ecbf" data-id="151ecbf" data-element_type="column" data-e-type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-314ef82 elementor-widget elementor-widget-image" data-id="314ef82" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-                  <img loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/basement2.webp" className="attachment-full size-full" alt="Finished basement living area" />
+
+              {/* Right Column: Outdoor Living Photo Card */}
+              <div className="home-sec6-right">
+                <div className="home-why-img-card">
+                  <img
+                    src="/assets/images/about-why-choose.jpg"
+                    alt="Why Choose JRC Home Remodeling"
+                    className="home-why-img"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/images/33190.jpg';
+                    }}
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 4: OUR SPECIAL SERVICES (12 CIRCLE ICON CARDS) */}
-        <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-f9cfbf9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f9cfbf9" data-element_type="section" data-e-type="section">
-          <div className="elementor-container elementor-column-gap-default">
-            <div className="elementor-column elementor-col-100 elementor-top-column elementor-element" data-element_type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <h2 className="services-heading" style={{ textAlign: "center" }}>Our Special Services</h2>
-                <p className="services-intro" style={{ textAlign: "center", margin: "0 auto 50px" }}>
-                  Curating a home that suites you and your family is essential to the place that you call home. Our homes mean more to us than they ever did as we are now doing a lot of our everyday work from the same place we rest. Knowing you have a space that is made by you for you is essential to a positive outlook. Your workspace and your home space can be all the difference in your overall comfort. At JRC Remodeling we address the complete project to make sure you don't have to worry.
-                </p>
+        {/* ==========================================
+            SECTION 7: PORTFOLIO SHOWCASE ("SEE THE DIFFERENCE...")
+           ========================================== */}
+        <section className="home-sec7-portfolio">
+          <div className="hr-container">
+            <div className="home-sec-header text-center">
+              <div className="home-pill-gray">OUR PORTFOLIO</div>
+              <h2 className="home-sec-title">
+                See The Difference Professional Remodeling Makes
+              </h2>
+            </div>
 
-                <div className="home-services-grid">
-                  {services.map((srv, index) => (
-                    <Link key={index} to={srv.link} className="home-service-item">
-                      <div className="home-service-icon-wrap">
-                        <img src={srv.icon} alt={srv.name} />
-                      </div>
-                      <span className="home-service-title">{srv.name}</span>
-                    </Link>
-                  ))}
-                </div>
+            <div className="home-sec7-grid">
+              <div className="home-portfolio-card">
+                <img
+                  src="/assets/images/photo-1756079664354-34944e001f6d.jpeg"
+                  alt="Master Bedroom Remodel"
+                  className="home-portfolio-img"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/images/33190.jpg';
+                  }}
+                />
+              </div>
+
+              <div className="home-portfolio-card">
+                <img
+                  src="/assets/images/photo-1765745518752-68a289300789.jpeg"
+                  alt="Modern Kitchen Island Remodel"
+                  className="home-portfolio-img"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/images/33190.jpg';
+                  }}
+                />
+              </div>
+
+              <div className="home-portfolio-card">
+                <img
+                  src="/assets/images/photo-1769253523308-f7bff35c60b1.jpeg"
+                  alt="Bathroom Vanity Remodel"
+                  className="home-portfolio-img"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/images/33190.jpg';
+                  }}
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 5: TRUSTED BY HOMEOWNERS & GOOGLE REVIEWS (BLUE) */}
-        <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-351328f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="351328f" data-element_type="section" data-e-type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-          <div className="elementor-container elementor-column-gap-default">
-            {/* Left Testimonial Slider */}
-            <div className="elementor-column elementor-top-column testimonial-left-col">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-76d4371 elementor-widget elementor-widget-heading">
-                  <h2 className="elementor-heading-title">Trusted by Homeowners Since 1992</h2>
-                </div>
-                <div className="elementor-element elementor-element-c958802 elementor-widget elementor-widget-heading">
-                  <h2 className="elementor-heading-title">5-Star Rated on Google | Zero Complaints in Over 30 Years</h2>
-                </div>
+        {/* ==========================================
+            SECTION 8: TESTIMONIALS (DARK NAVY 3D CUBE)
+           ========================================== */}
+        <section className="about-sec5-section" style={{ backgroundColor: "#132B45", color: "#FFFFFF" }}>
+          <div
+            className="hr-container"
+            style={{
+              width: '100%',
+              maxWidth: '1650px',
+              margin: '0 auto',
+              padding: '0 24px'
+            }}
+          >
+            <div style={{ marginBottom: '40px' }}>
+              <div
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                  padding: '8px 20px',
+                  borderRadius: '50px',
+                  fontSize: '13px',
+                  fontWeight: '600',
+                  letterSpacing: '1.6px',
+                  textTransform: 'uppercase',
+                  color: '#FFFFFF',
+                  marginBottom: '16px'
+                }}
+              >
+                <span style={{ color: '#FFB800', marginRight: '6px' }}>●</span>
+                LATEST PROJECT
+              </div>
 
-                <div className="home-testimonial-outer-wrap">
-                  <button
-                    type="button"
-                    className="home-testimonial-arrow-outside prev"
-                    onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                    aria-label="Previous Testimonial"
-                  >
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-          </button>
+              <h2 className="about-sec5-heading">
+                What Our Clients Say <br />
+                About Our Painting Company
+              </h2>
+            </div>
 
-                  <div className="home-testimonial-card-viewport">
-                      <div key={activeTestimonial} className="home-testimonial-card slide-fade">
-                        <p className="home-testimonial-quote">
-                          "{testimonials[activeTestimonial].text}"
-                        </p>
-                        <p className="home-testimonial-author">
-                          {testimonials[activeTestimonial].user}
-                        </p>
-                      </div>
-                    </div>
+            <div className="about-sec5-grid">
+              {/* Left Column: Cityscape Photo Card with Avatar Stack */}
+              <div
+                className="about-sec5-left-card"
+                style={{
+                  position: 'relative',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  minHeight: '380px',
+                  height: '380px',
+                  backgroundImage: "url('/assets/images/about/about-city-bg.jpg')",
+                  backgroundPosition: 'center center',
+                  backgroundSize: 'cover',
+                  boxShadow: '0 12px 30px rgba(0,0,0,0.25)',
+                  display: 'flex',
+                  alignItems: 'flex-end'
+                }}
+              >
+                {/* Gradient tint over image */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)'
+                  }}
+                />
 
-                  <button
-                    type="button"
-                    className="home-testimonial-arrow-outside next"
-                    onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                    aria-label="Next Testimonial"
-                  >
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-          </button>
-                </div>
-
-                <div className="home-testimonial-dots-outside">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className={`home-testimonial-dot ${i === activeTestimonial ? 'active' : ''}`}
-                      onClick={() => setActiveTestimonial(i)}
-                      aria-label={`Testimonial ${i + 1}`}
+                {/* Overlapping Avatars & Text Badge */}
+                <div
+                  style={{
+                    position: 'relative',
+                    zIndex: 2,
+                    padding: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '16px'
+                  }}
+                >
+                  <div style={{ display: 'flex' }}>
+                    <img
+                      src="/assets/images/about/user9.jpg"
+                      alt="Customer"
+                      style={{
+                        width: '44px',
+                        height: '44px',
+                        borderRadius: '50%',
+                        border: '2px solid #FFFFFF',
+                        objectFit: 'cover'
+                      }}
                     />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Google Card */}
-            <div className="elementor-column elementor-top-column google-right-col">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="home-google-card">
-                  <a href="https://maps.app.goo.gl/DQDfjDHzCD2jyssR6" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/google-reviews-logo.png" alt="Google Reviews" />
-                  </a>
-                  <a href="https://maps.app.goo.gl/t1BinviUZ5TuEL746" target="_blank" rel="noopener noreferrer" className="home-google-btn">
-                    Review us
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 6: BATH, KITCHEN, BASEMENT CONTRACTOR & BEFORE/AFTER BATHTUB */}
-        <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-ef5cc89 e-flex e-con-boxed e-con e-parent" data-id="ef5cc89" data-element_type="container" data-e-type="container">
-          <div className="e-con-inner">
-            <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-67b2d7d e-flex e-con-boxed e-con e-child" data-id="67b2d7d" data-element_type="container" data-e-type="container">
-              <div className="e-con-inner">
-                <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-945ed11 e-flex e-con-boxed e-con e-child" data-id="945ed11" data-element_type="container" data-e-type="container">
-                  <div className="e-con-inner">
-                    <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-04d78d5 e-flex e-con-boxed e-con e-child" data-id="04d78d5" data-element_type="container" data-e-type="container">
-                      <div className="e-con-inner">
-                        <div className="elementor-element elementor-element-2d2aa7d elementor-widget elementor-widget-image">
-                          <img alt="JRC Home Remodeling logo" loading="lazy" decoding="async" width="1024" height="242" src="/assets/images/loh.webp" />
-                        </div>
-                        <div className="elementor-element elementor-element-3de7308 elementor-widget__width-initial elementor-widget elementor-widget-heading">
-                          <h2 className="elementor-heading-title">Bath, kitchen, and basement Contractors near me</h2>
-                        </div>
-                        <div className="elementor-element elementor-element-abfe672 elementor-widget elementor-widget-button">
-                          <a className="elementor-button elementor-button-link elementor-size-sm" href="tel:303-418-2167">
-                            <span className="elementor-button-content-wrapper">
-                              <span className="elementor-button-text">Call us: 303-418-2167</span>
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-615b948 e-con-full e-flex e-con e-child">
-                      <div className="elementor-element elementor-element-ee11e5b elementor-widget elementor-widget-text-editor">
-                        <p>If you are looking for peace of mind and a sense of security, the best place to start would be your home. Think about it. These days we spend almost all our time living, working and/or studying at home.</p>
-                        <p>Your immediate surroundings have a direct impact on your mental, physical and emotional well-being. Do you want to #stayathome as well as feel safe, secure and comfortable? Start by remodeling your house. At JRC Home Remodeling we specialize in home Remodeling, basement, kitchen, bath, and deck. We also do painting (both indoor and outdoor), as well as frame and drywalling.</p>
-                      </div>
-                    </div>
+                    <img
+                      src="/assets/images/about/user8.jpg"
+                      alt="Customer"
+                      style={{
+                        width: '44px',
+                        height: '44px',
+                        borderRadius: '50%',
+                        border: '2px solid #FFFFFF',
+                        objectFit: 'cover',
+                        marginLeft: '-12px'
+                      }}
+                    />
+                    <img
+                      src="/assets/images/about/user7.jpg"
+                      alt="Customer"
+                      style={{
+                        width: '44px',
+                        height: '44px',
+                        borderRadius: '50%',
+                        border: '2px solid #FFFFFF',
+                        objectFit: 'cover',
+                        marginLeft: '-12px'
+                      }}
+                    />
                   </div>
-                </div>
-
-                <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-a6cab62 e-con-full e-flex e-con e-child">
-                  <div className="elementor-element elementor-element-8d78917 elementor-widget elementor-widget-image">
-                    <figure className="wp-caption">
-                      <img alt="Bathroom before remodeling" loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/bf-1.jpg" />
-                      <figcaption className="widget-image-caption wp-caption-text">Before</figcaption>
-                    </figure>
-                  </div>
-                  <div className="elementor-element elementor-element-386f4b2 elementor-widget elementor-widget-image">
-                    <figure className="wp-caption">
-                      <img alt="Modern bathroom after remodel" loading="lazy" decoding="async" width="1000" height="1000" src="/assets/images/af-1.webp" />
-                      <figcaption className="widget-image-caption wp-caption-text">After</figcaption>
-                    </figure>
+                  <div style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF', lineHeight: '1.35' }}>
+                    Trusted By <span style={{ color: '#F45404' }}>1000+</span>
+                    <br />
+                    Satisfied Customers
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* SECTION 7: SPLIT VANITY BEFORE/AFTER & 5 ENGINEERING CAPABILITIES */}
-        <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-287e501 elementor-reverse-tablet elementor-reverse-mobile elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="287e501" data-element_type="section" data-e-type="section">
-          <div className="elementor-container elementor-column-gap-default">
-            {/* Left Dual Vanity */}
-            <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-815c040" data-id="815c040" data-element_type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-element elementor-element-480f3ef e-con-full e-flex e-con e-parent">
-                  <div className="elementor-element elementor-element-a12266c elementor-widget elementor-widget-image">
-                    <figure className="wp-caption">
-                      <img alt="Bathroom vanity before" loading="lazy" decoding="async" width="700" height="965" src="/assets/images/lsbf-1.webp" />
-                      <figcaption className="widget-image-caption wp-caption-text">Before</figcaption>
-                    </figure>
-                  </div>
-                  <div className="elementor-element elementor-element-4c012f4 elementor-widget elementor-widget-image">
-                    <figure className="wp-caption">
-                      <img alt="Bathroom vanity after" loading="lazy" decoding="async" width="700" height="965" src="/assets/images/lsaf-1.webp" />
-                      <figcaption className="widget-image-caption wp-caption-text">After</figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Blue Engineering Card */}
-            <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-33138a3" data-id="33138a3" data-element_type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-ce1e386 elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box">
-                  <div className="elementor-image-box-wrapper">
-                    <figure className="elementor-image-box-img">
-                      <img alt="Engineering" loading="lazy" decoding="async" width="512" height="512" src="/assets/images/worker-2-copy.png" />
-                    </figure>
-                    <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Engineering</h3>
-                      <p className="elementor-image-box-description">Our expert team uses quality materials and sustainable practices to bring your vision to life. Choose us for lasting excellence.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="elementor-element elementor-element-e333008 elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box">
-                  <div className="elementor-image-box-wrapper">
-                    <figure className="elementor-image-box-img">
-                      <img alt="Quality Work" loading="lazy" decoding="async" width="512" height="512" src="/assets/images/guaranteed-copy.png" />
-                    </figure>
-                    <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Quality Work</h3>
-                      <p className="elementor-image-box-description">JRC Home Remodeling guarantees superior craftsmanship, precision, and client satisfaction.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="elementor-element elementor-element-df3473e elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box">
-                  <div className="elementor-image-box-wrapper">
-                    <figure className="elementor-image-box-img">
-                      <img alt="Automated System" loading="lazy" decoding="async" width="512" height="512" src="/assets/images/data-preparation-copy.png" />
-                    </figure>
-                    <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Automated System</h3>
-                      <p className="elementor-image-box-description">Our dedicated team, committed to excellence and precision, ensures your project's success. With a proven track record and client-focused approach, your trust in us is the foundation of our exceptional craftsmanship.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="elementor-element elementor-element-015856c elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box">
-                  <div className="elementor-image-box-wrapper">
-                    <figure className="elementor-image-box-img">
-                      <img alt="Experienced Team" loading="lazy" decoding="async" width="512" height="512" src="/assets/images/teamwork-copy.png" />
-                    </figure>
-                    <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Experienced Team</h3>
-                      <p className="elementor-image-box-description">Our expert team uses quality materials and sustainable practices to bring your vision to life. Choose us for lasting excellence.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="elementor-element elementor-element-fd63c61 elementor-position-left elementor-vertical-align-middle elementor-widget elementor-widget-image-box">
-                  <div className="elementor-image-box-wrapper">
-                    <figure className="elementor-image-box-img">
-                      <img alt="Safety" loading="lazy" decoding="async" width="512" height="512" src="/assets/images/requirements-copy.png" />
-                    </figure>
-                    <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Safety</h3>
-                      <p className="elementor-image-box-description">Safety is our top priority at JRC Home Remodeling. Our projects adhere to the highest safety standards, ensuring a secure environment for both our team and your home. Trust us for meticulous planning, expert execution, and a commitment to creating spaces that prioritize the well-being of all.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Right Column: 3D Rectangular Cube Rotating Testimonial Slider */}
+              <C3DRectangularCubeSlider />
             </div>
           </div>
         </section>
-
-        {/* SECTION 8: SERVICE AREAS & COLORADO MAP */}
-        <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-0df0ae2 elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0df0ae2" data-element_type="section" data-e-type="section">
-          <div className="elementor-container elementor-column-gap-default">
-            {/* Left Service Areas Card */}
-            <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-0e74335" data-id="0e74335" data-element_type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-cb531aa elementor-widget elementor-widget-heading">
-                  <h2 className="elementor-heading-title">Our Service Areas</h2>
-                </div>
-                <div className="elementor-element elementor-element-cbfb864 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list">
-                  <ul className="elementor-icon-list-items">
-                    {serviceAreas.map((area, idx) => (
-                      <li key={idx} className="elementor-icon-list-item">
-                        <span className="elementor-icon-list-icon">
-                          <svg aria-hidden="true" className="e-font-icon-svg e-fas-caret-right" viewBox="0 0 192 512" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z" />
-                          </svg>
-                        </span>
-                        <span className="elementor-icon-list-text">{area}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Map Image */}
-            <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-328a4ed" data-id="328a4ed" data-element_type="column">
-              <div className="elementor-widget-wrap elementor-element-populated">
-                <div className="elementor-element elementor-element-9ad94a4 elementor-widget elementor-widget-image">
-                  <figure className="wp-caption">
-                    <img loading="lazy" decoding="async" width="1080" height="1350" src="/assets/images/jrc-website-image.png" className="attachment-full size-full" alt="Denver Colorado Service Area Map" />
-                    <figcaption className="widget-image-caption wp-caption-text">Before</figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      </article>
     </>
   );
 }
