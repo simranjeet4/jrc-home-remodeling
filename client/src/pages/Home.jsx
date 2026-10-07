@@ -85,7 +85,7 @@ export default function Home() {
             SECTION 1: HERO BANNER (SPLIT LAYOUT)
            ========================================== */}
         <section className="home-sec1-hero">
-          <div className="hr-container home-sec1-grid">
+          <div className="home-sec1-hero-container home-sec1-grid">
             {/* Left Content */}
             <div className="home-sec1-left">
               <div className="home-pill-white">WELCOME TO JRC</div>
@@ -116,6 +116,7 @@ export default function Home() {
                 beforeLabel="BEFORE"
                 afterLabel="AFTER"
                 height="100%"
+                borderRadius="0px"
                 autoAnimate={true}
                 animationDuration={6}
                 className="home-hero-slider"
