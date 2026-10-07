@@ -95,14 +95,13 @@ export default function Home() {
                 From kitchen upgrades to full-home renovations, we deliver high-quality craftsmanship and stress-free project management from start to finish.
               </p>
               <div className="home-sec1-cta-group">
-                <Link to="/contact-us" className="loc-btn-orange">
-                  <span>GET A FREE ESTIMATE</span>
-                  <span>➔</span>
+                <Link to="/contact-us" className="home-btn-orange">
+                  <span>Get Free Estimate</span>
+                  <span className="home-btn-arrow">➔</span>
                 </Link>
-                <Link to="/services" className="loc-btn-blue">
-                  <span>OUR SERVICES</span>
-                  <span>➔</span>
-                </Link>
+                <a href="tel:3034182167" className="home-btn-blue">
+                  <span>Call Now 303-418-2167</span>
+                </a>
               </div>
             </div>
 
