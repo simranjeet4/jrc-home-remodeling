@@ -131,15 +131,23 @@ function App() {
           <Route path="/blog/" element={<Blog />} />
 
           {/* Mandatory Location Pages (18 routes) */}
+          <Route path="/home-remodeling-contractor-in-arvada" element={<Arvada />} />
+          <Route path="/home-remodeling-contractor-in-arvada/" element={<Arvada />} />
           <Route path="/home-remodeling-contractor-in-arvada-2" element={<Arvada />} />
           <Route path="/home-remodeling-contractor-in-arvada-2/" element={<Arvada />} />
 
+          <Route path="/home-remodeling-contractor-in-aurora" element={<Aurora />} />
+          <Route path="/home-remodeling-contractor-in-aurora/" element={<Aurora />} />
           <Route path="/home-remodeling-contractor-in-aurora-3" element={<Aurora />} />
           <Route path="/home-remodeling-contractor-in-aurora-3/" element={<Aurora />} />
 
+          <Route path="/home-remodeling-contractor-in-brighton" element={<Brighton />} />
+          <Route path="/home-remodeling-contractor-in-brighton/" element={<Brighton />} />
           <Route path="/home-remodeling-contractor-in-brighton-2" element={<Brighton />} />
           <Route path="/home-remodeling-contractor-in-brighton-2/" element={<Brighton />} />
 
+          <Route path="/home-remodeling-contractor-in-broomfield" element={<Broomfield />} />
+          <Route path="/home-remodeling-contractor-in-broomfield/" element={<Broomfield />} />
           <Route path="/home-remodeling-contractor-in-broomfield-2" element={<Broomfield />} />
           <Route path="/home-remodeling-contractor-in-broomfield-2/" element={<Broomfield />} />
 
@@ -152,6 +160,8 @@ function App() {
           <Route path="/home-remodeling-contractor-in-cherry-creek" element={<CherryCreek />} />
           <Route path="/home-remodeling-contractor-in-cherry-creek/" element={<CherryCreek />} />
 
+          <Route path="/home-remodeling-contractor-in-commerce-city" element={<CommerceCity />} />
+          <Route path="/home-remodeling-contractor-in-commerce-city/" element={<CommerceCity />} />
           <Route path="/home-remodeling-contractor-in-commerce-city-new" element={<CommerceCity />} />
           <Route path="/home-remodeling-contractor-in-commerce-city-new/" element={<CommerceCity />} />
 
@@ -167,6 +177,8 @@ function App() {
           <Route path="/home-remodeling-contractor-in-greenwood-village" element={<GreenwoodVillage />} />
           <Route path="/home-remodeling-contractor-in-greenwood-village/" element={<GreenwoodVillage />} />
 
+          <Route path="/home-remodeling-contractor-in-highland-ranch" element={<HighlandRanch />} />
+          <Route path="/home-remodeling-contractor-in-highland-ranch/" element={<HighlandRanch />} />
           <Route path="/home-remodeling-contractor-in-highland-ranch-2" element={<HighlandRanch />} />
           <Route path="/home-remodeling-contractor-in-highland-ranch-2/" element={<HighlandRanch />} />
 
@@ -176,12 +188,16 @@ function App() {
           <Route path="/home-remodeling-contractor-in-lakewood" element={<Lakewood />} />
           <Route path="/home-remodeling-contractor-in-lakewood/" element={<Lakewood />} />
 
+          <Route path="/home-remodeling-contractor-in-littleton" element={<Littleton />} />
+          <Route path="/home-remodeling-contractor-in-littleton/" element={<Littleton />} />
           <Route path="/home-remodeling-contractor-in-littleton-2" element={<Littleton />} />
           <Route path="/home-remodeling-contractor-in-littleton-2/" element={<Littleton />} />
 
           <Route path="/home-remodeling-contractor-in-lone-tree" element={<LoneTree />} />
           <Route path="/home-remodeling-contractor-in-lone-tree/" element={<LoneTree />} />
 
+          <Route path="/home-remodeling-contractor-in-morrison" element={<Morrison />} />
+          <Route path="/home-remodeling-contractor-in-morrison/" element={<Morrison />} />
           <Route path="/home-remodeling-contractor-in-morrison-2" element={<Morrison />} />
           <Route path="/home-remodeling-contractor-in-morrison-2/" element={<Morrison />} />
 
