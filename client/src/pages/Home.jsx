@@ -87,12 +87,12 @@ export default function Home() {
           <div className="hr-container home-sec1-grid">
             {/* Left Content */}
             <div className="home-sec1-left">
-              <div className="home-pill-white">FOR ALL YOUR NEEDS</div>
+              <div className="home-pill-white">WELCOME TO JRC</div>
               <h1 className="home-sec1-title">
                 Transform Your Home With Expert Remodeling Services
               </h1>
               <p className="home-sec1-desc">
-                At JRC Home Remodeling, we transform your living space with expert craftsmanship, transparent communication, and top-quality materials built to last.
+                From kitchen upgrades to full-home renovations, we deliver high-quality craftsmanship and stress-free project management from start to finish.
               </p>
               <div className="home-sec1-cta-group">
                 <Link to="/contact-us" className="loc-btn-orange">

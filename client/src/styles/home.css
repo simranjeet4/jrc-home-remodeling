@@ -20,8 +20,11 @@
    SECTION 1: HERO BANNER (SPLIT LAYOUT)
    ========================================================================== */
 .home-sec1-hero {
-  padding: 85px 0 95px;
-  background-color: #F9F8F6;
+  padding: 90px 0 100px;
+  background-image: url('/assets/images/hero-cream-pattern.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .home-sec1-grid {
@@ -35,25 +38,26 @@
   display: inline-block;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 50px;
-  font-size: 13px;
+  font-size: 16px !important;
   font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #160A05;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .home-sec1-title {
-  font-size: 48px;
+  font-size: 64px !important;
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.15;
   color: #160A05;
   margin: 0 0 20px;
 }
 
 .home-sec1-desc {
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: 1.65;
   color: #555555;
   margin: 0 0 32px;
