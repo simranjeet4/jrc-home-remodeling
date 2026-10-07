@@ -280,6 +280,24 @@
   max-width: 320px;
 }
 
+.home-sec2-showcase-box {
+  margin-top: 55px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.home-sec2-showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: cover;
+  display: block;
+}
+
 .home-play-btn {
   width: 80px;
   height: 80px;
