@@ -115,7 +115,7 @@ export default function Home() {
                 afterAlt="After Bathroom Renovation"
                 beforeLabel="BEFORE"
                 afterLabel="AFTER"
-                height="480px"
+                height="100%"
                 autoAnimate={true}
                 animationDuration={6}
                 className="home-hero-slider"

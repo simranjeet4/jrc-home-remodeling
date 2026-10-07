@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    NEW HOMEPAGE STYLES (MATCHING MEDIA_1791370009697.PNG MOCKUP)
    ========================================================================== */
 
@@ -20,18 +20,41 @@
    SECTION 1: HERO BANNER (SPLIT LAYOUT)
    ========================================================================== */
 .home-sec1-hero {
-  padding: 90px 0 100px;
+  position: relative;
+  padding: 0;
   background-image: url('/assets/images/hero-cream-pattern.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .home-sec1-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  align-items: center;
+  align-items: stretch;
+  min-height: 640px;
+}
+
+.home-sec1-left {
+  padding: 85px 0 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-sec1-right {
+  display: flex;
+  height: 100%;
+  padding: 0;
+}
+
+.home-hero-slider {
+  height: 100% !important;
+  min-height: 640px;
+  width: 100%;
+  border-radius: 24px;
 }
 
 .home-pill-white {
