@@ -258,16 +258,17 @@
 }
 
 .home-sec2-icon-wrapper {
-  height: 95px;
+  height: 85px;
+  width: 85px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+  margin: 0 auto 20px;
 }
 
 .home-sec2-icon-img {
-  max-height: 85px;
-  width: auto;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   display: block;
 }
