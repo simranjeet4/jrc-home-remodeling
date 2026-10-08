@@ -295,9 +295,12 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background-color: #0F1E33;
 }
 
-.home-sec2-showcase-img {
+.home-sec2-showcase-img,
+.home-sec2-showcase-video {
   width: 100%;
   height: auto;
   max-height: 640px;

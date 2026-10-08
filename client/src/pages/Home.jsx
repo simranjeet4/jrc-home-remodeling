@@ -185,12 +185,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Construction Showcase Media Card */}
+            {/* Construction Showcase Video Card */}
             <div className="home-sec2-showcase-box">
-              <img
-                src="/assets/images/sec2-construction-video-thumb.jpg"
-                alt="Your Trusted Experts In Professional Remodeling Services"
-                className="home-sec2-showcase-img"
+              <video
+                src="/assets/videos/sec2-construction-video.mp4"
+                poster="/assets/images/sec2-construction-video-thumb.jpg"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="home-sec2-showcase-video"
               />
             </div>
           </div>
