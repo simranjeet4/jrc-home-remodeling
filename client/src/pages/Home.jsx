@@ -126,58 +126,72 @@ export default function Home() {
         </section>
 
         {/* ==========================================
-            SECTION 2: DARK NAVY STATS & VIDEO SHOWCASE
+            SECTION 2: WHAT WE DO (EXPERT SERVICES & SHOWCASE)
            ========================================== */}
         <section className="home-sec2-navy">
           <div className="hr-container">
             <div className="home-sec-header text-center">
-              <div className="home-pill-navy">
-                <span className="home-dot-gold">●</span> EXPERT SERVICES
+              <div className="home-pill-whatwedo">
+                WHAT WE DO
               </div>
               <h2 className="home-sec-title text-white">
-                Your Trusted Experts In Professional Remodeling Services
+                Your Trusted Experts In <br />
+                Professional Remodeling Services
               </h2>
             </div>
 
-            {/* 3 Stat Feature Cards */}
-            <div className="home-sec2-stats-grid">
-              <div className="home-sec2-stat-card">
-                <div className="home-stat-icon">🏠</div>
-                <h3 className="home-stat-num">50+ Combined Experience</h3>
-                <p className="home-stat-desc">Decades of combined remodeling & construction expertise.</p>
+            {/* 3 Feature Cards */}
+            <div className="home-sec2-features-grid">
+              <div className="home-sec2-feature-card">
+                <div className="home-sec2-icon-wrapper">
+                  <img
+                    src="/assets/images/sec2-icon-remodel.png"
+                    alt="Remodel Refresh Reimagine"
+                    className="home-sec2-icon-img"
+                  />
+                </div>
+                <h3 className="home-sec2-feature-title">Remodel Refresh Reimagine</h3>
+                <p className="home-sec2-feature-desc">
+                  Upgrade comfort style and property value with expert remodeling solutions
+                </p>
               </div>
 
-              <div className="home-sec2-stat-card">
-                <div className="home-stat-icon">🛠️</div>
-                <h3 className="home-stat-num">4 Construction Crews</h3>
-                <p className="home-stat-desc">Dedicated full-time in-house crews ready to start.</p>
+              <div className="home-sec2-feature-card">
+                <div className="home-sec2-icon-wrapper">
+                  <img
+                    src="/assets/images/sec2-icon-bathroom.png"
+                    alt="Smart Bathroom Upgrades"
+                    className="home-sec2-icon-img"
+                  />
+                </div>
+                <h3 className="home-sec2-feature-title">Smart Bathroom Upgrades</h3>
+                <p className="home-sec2-feature-desc">
+                  Modern fixtures elegant finishes and functional improvements
+                </p>
               </div>
 
-              <div className="home-sec2-stat-card">
-                <div className="home-stat-icon">🛡️</div>
-                <h3 className="home-stat-num">100% Licensed & Insured</h3>
-                <p className="home-stat-desc">Full protection and peace of mind on every job.</p>
+              <div className="home-sec2-feature-card">
+                <div className="home-sec2-icon-wrapper">
+                  <img
+                    src="/assets/images/sec2-icon-home.png"
+                    alt="Full Home Transformations"
+                    className="home-sec2-icon-img"
+                  />
+                </div>
+                <h3 className="home-sec2-feature-title">Full Home Transformations</h3>
+                <p className="home-sec2-feature-desc">
+                  Custom renovation solutions designed around your lifestyle
+                </p>
               </div>
             </div>
 
-            {/* Featured Video Player Box */}
-            <div className="home-sec2-video-box">
-              <div className="home-video-wrapper">
-                <img
-                  src="/assets/images/about-team-blueprint.jpg"
-                  alt="Professional remodeling team in action"
-                  className="home-video-thumb"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/images/33190.jpg';
-                  }}
-                />
-                <div className="home-video-overlay">
-                  <button type="button" className="home-play-btn" aria-label="Play Video">
-                    ▶
-                  </button>
-                </div>
-              </div>
+            {/* Construction Showcase Media Card */}
+            <div className="home-sec2-showcase-box">
+              <img
+                src="/assets/images/sec2-construction-video-thumb.jpg"
+                alt="Your Trusted Experts In Professional Remodeling Services"
+                className="home-sec2-showcase-img"
+              />
             </div>
           </div>
         </section>
