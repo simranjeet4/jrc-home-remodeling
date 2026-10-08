@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import C3DRectangularCubeSlider from '../components/about/C3DRectangularCubeSlider';
@@ -24,52 +24,104 @@ const servicesStackList = [
 
 const featureTabServices = [
   {
-    id: 'home-remodel',
-    title: 'Home Remodeling',
-    desc: 'Transform your entire living space with comprehensive, custom home remodeling. From structural reconfiguration to luxury interior finishes, JRC Home Remodeling delivers unmatched quality.',
-    image: '/assets/images/vintage-kitchen-design-tips.jpg',
-    highlights: ['Complete Space Transformation', 'In-House Framing & Drywall', 'Transparent Timelines & Budgeting']
+    id: "kitchen-remodel",
+    title: "Kitchen Remodeling",
+    desc: "At JRC Home Remodeling, we specialize in high-quality kitchen remodeling that enhances both style and functionality. Whether you're looking for custom cabinetry, luxury countertops, modern backsplashes, or a full kitchen makeover, our team delivers expert craftsmanship tailored to your vision.",
+    image: "/assets/images/kitchen-sage-luxury.jpg",
+    path: "/kitchen-remodeling",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   },
   {
-    id: 'kitchen-remodel',
-    title: 'Kitchen Remodeling',
-    desc: 'Create the gourmet kitchen of your dreams with custom cabinetry, quartz countertops, designer backsplashes, and optimized functional layouts.',
-    image: '/assets/images/33190.jpg',
-    highlights: ['Custom Cabinetry & Islands', 'Quartz & Granite Counters', 'Premium Tile Backsplashes']
+    id: "bathroom-remodel",
+    title: "Bathroom Remodeling",
+    desc: "Do you want to make the most out of your basement? We are precisely who you are looking for when it comes to a full-service remodeling company. We've been remodeling, replacing, fixing, and repairing basements and other stuff for eight years now, and our Foreman has been in the business for 45 years. There is no need to keep searching the web for 'Basement Contractors near me' because you have found one of the best.",
+    image: "/assets/images/project-bathroom.jpg",
+    path: "/bathroom-remodeling",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   },
   {
-    id: 'bathroom-remodel',
-    title: 'Bathroom Remodeling',
-    desc: 'Turn outdated bathrooms into spa-like retreats with walk-in tile showers, freestanding tubs, custom vanities, and high-efficiency fixtures.',
-    image: '/assets/images/project-bathroom.jpg',
-    highlights: ['Walk-In Tile Showers', 'Custom Vanity Installation', 'Waterproof Flooring & Lighting']
+    id: "basement-remodel",
+    title: "Basement Remodeling",
+    desc: "Looking to add more living space, increase your home's value, or create the ultimate entertainment area? At JRC Home Remodeling, we specialize in high-quality basement remodels that turn underutilized spaces into beautiful, functional living areas.",
+    image: "/assets/images/basement-renovation-scaffolding.jpg",
+    path: "/basement-remodeling",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   },
   {
-    id: 'basement-finish',
-    title: 'Basement Finishing',
-    desc: 'Maximize your home square footage with custom basement finishes, wet bars, home theaters, guest suites, and full bathrooms.',
-    image: '/assets/images/project-basement.jpg',
-    highlights: ['Egress Windows & Suites', 'Custom Wet Bars & Theaters', 'Moisture-Resistant Materials']
+    id: "deck-installation",
+    title: "Deck Installation",
+    desc: "Affordable Deck Installers Near You: Enhance Your Outdoor Space in Just 2 Days! JRC Deck Builders is your premier destination for high-quality, affordable deck installations right in your neighborhood. Are you dreaming of transforming your outdoor space into a beautiful haven for relaxation and entertainment? Look no further! Our team of experienced professionals is here to turn your vision into reality, all within a timeframe that fits your schedule and budget.",
+    image: "/assets/images/deck-installation-luxury.jpg",
+    path: "/jrc-decks",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   },
   {
-    id: 'jrc-decks',
-    title: 'JRC Decks',
-    desc: 'Expand your outdoor living space with composite or natural wood decks built for Colorado weather and entertaining.',
-    image: '/assets/images/about-why-choose.jpg',
-    highlights: ['Trex & Composite Decks', 'Custom Railing Systems', 'Built for Altitude & Seasons']
+    id: "floor-installation",
+    title: "Floor Installation",
+    desc: "Looking for reliable floor installation near me? JRC Floor Installers is your go-to team for expert craftsmanship and high-quality flooring solutions. We specialize in installing laminate floors, luxury vinyl plank (LVP), ceramic flooring, and more?all with attention to detail and service you can count on.",
+    image: "/assets/images/floor-installation-worker.jpg",
+    path: "/floor-installers",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   },
   {
-    id: 'jrc-tile',
-    title: 'JRC Tile',
-    desc: 'Expert tile installation for floors, walls, backsplashes, and custom showers using porcelain, ceramic, marble, and natural stone.',
-    image: '/assets/images/tile-re.png',
-    highlights: ['Precision Layout & Alignment', 'Waterproof Substrate Systems', 'Custom Pattern & Mosaic Work']
+    id: "painting-service",
+    title: "Painting Service",
+    desc: "Looking for reliable floor installation near me? JRC Floor Installers is your go-to team for expert craftsmanship and high-quality flooring solutions. We specialize in installing laminate floors, luxury vinyl plank (LVP), ceramic flooring, and more?all with attention to detail and service you can count on.",
+    image: "/assets/images/painting-electrical-scaffolding.jpg",
+    path: "/jrc-painting",
+    highlights: [
+      "Manufacturer Quality Equipment",
+      "Use Premium Paints And Materials",
+      "100% Satisfaction Guarantee"
+    ]
   }
 ];
 
+
+
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('home-remodel');
-  const [openSec3Accordion, setOpenSec3Accordion] = useState(null);
+  const [activeTab, setActiveTab] = useState('kitchen-remodel');
+  const [openSec3Accordion, setOpenSec3Accordion] = useState('mission');
+  const [sec3Parallax, setSec3Parallax] = useState(0);
+  const sec3ImgCardRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sec3ImgCardRef.current) return;
+      const rect = sec3ImgCardRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const centerOffset = (rect.top + rect.height / 2) - (windowHeight / 2);
+        const maxParallax = 40;
+        const normalized = centerOffset / (windowHeight / 2);
+        const clamped = Math.max(-1, Math.min(1, normalized));
+        setSec3Parallax(clamped * maxParallax);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const currentTabContent = featureTabServices.find((s) => s.id === activeTab) || featureTabServices[0];
 
@@ -228,11 +280,15 @@ export default function Home() {
 
             {/* Col 2: Center Image Card */}
             <div className="home-sec3-col2">
-              <div className="home-sec3-img-card">
+              <div className="home-sec3-img-card" ref={sec3ImgCardRef}>
                 <img
                   src="/assets/images/sec3-navy-kitchen.jpg"
                   alt="Welcome To JRC Home Remodeling"
                   className="home-sec3-img"
+                  style={{
+                    transform: `translateY(${sec3Parallax}px) scale(1.15)`,
+                    transition: 'transform 0.1s ease-out',
+                  }}
                 />
               </div>
             </div>
@@ -305,16 +361,17 @@ export default function Home() {
         </section>
 
         {/* ==========================================
-            SECTION 4: HUGE VERTICAL SERVICES TYPOGRAPHY STACK
+            SECTION 4: INFINITE MARQUEE SERVICES TICKER (76PX)
            ========================================== */}
         <section className="home-sec4-services-list">
-          <div className="hr-container">
-            <div className="home-services-stack">
-              {servicesStackList.map((item, idx) => (
-                <div key={idx} className="home-stack-item">
-                  <Link to={item.path} className="home-stack-link">
-                    - {item.name}
+          <div className="home-marquee-wrapper">
+            <div className="home-marquee-track">
+              {[...servicesStackList, ...servicesStackList].map((item, idx) => (
+                <div key={idx} className="home-marquee-item">
+                  <Link to={item.path} className="home-marquee-link">
+                    {item.name}
                   </Link>
+                  <span className="home-marquee-separator">&bull;</span>
                 </div>
               ))}
             </div>
@@ -375,8 +432,8 @@ export default function Home() {
                     ))}
                   </ul>
 
-                  <Link to="/services" className="loc-btn-orange" style={{ marginTop: '20px' }}>
-                    <span>LEARN MORE</span>
+                  <Link to={currentTabContent.path || "/services"} className="loc-btn-orange" style={{ marginTop: '20px' }}>
+                    <span>BROWSE MORE</span>
                     <span>➔</span>
                   </Link>
                 </div>
