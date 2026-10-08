@@ -69,6 +69,7 @@ const featureTabServices = [
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('home-remodel');
+  const [openSec3Accordion, setOpenSec3Accordion] = useState(null);
 
   const currentTabContent = featureTabServices.find((s) => s.id === activeTab) || featureTabServices[0];
 
@@ -201,51 +202,102 @@ export default function Home() {
         </section>
 
         {/* ==========================================
-            SECTION 3: WELCOME & ABOUT NARRATIVE (3-COL)
+            SECTION 3: WELCOME & ABOUT NARRATIVE (3-COL SPLIT)
            ========================================== */}
         <section className="home-sec3-welcome">
           <div className="hr-container home-sec3-grid">
             {/* Col 1: Text Intro */}
             <div className="home-sec3-col1">
-              <div className="home-pill-orange">ABOUT US</div>
               <h2 className="home-sec3-title">Welcome To JRC Home Remodeling</h2>
               <p className="home-sec3-p">
-                At JRC Home Remodeling, we take pride in delivering top-tier residential renovation services across the Denver metropolitan area. Founded on principles of integrity, craftsmanship, and transparent pricing, our team brings decades of combined experience to every kitchen, bathroom, basement, and full-home transformation.
+                We specialize in kitchen bathroom and basement remodeling backed by experience from over 40 successful renovation projects.
               </p>
               <p className="home-sec3-p">
-                We manage every phase from initial scoping to final walk-through, ensuring your vision is realized seamlessly.
+                Our project managers guide every step of your remodel so the stress stays with us not you.
               </p>
-              <Link to="/about-us" className="loc-btn-orange" style={{ marginTop: '16px' }}>
-                <span>MORE ABOUT US</span>
-                <span>➔</span>
-              </Link>
+              <p className="home-sec3-p">
+                Whether upgrading one room or your entire home our goal is to increase comfort function and long-term value.
+              </p>
+              <div style={{ marginTop: '28px' }}>
+                <Link to="/contact-us" className="home-btn-orange">
+                  <span>Request Free Estimate</span>
+                  <span className="home-btn-arrow">&rarr;</span>
+                </Link>
+              </div>
             </div>
 
             {/* Col 2: Center Image Card */}
             <div className="home-sec3-col2">
               <div className="home-sec3-img-card">
                 <img
-                  src="/assets/images/33190.jpg"
-                  alt="Modern kitchen countertop"
+                  src="/assets/images/sec3-navy-kitchen.jpg"
+                  alt="Welcome To JRC Home Remodeling"
                   className="home-sec3-img"
                 />
               </div>
             </div>
 
-            {/* Col 3: Accordion Menu (Vision, Mission, Values) */}
+            {/* Col 3: Accordion Menu (Mission, Vision, Value) */}
             <div className="home-sec3-col3">
-              <div className="home-vision-list">
-                <div className="home-vision-item">
-                  <span>Our Vision</span>
-                  <button type="button" className="home-vision-arrow" aria-label="Expand Vision">➔</button>
+              <div className="home-accordion-list">
+                {/* Accordion Item 1: Mission */}
+                <div className={`home-accordion-item ${openSec3Accordion === 'mission' ? 'is-open' : ''}`}>
+                  <div
+                    className="home-accordion-header"
+                    onClick={() => setOpenSec3Accordion(openSec3Accordion === 'mission' ? null : 'mission')}
+                  >
+                    <span className="home-accordion-title">Our Mission</span>
+                    <button type="button" className="home-accordion-toggle-btn" aria-label="Toggle Mission">
+                      {openSec3Accordion === 'mission' ? '−' : '+'}
+                    </button>
+                  </div>
+                  {openSec3Accordion === 'mission' && (
+                    <div className="home-accordion-body">
+                      <p>
+                        Our mission is to provide high-quality kitchen, bathroom, basement, and full-home remodeling services through expert craftsmanship, transparent communication, and complete project management from start to finish.
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <div className="home-vision-item">
-                  <span>Our Mission</span>
-                  <button type="button" className="home-vision-arrow" aria-label="Expand Mission">➔</button>
+
+                {/* Accordion Item 2: Vision */}
+                <div className={`home-accordion-item ${openSec3Accordion === 'vision' ? 'is-open' : ''}`}>
+                  <div
+                    className="home-accordion-header"
+                    onClick={() => setOpenSec3Accordion(openSec3Accordion === 'vision' ? null : 'vision')}
+                  >
+                    <span className="home-accordion-title">Our Vision</span>
+                    <button type="button" className="home-accordion-toggle-btn" aria-label="Toggle Vision">
+                      {openSec3Accordion === 'vision' ? '−' : '+'}
+                    </button>
+                  </div>
+                  {openSec3Accordion === 'vision' && (
+                    <div className="home-accordion-body">
+                      <p>
+                        To become Colorado’s most trusted home remodeling partner by transforming houses into comfortable, functional, and beautiful living spaces that families enjoy for years to come. We aim to deliver remodeling experiences that are as reliable and stress-free as the results themselves.
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <div className="home-vision-item">
-                  <span>Our Values</span>
-                  <button type="button" className="home-vision-arrow" aria-label="Expand Values">➔</button>
+
+                {/* Accordion Item 3: Value */}
+                <div className={`home-accordion-item ${openSec3Accordion === 'value' ? 'is-open' : ''}`}>
+                  <div
+                    className="home-accordion-header"
+                    onClick={() => setOpenSec3Accordion(openSec3Accordion === 'value' ? null : 'value')}
+                  >
+                    <span className="home-accordion-title">Our Value</span>
+                    <button type="button" className="home-accordion-toggle-btn" aria-label="Toggle Value">
+                      {openSec3Accordion === 'value' ? '−' : '+'}
+                    </button>
+                  </div>
+                  {openSec3Accordion === 'value' && (
+                    <div className="home-accordion-body">
+                      <p>
+                        To become Colorado’s most trusted home remodeling partner by transforming houses into comfortable, functional, and beautiful living spaces that families enjoy for years to come. We aim to deliver remodeling experiences that are as reliable and stress-free as the results themselves.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
